@@ -12,11 +12,12 @@ Please see instructions on fetching from package managers for each language spec
 ## Authentication
 
 Formance Stack offers one form of authentication:
-  - OAuth2
-OAuth2 - an open protocol to allow secure authorization in a simple
+  - **OAuth2** - an open protocol to allow secure authorization in a simple
 and standard method from web, mobile and desktop applications.
 
 ## SDK Example Usage
+
+Please see example usage for each language specific SDK. Here is an example for Typescript.
 <!-- Start SDK Example Usage -->
 ```typescript
 import { FormanceAPI, withSecurity} from "@formance/sdk";
