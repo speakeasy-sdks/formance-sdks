@@ -1,0 +1,5 @@
+python:
+    version: v1.0.0-rc.5
+    packagename: formance
+    author: formance
+sdkclassname: FormanceAPI

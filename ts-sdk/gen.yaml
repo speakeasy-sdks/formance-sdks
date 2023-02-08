@@ -1,0 +1,5 @@
+typescript:
+    version: v1.0.0-rc.5
+    packagename: '@formance/sdk'
+    author: formance
+sdkclassname: FormanceAPI

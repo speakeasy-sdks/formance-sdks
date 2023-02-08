@@ -1,0 +1,5 @@
+java:
+    version: v1.0.0-rc.5
+    packagename: dev.formance.javasdk
+    projectname: formance-client-sdk-java
+sdkclassname: FormanceAPI

@@ -1,0 +1,4 @@
+go:
+    version: v1.0.0-rc.5
+    packagename: github.com/speakeasy-sdks/formance-sdks/go-client-sdk
+sdkclassname: formance
