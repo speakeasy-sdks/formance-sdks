@@ -1,4 +1,4 @@
-# github.com/speakeasy-sdks/formance-sdks/go-client-sdk
+# Formance Go SDK
 
 <!-- Start SDK Installation -->
 ## SDK Installation
