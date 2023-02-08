@@ -1,4 +1,4 @@
-# @formance/sdk
+Formance Typescript SDK
 
 <!-- Start SDK Installation -->
 ## SDK Installation
