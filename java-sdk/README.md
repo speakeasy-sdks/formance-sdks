@@ -1,4 +1,4 @@
-# formance-client-sdk-java
+# Formance Java SDK
 
 <!-- Start SDK Installation -->
 ## SDK Installation
