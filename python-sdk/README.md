@@ -1,4 +1,4 @@
-# formance
+# Formance Python SDK
 
 <!-- Start SDK Installation -->
 ## SDK Installation
