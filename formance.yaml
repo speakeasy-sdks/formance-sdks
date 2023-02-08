@@ -516,19 +516,6 @@ paths:
             minimum: 1
             maximum: 1000
             default: 15
-        - name: page_size
-          in: query
-          description: |
-            The maximum number of results to return per page.
-            Deprecated, please use `pageSize` instead.
-          example: 100
-          schema:
-            type: integer
-            format: int64
-            minimum: 1
-            maximum: 1000
-            default: 15
-          deprecated: true
         - name: after
           in: query
           description: >-
@@ -579,24 +566,7 @@ paths:
               - e
               - ne
             example: gte
-        - name: balance_operator
-          in: query
-          description: >
-            Operator used for the filtering of balances can be greater
-            than/equal, less than/equal, greater than, less than, equal or not.
-
-            Deprecated, please use `balanceOperator` instead.
-          schema:
-            type: string
-            enum:
-              - gte
-              - lte
-              - gt
-              - lt
-              - e
-              - ne
-            example: gte
-          deprecated: true
+        
         - name: cursor
           in: query
           description: >
@@ -920,19 +890,7 @@ paths:
           schema:
             type: string
             format: date-time
-        - name: start_time
-          in: query
-          description: >
-            Filter transactions that occurred after this timestamp.
-
-            The format is RFC3339 and is inclusive (for example,
-            "2023-01-02T15:04:01Z" includes the first second of 4th minute).
-
-            Deprecated, please use `startTime` instead.
-          schema:
-            type: string
-            format: date-time
-          deprecated: true
+        
         - name: endTime
           in: query
           description: >
@@ -943,19 +901,7 @@ paths:
           schema:
             type: string
             format: date-time
-        - name: end_time
-          in: query
-          description: >
-            Filter transactions that occurred before this timestamp.
-
-            The format is RFC3339 and is exclusive (for example,
-            "2023-01-02T15:04:01Z" excludes the first second of 4th minute).
-
-            Deprecated, please use `endTime` instead.
-          schema:
-            type: string
-            format: date-time
-          deprecated: true
+        
         - name: metadata
           in: query
           description: >-
@@ -1007,19 +953,6 @@ paths:
             minimum: 1
             maximum: 1000
             default: 15
-        - name: page_size
-          in: query
-          description: |
-            The maximum number of results to return per page.
-            Deprecated, please use `pageSize` instead.
-          example: 100
-          schema:
-            type: integer
-            format: int64
-            minimum: 1
-            maximum: 1000
-            default: 15
-          deprecated: true
         - name: after
           in: query
           description: >-
@@ -1068,19 +1001,6 @@ paths:
           schema:
             type: string
             format: date-time
-        - name: start_time
-          in: query
-          description: >
-            Filter transactions that occurred after this timestamp.
-
-            The format is RFC3339 and is inclusive (for example,
-            "2023-01-02T15:04:01Z" includes the first second of 4th minute).
-
-            Deprecated, please use `startTime` instead.
-          schema:
-            type: string
-            format: date-time
-          deprecated: true
         - name: endTime
           in: query
           description: >
@@ -1091,19 +1011,6 @@ paths:
           schema:
             type: string
             format: date-time
-        - name: end_time
-          in: query
-          description: >
-            Filter transactions that occurred before this timestamp.
-
-            The format is RFC3339 and is exclusive (for example,
-            "2023-01-02T15:04:01Z" excludes the first second of 4th minute).
-
-            Deprecated, please use `endTime` instead.
-          schema:
-            type: string
-            format: date-time
-          deprecated: true
         - name: cursor
           in: query
           description: >
@@ -1476,19 +1383,6 @@ paths:
             minimum: 1
             maximum: 1000
             default: 15
-        - name: page_size
-          in: query
-          description: |
-            The maximum number of results to return per page.
-            Deprecated, please use `pageSize` instead.
-          example: 100
-          schema:
-            type: integer
-            format: int64
-            minimum: 1
-            maximum: 1000
-            default: 15
-          deprecated: true
         - name: after
           in: query
           description: >-
@@ -1507,19 +1401,6 @@ paths:
           schema:
             type: string
             format: date-time
-        - name: start_time
-          in: query
-          description: >
-            Filter transactions that occurred after this timestamp.
-
-            The format is RFC3339 and is inclusive (for example,
-            "2023-01-02T15:04:01Z" includes the first second of 4th minute).
-
-            Deprecated, please use `startTime` instead.
-          schema:
-            type: string
-            format: date-time
-          deprecated: true
         - name: endTime
           in: query
           description: >
@@ -1530,19 +1411,6 @@ paths:
           schema:
             type: string
             format: date-time
-        - name: end_time
-          in: query
-          description: >
-            Filter transactions that occurred before this timestamp.
-
-            The format is RFC3339 and is exclusive (for example,
-            "2023-01-02T15:04:01Z" excludes the first second of 4th minute).
-
-            Deprecated, please use `endTime` instead.
-          schema:
-            type: string
-            format: date-time
-          deprecated: true
         - name: cursor
           in: query
           description: >
