@@ -1,5 +1,7 @@
 # Formance Go SDK
 
+![GitHub go.mod Go version (subdirectory of monorepo)](https://img.shields.io/github/go-mod/go-version/speakeasy-sdks/formance-sdks?filename=go-sdk%2Fgo.mod&style=for-the-badge)
+
 <!-- Start SDK Installation -->
 ## SDK Installation
 
