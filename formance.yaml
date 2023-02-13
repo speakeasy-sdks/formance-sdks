@@ -41,7 +41,7 @@ paths:
     get:
       summary: Get the server info
       tags: 
-        -Ledger
+        - Ledger
       operationId: getServerInfo
       responses:
         '200':
