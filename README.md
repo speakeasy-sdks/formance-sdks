@@ -37,7 +37,7 @@ const sdk = new FormanceAPI(withSecurity(
   }
 ));
 
-sdk.getServerInfo().then((res: GetServerInfoResponse | AxiosError) => {
+sdk.ledger.getServerInfo().then((res: GetServerInfoResponse | AxiosError) => {
    // handle response
 });
 ```
