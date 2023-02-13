@@ -23,7 +23,7 @@ s.config_security(
     )
 )
     
-res = s.get_server_info()
+res = s.paymentsget_server_info()
 
 if res.server_info is not None:
     # handle response
@@ -35,7 +35,6 @@ if res.server_info is not None:
 
 ### FormanceAPI SDK
 
-* `get_server_info` - Get server info
 * `paymentsget_server_info` - Get server info
 * `searchget_server_info` - Get server info
 
@@ -66,6 +65,7 @@ if res.server_info is not None:
 ### ledger
 
 * `get_ledger_info` - Get information about a ledger
+* `get_server_info` - Get the server info
 
 ### logs
 

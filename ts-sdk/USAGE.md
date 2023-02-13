@@ -1,7 +1,7 @@
 <!-- Start SDK Example Usage -->
 ```typescript
 import { FormanceAPI, withSecurity} from "@formance/sdk";
-import { GetServerInfoResponse } from "@formance/sdk/src/sdk/models/operations";
+import { PaymentsgetServerInfoResponse } from "@formance/sdk/src/sdk/models/operations";
 import { AxiosError } from "axios";
 
 const sdk = new FormanceAPI(withSecurity(
@@ -12,7 +12,7 @@ const sdk = new FormanceAPI(withSecurity(
   }
 ));
 
-sdk.getServerInfo().then((res: GetServerInfoResponse | AxiosError) => {
+sdk.paymentsgetServerInfo().then((res: PaymentsgetServerInfoResponse | AxiosError) => {
    // handle response
 });
 ```

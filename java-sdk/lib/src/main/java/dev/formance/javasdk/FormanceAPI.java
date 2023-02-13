@@ -37,7 +37,7 @@ public class FormanceAPI {
 	private dev.formance.javasdk.models.shared.Security _security;
 	private String _serverUrl;
 	private String _language = "java";
-	private String _sdkVersion = "1.3.0";
+	private String _sdkVersion = "1.3.1";
 	private String _genVersion = "1.3.1";
 
 	public static class Builder {
@@ -256,42 +256,6 @@ public class FormanceAPI {
 			this._genVersion
 		);
 	}
-    
-    /**
-     * getServerInfo - Get server info
-    **/
-    public dev.formance.javasdk.models.operations.GetServerInfoResponse getServerInfo() throws Exception {
-        String baseUrl = this._serverUrl;
-        String url = dev.formance.javasdk.utils.Utils.generateURL(baseUrl, "/api/auth/_info");
-        
-        HTTPRequest req = new HTTPRequest();
-        req.setMethod("GET");
-        req.setURL(url);
-        
-        
-        HTTPClient client = this._securityClient;
-        
-        HttpResponse<byte[]> httpRes = client.send(req);
-
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
-
-        dev.formance.javasdk.models.operations.GetServerInfoResponse res = new dev.formance.javasdk.models.operations.GetServerInfoResponse() {{
-            serverInfo = null;
-        }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
-        res.contentType = contentType;
-        
-        if (httpRes.statusCode() == 200) {
-            if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
-                dev.formance.javasdk.models.shared.ServerInfo out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.ServerInfo.class);
-                res.serverInfo = out;
-            }
-        }
-
-        return res;
-    }
     
     /**
      * paymentsgetServerInfo - Get server info

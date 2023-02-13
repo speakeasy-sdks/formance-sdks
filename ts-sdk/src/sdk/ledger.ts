@@ -64,4 +64,40 @@ export class Ledger {
       })
   }
 
+  
+  /**
+   * getServerInfo - Get the server info
+  **/
+  getServerInfo(
+    config?: AxiosRequestConfig
+  ): Promise<operations.GetServerInfoResponse> {
+    const baseURL: string = this._serverURL;
+    const url: string = baseURL.replace(/\/$/, "") + "/api/auth/_info";
+    
+    const client: AxiosInstance = this._securityClient!;
+    
+    
+    const r = client.request({
+      url: url,
+      method: "get",
+      ...config,
+    });
+    
+    return r.then((httpRes: AxiosResponse) => {
+        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
+
+        if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
+        const res: operations.GetServerInfoResponse = {statusCode: httpRes.status, contentType: contentType};
+        switch (true) {
+          case httpRes?.status == 200:
+            if (utils.matchContentType(contentType, `application/json`)) {
+                res.serverInfo = httpRes?.data;
+            }
+            break;
+        }
+
+        return res;
+      })
+  }
+
 }

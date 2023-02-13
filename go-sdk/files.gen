@@ -33,6 +33,7 @@ pkg/models/operations/listclients.go
 pkg/models/operations/readclient.go
 pkg/models/operations/updateclient.go
 pkg/models/operations/getledgerinfo.go
+pkg/models/operations/getserverinfo.go
 pkg/models/operations/listlogs.go
 pkg/models/operations/getmapping.go
 pkg/models/operations/updatemapping.go
@@ -97,7 +98,6 @@ pkg/models/operations/deleteconfig.go
 pkg/models/operations/getmanyconfigs.go
 pkg/models/operations/insertconfig.go
 pkg/models/operations/testconfig.go
-pkg/models/operations/getserverinfo.go
 pkg/models/operations/paymentsgetserverinfo.go
 pkg/models/operations/searchgetserverinfo.go
 pkg/models/shared/errorresponse.go
@@ -119,6 +119,7 @@ pkg/models/shared/listclientsresponse.go
 pkg/models/shared/readclientresponse.go
 pkg/models/shared/updateclientresponse.go
 pkg/models/shared/updateclientrequest.go
+pkg/models/shared/serverinfo.go
 pkg/models/shared/logscursorresponse.go
 pkg/models/shared/log.go
 pkg/models/shared/mappingresponse.go
@@ -134,7 +135,6 @@ pkg/models/shared/getworkflowoccurrenceresponse.go
 pkg/models/shared/workflowoccurrence.go
 pkg/models/shared/stagestatus.go
 pkg/models/shared/listworkflowsresponse.go
-pkg/models/shared/serverinfo.go
 pkg/models/shared/runworkflowresponse.go
 pkg/models/shared/stripetransferrequest.go
 pkg/models/shared/taskresponse.go

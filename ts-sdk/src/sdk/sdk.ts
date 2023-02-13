@@ -59,7 +59,7 @@ export class FormanceAPI {
   public _securityClient: AxiosInstance;
   public _serverURL: string;
   private _language = "typescript";
-  private _sdkVersion = "1.3.0";
+  private _sdkVersion = "1.3.1";
   private _genVersion = "1.3.1";
 
   constructor(props: SDKProps) {
@@ -232,41 +232,6 @@ export class FormanceAPI {
     );
   }
   
-  /**
-   * getServerInfo - Get server info
-  **/
-  getServerInfo(
-    config?: AxiosRequestConfig
-  ): Promise<operations.GetServerInfoResponse> {
-    const baseURL: string = this._serverURL;
-    const url: string = baseURL.replace(/\/$/, "") + "/api/auth/_info";
-    
-    const client: AxiosInstance = this._securityClient!;
-    
-    
-    const r = client.request({
-      url: url,
-      method: "get",
-      ...config,
-    });
-    
-    return r.then((httpRes: AxiosResponse) => {
-        const contentType: string = httpRes?.headers?.["content-type"] ?? "";
-
-        if (httpRes?.status == null) throw new Error(`status code not found in response: ${httpRes}`);
-        const res: operations.GetServerInfoResponse = {statusCode: httpRes.status, contentType: contentType};
-        switch (true) {
-          case httpRes?.status == 200:
-            if (utils.matchContentType(contentType, `application/json`)) {
-                res.serverInfo = httpRes?.data;
-            }
-            break;
-        }
-
-        return res;
-      })
-  }
-
   /**
    * paymentsgetServerInfo - Get server info
   **/

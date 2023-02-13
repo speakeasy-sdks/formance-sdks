@@ -33,6 +33,7 @@ src/formanceapi/models/operations/listclients.py
 src/formanceapi/models/operations/readclient.py
 src/formanceapi/models/operations/updateclient.py
 src/formanceapi/models/operations/getledgerinfo.py
+src/formanceapi/models/operations/getserverinfo.py
 src/formanceapi/models/operations/listlogs.py
 src/formanceapi/models/operations/getmapping.py
 src/formanceapi/models/operations/updatemapping.py
@@ -97,7 +98,6 @@ src/formanceapi/models/operations/deleteconfig.py
 src/formanceapi/models/operations/getmanyconfigs.py
 src/formanceapi/models/operations/insertconfig.py
 src/formanceapi/models/operations/testconfig.py
-src/formanceapi/models/operations/getserverinfo.py
 src/formanceapi/models/operations/paymentsgetserverinfo.py
 src/formanceapi/models/operations/searchgetserverinfo.py
 src/formanceapi/models/operations/__init__.py
@@ -120,6 +120,7 @@ src/formanceapi/models/shared/listclientsresponse.py
 src/formanceapi/models/shared/readclientresponse.py
 src/formanceapi/models/shared/updateclientresponse.py
 src/formanceapi/models/shared/updateclientrequest.py
+src/formanceapi/models/shared/serverinfo.py
 src/formanceapi/models/shared/logscursorresponse.py
 src/formanceapi/models/shared/log.py
 src/formanceapi/models/shared/mappingresponse.py
@@ -135,7 +136,6 @@ src/formanceapi/models/shared/getworkflowoccurrenceresponse.py
 src/formanceapi/models/shared/workflowoccurrence.py
 src/formanceapi/models/shared/stagestatus.py
 src/formanceapi/models/shared/listworkflowsresponse.py
-src/formanceapi/models/shared/serverinfo.py
 src/formanceapi/models/shared/runworkflowresponse.py
 src/formanceapi/models/shared/stripetransferrequest.py
 src/formanceapi/models/shared/taskresponse.py

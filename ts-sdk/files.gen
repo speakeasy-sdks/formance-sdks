@@ -34,6 +34,7 @@ src/sdk/models/operations/listclients.ts
 src/sdk/models/operations/readclient.ts
 src/sdk/models/operations/updateclient.ts
 src/sdk/models/operations/getledgerinfo.ts
+src/sdk/models/operations/getserverinfo.ts
 src/sdk/models/operations/listlogs.ts
 src/sdk/models/operations/getmapping.ts
 src/sdk/models/operations/updatemapping.ts
@@ -98,7 +99,6 @@ src/sdk/models/operations/deleteconfig.ts
 src/sdk/models/operations/getmanyconfigs.ts
 src/sdk/models/operations/insertconfig.ts
 src/sdk/models/operations/testconfig.ts
-src/sdk/models/operations/getserverinfo.ts
 src/sdk/models/operations/paymentsgetserverinfo.ts
 src/sdk/models/operations/searchgetserverinfo.ts
 src/sdk/models/operations/index.ts
@@ -121,6 +121,7 @@ src/sdk/models/shared/listclientsresponse.ts
 src/sdk/models/shared/readclientresponse.ts
 src/sdk/models/shared/updateclientresponse.ts
 src/sdk/models/shared/updateclientrequest.ts
+src/sdk/models/shared/serverinfo.ts
 src/sdk/models/shared/logscursorresponse.ts
 src/sdk/models/shared/log.ts
 src/sdk/models/shared/mappingresponse.ts
@@ -136,7 +137,6 @@ src/sdk/models/shared/getworkflowoccurrenceresponse.ts
 src/sdk/models/shared/workflowoccurrence.ts
 src/sdk/models/shared/stagestatus.ts
 src/sdk/models/shared/listworkflowsresponse.ts
-src/sdk/models/shared/serverinfo.ts
 src/sdk/models/shared/runworkflowresponse.ts
 src/sdk/models/shared/stripetransferrequest.ts
 src/sdk/models/shared/taskresponse.ts

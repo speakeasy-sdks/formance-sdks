@@ -76,7 +76,7 @@ func WithSecurity(security shared.Security) SDKOption {
 func New(opts ...SDKOption) *Formance {
 	sdk := &Formance{
 		_language:   "go",
-		_sdkVersion: "1.3.0",
+		_sdkVersion: "1.3.1",
 		_genVersion: "1.3.1",
 	}
 	for _, opt := range opts {
@@ -255,49 +255,6 @@ func New(opts ...SDKOption) *Formance {
 	)
 
 	return sdk
-}
-
-// GetServerInfo - Get server info
-func (s *Formance) GetServerInfo(ctx context.Context) (*operations.GetServerInfoResponse, error) {
-	baseURL := s._serverURL
-	url := strings.TrimSuffix(baseURL, "/") + "/api/auth/_info"
-
-	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
-	if err != nil {
-		return nil, fmt.Errorf("error creating request: %w", err)
-	}
-
-	client := s._securityClient
-
-	httpRes, err := client.Do(req)
-	if err != nil {
-		return nil, fmt.Errorf("error sending request: %w", err)
-	}
-	if httpRes == nil {
-		return nil, fmt.Errorf("error sending request: no response")
-	}
-	defer httpRes.Body.Close()
-
-	contentType := httpRes.Header.Get("Content-Type")
-
-	res := &operations.GetServerInfoResponse{
-		StatusCode:  int64(httpRes.StatusCode),
-		ContentType: contentType,
-	}
-	switch {
-	case httpRes.StatusCode == 200:
-		switch {
-		case utils.MatchContentType(contentType, `application/json`):
-			var out *shared.ServerInfo
-			if err := utils.UnmarshalJsonFromResponseBody(httpRes.Body, &out); err != nil {
-				return nil, err
-			}
-
-			res.ServerInfo = out
-		}
-	}
-
-	return res, nil
 }
 
 // PaymentsgetServerInfo - Get server info

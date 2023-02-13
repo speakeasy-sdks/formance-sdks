@@ -20,7 +20,7 @@ public class Application {
 
             FormanceAPI sdk = builder.build();
 
-            GetServerInfoResponse res = sdk.getServerInfo();
+            PaymentsgetServerInfoResponse res = sdk.paymentsgetServerInfo();
 
             if (res.serverInfo.isPresent()) {
                 // handle response
