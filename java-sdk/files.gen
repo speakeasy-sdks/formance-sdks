@@ -16,6 +16,7 @@ lib/src/main/java/dev/formance/javasdk/Users.java
 lib/src/main/java/dev/formance/javasdk/Wallets.java
 lib/src/main/java/dev/formance/javasdk/Webhooks.java
 lib/src/main/java/dev/formance/javasdk/FormanceAPI.java
+lib/build.gradle
 lib/src/main/java/dev/formance/javasdk/utils/DateTimeDeserializer.java
 lib/src/main/java/dev/formance/javasdk/utils/DateTimeSerializer.java
 lib/src/main/java/dev/formance/javasdk/utils/FormMetadata.java
