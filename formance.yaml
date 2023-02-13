@@ -39,13 +39,13 @@ security:
 paths:
   /api/auth/_info:
     get:
-      summary: Get server info
+      summary: Get the server info
       tags: 
         -Ledger
       operationId: getServerInfo
       responses:
         '200':
-          description: Server information
+          description: The Server information
           content:
             application/json:
               schema:
