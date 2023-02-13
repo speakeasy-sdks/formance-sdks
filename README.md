@@ -1,5 +1,7 @@
 # Formance SDKs
 
+<img src="https://img.shields.io/github/actions/workflow/status/speakeasy-sdks/formance-sdks/speakeasy_sdk_generation.yml?style=for-the-badge" />
+
 SDKs for the [Formance Stack API](https://docs.formance.com/api/stack/v1.0). Formance Stack is an open-source suite of modular tools designed to help developers build, operate, and track money movements of any size and shape. The suite includes a range of products that provide technical introductions, how-tos, and reference documents for each component. Whether you are building a small money-moving application or a large-scale financial platform, Formance Stack has the tools and resources you need to get started.
 
 <!-- Start SDK Installation -->
