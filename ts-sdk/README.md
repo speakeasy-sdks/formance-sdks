@@ -20,7 +20,7 @@ yarn add @formance/sdk
 <!-- Start SDK Example Usage -->
 ```typescript
 import { FormanceAPI, withSecurity} from "@formance/sdk";
-import { PaymentsgetServerInfoResponse } from "@formance/sdk/src/sdk/models/operations";
+import { GetServerInfoResponse } from "@formance/sdk/src/sdk/models/operations";
 import { AxiosError } from "axios";
 
 const sdk = new FormanceAPI(withSecurity(
@@ -31,7 +31,7 @@ const sdk = new FormanceAPI(withSecurity(
   }
 ));
 
-sdk.paymentsgetServerInfo().then((res: PaymentsgetServerInfoResponse | AxiosError) => {
+sdk.ledger.getServerInfo().then((res: GetServerInfoResponse | AxiosError) => {
    // handle response
 });
 ```
