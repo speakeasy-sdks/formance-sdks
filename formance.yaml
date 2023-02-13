@@ -30,12 +30,18 @@ servers:
       organization:
         description: The organization on which the ledger is located
         default: ''
+tags:
+  - name: Ledger
+    description: Everything about your Ledger
+    
 security:
   - Authorization: []
 paths:
   /api/auth/_info:
     get:
       summary: Get server info
+      tags: 
+        -Ledger
       operationId: getServerInfo
       responses:
         '200':
