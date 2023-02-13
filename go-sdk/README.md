@@ -37,7 +37,7 @@ func main() {
 
     s := formance.New(opts...)
     
-    res, err := s.GetServerInfo(ctx)
+    res, err := s.PaymentsgetServerInfo(ctx)
     if err != nil {
         log.Fatal(err)
     }
@@ -53,7 +53,6 @@ func main() {
 
 ### Formance SDK
 
-* `GetServerInfo` - Get server info
 * `PaymentsgetServerInfo` - Get server info
 * `SearchgetServerInfo` - Get server info
 
@@ -84,6 +83,7 @@ func main() {
 ### Ledger
 
 * `GetLedgerInfo` - Get information about a ledger
+* `GetServerInfo` - Get the server info
 
 ### Logs
 

@@ -6,7 +6,7 @@
 ### Gradle
 
 ```groovy
-implementation 'dev.formance.javasdk:formance-client-sdk-java:1.3.0'
+implementation 'dev.formance.javasdk:formance-client-sdk-java:1.3.1'
 ```
 <!-- End SDK Installation -->
 
@@ -33,7 +33,7 @@ public class Application {
 
             FormanceAPI sdk = builder.build();
 
-            GetServerInfoResponse res = sdk.getServerInfo();
+            PaymentsgetServerInfoResponse res = sdk.paymentsgetServerInfo();
 
             if (res.serverInfo.isPresent()) {
                 // handle response
@@ -49,7 +49,6 @@ public class Application {
 
 ### FormanceAPI SDK
 
-* `getServerInfo` - Get server info
 * `paymentsgetServerInfo` - Get server info
 * `searchgetServerInfo` - Get server info
 
@@ -80,6 +79,7 @@ public class Application {
 ### ledger
 
 * `getLedgerInfo` - Get information about a ledger
+* `getServerInfo` - Get the server info
 
 ### logs
 

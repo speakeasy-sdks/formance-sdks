@@ -12,7 +12,7 @@ s.config_security(
     )
 )
     
-res = s.get_server_info()
+res = s.paymentsget_server_info()
 
 if res.server_info is not None:
     # handle response

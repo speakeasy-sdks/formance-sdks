@@ -89,6 +89,7 @@ lib/src/main/java/dev/formance/javasdk/models/operations/UpdateClientResponse.ja
 lib/src/main/java/dev/formance/javasdk/models/operations/GetLedgerInfoPathParams.java
 lib/src/main/java/dev/formance/javasdk/models/operations/GetLedgerInfoRequest.java
 lib/src/main/java/dev/formance/javasdk/models/operations/GetLedgerInfoResponse.java
+lib/src/main/java/dev/formance/javasdk/models/operations/GetServerInfoResponse.java
 lib/src/main/java/dev/formance/javasdk/models/operations/ListLogsPathParams.java
 lib/src/main/java/dev/formance/javasdk/models/operations/ListLogsQueryParams.java
 lib/src/main/java/dev/formance/javasdk/models/operations/ListLogsRequest.java
@@ -267,7 +268,6 @@ lib/src/main/java/dev/formance/javasdk/models/operations/InsertConfigResponse.ja
 lib/src/main/java/dev/formance/javasdk/models/operations/TestConfigPathParams.java
 lib/src/main/java/dev/formance/javasdk/models/operations/TestConfigRequest.java
 lib/src/main/java/dev/formance/javasdk/models/operations/TestConfigResponse.java
-lib/src/main/java/dev/formance/javasdk/models/operations/GetServerInfoResponse.java
 lib/src/main/java/dev/formance/javasdk/models/operations/PaymentsgetServerInfoResponse.java
 lib/src/main/java/dev/formance/javasdk/models/operations/SearchgetServerInfoResponse.java
 lib/src/main/java/dev/formance/javasdk/models/shared/ErrorResponse.java
@@ -291,6 +291,7 @@ lib/src/main/java/dev/formance/javasdk/models/shared/ListClientsResponse.java
 lib/src/main/java/dev/formance/javasdk/models/shared/ReadClientResponse.java
 lib/src/main/java/dev/formance/javasdk/models/shared/UpdateClientResponse.java
 lib/src/main/java/dev/formance/javasdk/models/shared/UpdateClientRequest.java
+lib/src/main/java/dev/formance/javasdk/models/shared/ServerInfo.java
 lib/src/main/java/dev/formance/javasdk/models/shared/LogsCursorResponseCursor.java
 lib/src/main/java/dev/formance/javasdk/models/shared/LogsCursorResponse.java
 lib/src/main/java/dev/formance/javasdk/models/shared/LogTypeEnum.java
@@ -309,7 +310,6 @@ lib/src/main/java/dev/formance/javasdk/models/shared/GetWorkflowOccurrenceRespon
 lib/src/main/java/dev/formance/javasdk/models/shared/WorkflowOccurrence.java
 lib/src/main/java/dev/formance/javasdk/models/shared/StageStatus.java
 lib/src/main/java/dev/formance/javasdk/models/shared/ListWorkflowsResponse.java
-lib/src/main/java/dev/formance/javasdk/models/shared/ServerInfo.java
 lib/src/main/java/dev/formance/javasdk/models/shared/RunWorkflowResponse.java
 lib/src/main/java/dev/formance/javasdk/models/shared/StripeTransferRequest.java
 lib/src/main/java/dev/formance/javasdk/models/shared/TaskResponse.java

@@ -52,7 +52,7 @@ class FormanceAPI:
     _security: shared.Security
     _server_url: str = SERVERS[0]
     _language: str = "python"
-    _sdk_version: str = "1.3.0"
+    _sdk_version: str = "1.3.1"
     _gen_version: str = "1.3.1"
 
     def __init__(self) -> None:
@@ -239,29 +239,6 @@ class FormanceAPI:
             self._gen_version
         )
     
-    def get_server_info(self) -> operations.GetServerInfoResponse:
-        r"""Get server info
-        """
-        
-        base_url = self._server_url
-        
-        url = base_url.removesuffix("/") + "/api/auth/_info"
-        
-        
-        client = self._security_client
-        
-        r = client.request("GET", url)
-        content_type = r.headers.get("Content-Type")
-
-        res = operations.GetServerInfoResponse(status_code=r.status_code, content_type=content_type)
-        
-        if r.status_code == 200:
-            if utils.match_content_type(content_type, "application/json"):
-                out = utils.unmarshal_json(r.text, Optional[shared.ServerInfo])
-                res.server_info = out
-
-        return res
-
     def paymentsget_server_info(self) -> operations.PaymentsgetServerInfoResponse:
         r"""Get server info
         """

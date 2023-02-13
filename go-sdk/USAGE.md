@@ -22,7 +22,7 @@ func main() {
 
     s := formance.New(opts...)
     
-    res, err := s.GetServerInfo(ctx)
+    res, err := s.PaymentsgetServerInfo(ctx)
     if err != nil {
         log.Fatal(err)
     }
