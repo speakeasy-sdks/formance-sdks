@@ -8,10 +8,12 @@ public class UpdateScopeRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
     @SpeakeasyMetadata("request:mediaType=application/json")
     public dev.formance.javasdk.models.shared.UpdateScopeRequest request;
     public UpdateScopeRequest withRequest(dev.formance.javasdk.models.shared.UpdateScopeRequest request) {
         this.request = request;
         return this;
     }
+    
 }

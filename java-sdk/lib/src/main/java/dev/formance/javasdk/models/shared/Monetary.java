@@ -9,10 +9,12 @@ public class Monetary {
         this.amount = amount;
         return this;
     }
+    
     @JsonProperty("asset")
     public String asset;
     public Monetary withAsset(String asset) {
         this.asset = asset;
         return this;
     }
+    
 }

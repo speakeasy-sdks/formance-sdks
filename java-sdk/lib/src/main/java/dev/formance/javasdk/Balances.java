@@ -3,9 +3,9 @@ package dev.formance.javasdk;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.formance.javasdk.utils.HTTPClient;
 import dev.formance.javasdk.utils.HTTPRequest;
+import dev.formance.javasdk.utils.JSON;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
-import java.time.OffsetDateTime;
 import org.apache.http.NameValuePair;
 
 public class Balances {
@@ -47,27 +47,25 @@ public class Balances {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.GetBalancesResponse res = new dev.formance.javasdk.models.operations.GetBalancesResponse() {{
             balancesCursorResponse = null;
             errorResponse = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 200) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.BalancesCursorResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.BalancesCursorResponse.class);
                 res.balancesCursorResponse = out;
             }
         }
         else {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.ErrorResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.ErrorResponse.class);
                 res.errorResponse = out;
             }
@@ -98,27 +96,25 @@ public class Balances {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.GetBalancesAggregatedResponse res = new dev.formance.javasdk.models.operations.GetBalancesAggregatedResponse() {{
             aggregateBalancesResponse = null;
             errorResponse = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 200) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.AggregateBalancesResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.AggregateBalancesResponse.class);
                 res.aggregateBalancesResponse = out;
             }
         }
         else {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.ErrorResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.ErrorResponse.class);
                 res.errorResponse = out;
             }

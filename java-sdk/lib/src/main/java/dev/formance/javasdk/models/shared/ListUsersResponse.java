@@ -3,7 +3,6 @@ package dev.formance.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.OffsetDateTime;
 
 public class ListUsersResponse {
     @JsonInclude(Include.NON_ABSENT)
@@ -13,4 +12,5 @@ public class ListUsersResponse {
         this.data = data;
         return this;
     }
+    
 }

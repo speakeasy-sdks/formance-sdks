@@ -28,5 +28,5 @@ type CountTransactionsResponse struct {
 	ContentType   string
 	ErrorResponse *shared.ErrorResponse
 	Headers       map[string][]string
-	StatusCode    int64
+	StatusCode    int
 }

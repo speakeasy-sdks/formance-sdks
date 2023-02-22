@@ -3,7 +3,6 @@ package dev.formance.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.OffsetDateTime;
 
 public class StripeTransferRequest {
     @JsonInclude(Include.NON_ABSENT)
@@ -13,6 +12,7 @@ public class StripeTransferRequest {
         this.amount = amount;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("asset")
     public String asset;
@@ -20,6 +20,7 @@ public class StripeTransferRequest {
         this.asset = asset;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("destination")
     public String destination;
@@ -27,6 +28,7 @@ public class StripeTransferRequest {
         this.destination = destination;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("metadata")
     public java.util.Map<String, Object> metadata;
@@ -34,4 +36,5 @@ public class StripeTransferRequest {
         this.metadata = metadata;
         return this;
     }
+    
 }

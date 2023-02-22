@@ -17,5 +17,5 @@ type GetWorkflowOccurrenceResponse struct {
 	ContentType                   string
 	Error                         *shared.Error
 	GetWorkflowOccurrenceResponse *shared.GetWorkflowOccurrenceResponse
-	StatusCode                    int64
+	StatusCode                    int
 }

@@ -8,14 +8,17 @@ public class CreateClientResponse {
         this.contentType = contentType;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.CreateClientResponse createClientResponse;
     public CreateClientResponse withCreateClientResponse(dev.formance.javasdk.models.shared.CreateClientResponse createClientResponse) {
         this.createClientResponse = createClientResponse;
         return this;
     }
-    public Long statusCode;
-    public CreateClientResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public CreateClientResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

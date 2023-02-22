@@ -9,4 +9,5 @@ public class VoidHoldPathParams {
         this.holdId = holdId;
         return this;
     }
+    
 }

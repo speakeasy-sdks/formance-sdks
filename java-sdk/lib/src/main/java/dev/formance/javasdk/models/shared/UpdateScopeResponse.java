@@ -12,4 +12,5 @@ public class UpdateScopeResponse {
         this.data = data;
         return this;
     }
+    
 }

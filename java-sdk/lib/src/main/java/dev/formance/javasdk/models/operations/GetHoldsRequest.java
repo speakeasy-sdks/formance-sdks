@@ -8,4 +8,5 @@ public class GetHoldsRequest {
         this.queryParams = queryParams;
         return this;
     }
+    
 }

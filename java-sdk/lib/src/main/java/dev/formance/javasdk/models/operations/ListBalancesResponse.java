@@ -8,14 +8,17 @@ public class ListBalancesResponse {
         this.contentType = contentType;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.ListBalancesResponse listBalancesResponse;
     public ListBalancesResponse withListBalancesResponse(dev.formance.javasdk.models.shared.ListBalancesResponse listBalancesResponse) {
         this.listBalancesResponse = listBalancesResponse;
         return this;
     }
-    public Long statusCode;
-    public ListBalancesResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public ListBalancesResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

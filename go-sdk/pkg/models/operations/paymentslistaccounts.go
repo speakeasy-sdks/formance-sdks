@@ -17,5 +17,5 @@ type PaymentslistAccountsRequest struct {
 type PaymentslistAccountsResponse struct {
 	AccountsCursor *shared.AccountsCursor
 	ContentType    string
-	StatusCode     int64
+	StatusCode     int
 }

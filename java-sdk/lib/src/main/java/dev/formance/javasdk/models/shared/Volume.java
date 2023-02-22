@@ -12,16 +12,19 @@ public class Volume {
         this.balance = balance;
         return this;
     }
+    
     @JsonProperty("input")
     public Long input;
     public Volume withInput(Long input) {
         this.input = input;
         return this;
     }
+    
     @JsonProperty("output")
     public Long output;
     public Volume withOutput(Long output) {
         this.output = output;
         return this;
     }
+    
 }

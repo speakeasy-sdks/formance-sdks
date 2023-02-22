@@ -8,4 +8,5 @@ public class AddTransientScopeRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

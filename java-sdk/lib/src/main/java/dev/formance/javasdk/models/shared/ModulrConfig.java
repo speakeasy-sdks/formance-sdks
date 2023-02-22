@@ -11,12 +11,14 @@ public class ModulrConfig {
         this.apiKey = apiKey;
         return this;
     }
+    
     @JsonProperty("apiSecret")
     public String apiSecret;
     public ModulrConfig withApiSecret(String apiSecret) {
         this.apiSecret = apiSecret;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("endpoint")
     public String endpoint;
@@ -24,4 +26,5 @@ public class ModulrConfig {
         this.endpoint = endpoint;
         return this;
     }
+    
 }

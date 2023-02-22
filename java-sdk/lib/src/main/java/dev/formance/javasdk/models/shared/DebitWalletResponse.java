@@ -9,4 +9,5 @@ public class DebitWalletResponse {
         this.data = data;
         return this;
     }
+    
 }

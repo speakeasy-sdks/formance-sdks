@@ -9,4 +9,5 @@ public class UpdateWalletPathParams {
         this.id = id;
         return this;
     }
+    
 }

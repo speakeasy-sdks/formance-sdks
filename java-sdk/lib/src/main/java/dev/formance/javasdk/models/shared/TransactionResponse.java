@@ -9,4 +9,5 @@ public class TransactionResponse {
         this.data = data;
         return this;
     }
+    
 }

@@ -9,4 +9,5 @@ public class ConfigInfoResponse {
         this.data = data;
         return this;
     }
+    
 }

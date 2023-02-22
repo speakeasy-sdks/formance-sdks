@@ -54,7 +54,7 @@ func (s *stats) ReadStats(ctx context.Context, request operations.ReadStatsReque
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ReadStatsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

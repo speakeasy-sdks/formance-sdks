@@ -9,10 +9,12 @@ public class ConnectorsConfigsResponseDataConnectorKey {
         this.dataType = dataType;
         return this;
     }
+    
     @JsonProperty("required")
     public Boolean required;
     public ConnectorsConfigsResponseDataConnectorKey withRequired(Boolean required) {
         this.required = required;
         return this;
     }
+    
 }

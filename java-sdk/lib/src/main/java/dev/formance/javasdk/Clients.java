@@ -3,10 +3,10 @@ package dev.formance.javasdk;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.formance.javasdk.utils.HTTPClient;
 import dev.formance.javasdk.utils.HTTPRequest;
+import dev.formance.javasdk.utils.JSON;
 import dev.formance.javasdk.utils.SerializedBody;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
-import java.time.OffsetDateTime;
 
 public class Clients {
 	private HTTPClient _defaultClient;
@@ -41,11 +41,11 @@ public class Clients {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.AddScopeToClientResponse res = new dev.formance.javasdk.models.operations.AddScopeToClientResponse() {{
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 204) {
@@ -72,18 +72,17 @@ public class Clients {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.CreateClientResponse res = new dev.formance.javasdk.models.operations.CreateClientResponse() {{
             createClientResponse = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 201) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.CreateClientResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.CreateClientResponse.class);
                 res.createClientResponse = out;
             }
@@ -110,18 +109,17 @@ public class Clients {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.CreateSecretResponse res = new dev.formance.javasdk.models.operations.CreateSecretResponse() {{
             createSecretResponse = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 200) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.CreateSecretResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.CreateSecretResponse.class);
                 res.createSecretResponse = out;
             }
@@ -146,11 +144,11 @@ public class Clients {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.DeleteClientResponse res = new dev.formance.javasdk.models.operations.DeleteClientResponse() {{
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 204) {
@@ -175,11 +173,11 @@ public class Clients {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.DeleteScopeFromClientResponse res = new dev.formance.javasdk.models.operations.DeleteScopeFromClientResponse() {{
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 204) {
@@ -204,11 +202,11 @@ public class Clients {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.DeleteSecretResponse res = new dev.formance.javasdk.models.operations.DeleteSecretResponse() {{
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 204) {
@@ -233,18 +231,17 @@ public class Clients {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.ListClientsResponse res = new dev.formance.javasdk.models.operations.ListClientsResponse() {{
             listClientsResponse = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 200) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.ListClientsResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.ListClientsResponse.class);
                 res.listClientsResponse = out;
             }
@@ -269,18 +266,17 @@ public class Clients {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.ReadClientResponse res = new dev.formance.javasdk.models.operations.ReadClientResponse() {{
             readClientResponse = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 200) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.ReadClientResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.ReadClientResponse.class);
                 res.readClientResponse = out;
             }
@@ -307,18 +303,17 @@ public class Clients {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.UpdateClientResponse res = new dev.formance.javasdk.models.operations.UpdateClientResponse() {{
             updateClientResponse = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 200) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.UpdateClientResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.UpdateClientResponse.class);
                 res.updateClientResponse = out;
             }

@@ -1,6 +1,6 @@
 package dev.formance.javasdk.models.shared;
 
-
+import com.fasterxml.jackson.annotation.JsonValue;
 public enum PaymentSchemeEnum {
     VISA("visa"),
     MASTERCARD("mastercard"),
@@ -21,6 +21,7 @@ public enum PaymentSchemeEnum {
     UNKNOWN("unknown"),
     OTHER("other");
 
+    @JsonValue
     public final String value;
 
     private PaymentSchemeEnum(String value) {

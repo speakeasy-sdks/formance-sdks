@@ -8,4 +8,5 @@ public class ListWalletsRequest {
         this.queryParams = queryParams;
         return this;
     }
+    
 }

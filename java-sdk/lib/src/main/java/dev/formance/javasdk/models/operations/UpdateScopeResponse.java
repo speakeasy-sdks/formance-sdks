@@ -8,14 +8,17 @@ public class UpdateScopeResponse {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public UpdateScopeResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public UpdateScopeResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.UpdateScopeResponse updateScopeResponse;
     public UpdateScopeResponse withUpdateScopeResponse(dev.formance.javasdk.models.shared.UpdateScopeResponse updateScopeResponse) {
         this.updateScopeResponse = updateScopeResponse;
         return this;
     }
+    
 }

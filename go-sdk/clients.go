@@ -54,7 +54,7 @@ func (s *clients) AddScopeToClient(ctx context.Context, request operations.AddSc
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.AddScopeToClientResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -95,7 +95,7 @@ func (s *clients) CreateClient(ctx context.Context, request operations.CreateCli
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CreateClientResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -145,7 +145,7 @@ func (s *clients) CreateSecret(ctx context.Context, request operations.CreateSec
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CreateSecretResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -188,7 +188,7 @@ func (s *clients) DeleteClient(ctx context.Context, request operations.DeleteCli
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteClientResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -222,7 +222,7 @@ func (s *clients) DeleteScopeFromClient(ctx context.Context, request operations.
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteScopeFromClientResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -256,7 +256,7 @@ func (s *clients) DeleteSecret(ctx context.Context, request operations.DeleteSec
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteSecretResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -290,7 +290,7 @@ func (s *clients) ListClients(ctx context.Context) (*operations.ListClientsRespo
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListClientsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -333,7 +333,7 @@ func (s *clients) ReadClient(ctx context.Context, request operations.ReadClientR
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ReadClientResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -383,7 +383,7 @@ func (s *clients) UpdateClient(ctx context.Context, request operations.UpdateCli
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.UpdateClientResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

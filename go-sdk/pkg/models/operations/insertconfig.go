@@ -11,6 +11,6 @@ type InsertConfigRequest struct {
 type InsertConfigResponse struct {
 	ConfigResponse                 *shared.ConfigResponse
 	ContentType                    string
-	StatusCode                     int64
+	StatusCode                     int
 	InsertConfig400TextPlainString *string
 }

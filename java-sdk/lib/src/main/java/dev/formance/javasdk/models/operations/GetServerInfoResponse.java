@@ -8,14 +8,17 @@ public class GetServerInfoResponse {
         this.contentType = contentType;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.ServerInfo serverInfo;
     public GetServerInfoResponse withServerInfo(dev.formance.javasdk.models.shared.ServerInfo serverInfo) {
         this.serverInfo = serverInfo;
         return this;
     }
-    public Long statusCode;
-    public GetServerInfoResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public GetServerInfoResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

@@ -8,14 +8,17 @@ public class ReadScopeResponse {
         this.contentType = contentType;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.ReadScopeResponse readScopeResponse;
     public ReadScopeResponse withReadScopeResponse(dev.formance.javasdk.models.shared.ReadScopeResponse readScopeResponse) {
         this.readScopeResponse = readScopeResponse;
         return this;
     }
-    public Long statusCode;
-    public ReadScopeResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public ReadScopeResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

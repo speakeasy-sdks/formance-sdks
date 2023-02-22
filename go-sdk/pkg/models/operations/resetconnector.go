@@ -14,5 +14,5 @@ type ResetConnectorRequest struct {
 
 type ResetConnectorResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

@@ -17,6 +17,7 @@ public class PostTransaction {
         this.metadata = metadata;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("postings")
     public Posting[] postings;
@@ -24,6 +25,7 @@ public class PostTransaction {
         this.postings = postings;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("reference")
     public String reference;
@@ -31,6 +33,7 @@ public class PostTransaction {
         this.reference = reference;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("script")
     public PostTransactionScript script;
@@ -38,13 +41,15 @@ public class PostTransaction {
         this.script = script;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
-    @JsonSerialize(contentUsing = DateTimeSerializer.class)
-    @JsonDeserialize(contentUsing = DateTimeDeserializer.class)
+    @JsonSerialize(using = DateTimeSerializer.class)
+    @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("timestamp")
     public OffsetDateTime timestamp;
     public PostTransaction withTimestamp(OffsetDateTime timestamp) {
         this.timestamp = timestamp;
         return this;
     }
+    
 }

@@ -15,5 +15,5 @@ type ReadConnectorConfigRequest struct {
 type ReadConnectorConfigResponse struct {
 	ConnectorConfigResponse *shared.ConnectorConfigResponse
 	ContentType             string
-	StatusCode              int64
+	StatusCode              int
 }

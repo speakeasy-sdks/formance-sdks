@@ -20,6 +20,6 @@ type ListConnectorTasksRequest struct {
 
 type ListConnectorTasksResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 	TasksCursor *shared.TasksCursor
 }

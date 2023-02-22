@@ -8,14 +8,17 @@ public class VoidHoldResponse {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public VoidHoldResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public VoidHoldResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.WalletsErrorResponse walletsErrorResponse;
     public VoidHoldResponse withWalletsErrorResponse(dev.formance.javasdk.models.shared.WalletsErrorResponse walletsErrorResponse) {
         this.walletsErrorResponse = walletsErrorResponse;
         return this;
     }
+    
 }

@@ -9,4 +9,5 @@ public class GetHoldResponse {
         this.data = data;
         return this;
     }
+    
 }

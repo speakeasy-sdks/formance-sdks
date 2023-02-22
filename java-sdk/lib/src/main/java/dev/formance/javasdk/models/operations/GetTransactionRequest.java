@@ -8,4 +8,5 @@ public class GetTransactionRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

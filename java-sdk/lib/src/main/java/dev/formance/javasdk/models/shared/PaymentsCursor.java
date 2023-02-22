@@ -9,4 +9,5 @@ public class PaymentsCursor {
         this.cursor = cursor;
         return this;
     }
+    
 }

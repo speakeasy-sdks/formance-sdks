@@ -11,5 +11,5 @@ type CreateClientRequest struct {
 type CreateClientResponse struct {
 	ContentType          string
 	CreateClientResponse *shared.CreateClientResponse
-	StatusCode           int64
+	StatusCode           int
 }

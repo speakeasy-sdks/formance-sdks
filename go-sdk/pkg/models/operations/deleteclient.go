@@ -10,5 +10,5 @@ type DeleteClientRequest struct {
 
 type DeleteClientResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

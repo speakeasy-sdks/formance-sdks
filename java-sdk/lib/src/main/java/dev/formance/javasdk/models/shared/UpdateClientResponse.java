@@ -12,4 +12,5 @@ public class UpdateClientResponse {
         this.data = data;
         return this;
     }
+    
 }

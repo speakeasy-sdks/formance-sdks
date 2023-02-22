@@ -16,5 +16,5 @@ type ChangeConfigSecretRequest struct {
 type ChangeConfigSecretResponse struct {
 	ConfigResponse *shared.ConfigResponse
 	ContentType    string
-	StatusCode     int64
+	StatusCode     int
 }

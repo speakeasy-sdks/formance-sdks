@@ -12,6 +12,7 @@ public class ResponseCursorTotal {
         this.relation = relation;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("value")
     public Long value;
@@ -19,4 +20,5 @@ public class ResponseCursorTotal {
         this.value = value;
         return this;
     }
+    
 }

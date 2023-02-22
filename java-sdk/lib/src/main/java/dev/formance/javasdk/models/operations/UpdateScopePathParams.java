@@ -9,4 +9,5 @@ public class UpdateScopePathParams {
         this.scopeId = scopeId;
         return this;
     }
+    
 }

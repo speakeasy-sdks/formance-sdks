@@ -3,10 +3,10 @@ package dev.formance.javasdk;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.formance.javasdk.utils.HTTPClient;
 import dev.formance.javasdk.utils.HTTPRequest;
+import dev.formance.javasdk.utils.JSON;
 import dev.formance.javasdk.utils.SerializedBody;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
-import java.time.OffsetDateTime;
 import org.apache.http.NameValuePair;
 
 public class Payments {
@@ -49,18 +49,17 @@ public class Payments {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.ConnectorsStripeTransferResponse res = new dev.formance.javasdk.models.operations.ConnectorsStripeTransferResponse() {{
             stripeTransferResponse = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 200) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 java.util.Map<String, Object> out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), java.util.Map.class);
                 res.stripeTransferResponse = out;
             }
@@ -87,18 +86,17 @@ public class Payments {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.GetConnectorTaskResponse res = new dev.formance.javasdk.models.operations.GetConnectorTaskResponse() {{
             taskResponse = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 200) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.TaskResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.TaskResponse.class);
                 res.taskResponse = out;
             }
@@ -123,18 +121,17 @@ public class Payments {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.GetPaymentResponse res = new dev.formance.javasdk.models.operations.GetPaymentResponse() {{
             paymentResponse = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 200) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.PaymentResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.PaymentResponse.class);
                 res.paymentResponse = out;
             }
@@ -166,11 +163,11 @@ public class Payments {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.InstallConnectorResponse res = new dev.formance.javasdk.models.operations.InstallConnectorResponse() {{
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 204) {
@@ -197,18 +194,17 @@ public class Payments {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.ListAllConnectorsResponse res = new dev.formance.javasdk.models.operations.ListAllConnectorsResponse() {{
             connectorsResponse = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 200) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.ConnectorsResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.ConnectorsResponse.class);
                 res.connectorsResponse = out;
             }
@@ -235,18 +231,17 @@ public class Payments {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.ListConfigsAvailableConnectorsResponse res = new dev.formance.javasdk.models.operations.ListConfigsAvailableConnectorsResponse() {{
             connectorsConfigsResponse = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 200) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.ConnectorsConfigsResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.ConnectorsConfigsResponse.class);
                 res.connectorsConfigsResponse = out;
             }
@@ -279,18 +274,17 @@ public class Payments {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.ListConnectorTasksResponse res = new dev.formance.javasdk.models.operations.ListConnectorTasksResponse() {{
             tasksCursor = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 200) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.TasksCursor out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.TasksCursor.class);
                 res.tasksCursor = out;
             }
@@ -321,18 +315,17 @@ public class Payments {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.ListPaymentsResponse res = new dev.formance.javasdk.models.operations.ListPaymentsResponse() {{
             paymentsCursor = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 200) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.PaymentsCursor out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.PaymentsCursor.class);
                 res.paymentsCursor = out;
             }
@@ -363,18 +356,17 @@ public class Payments {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.PaymentslistAccountsResponse res = new dev.formance.javasdk.models.operations.PaymentslistAccountsResponse() {{
             accountsCursor = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 200) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.AccountsCursor out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.AccountsCursor.class);
                 res.accountsCursor = out;
             }
@@ -401,18 +393,17 @@ public class Payments {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.ReadConnectorConfigResponse res = new dev.formance.javasdk.models.operations.ReadConnectorConfigResponse() {{
             connectorConfigResponse = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 200) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.ConnectorConfigResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.ConnectorConfigResponse.class);
                 res.connectorConfigResponse = out;
             }
@@ -441,11 +432,11 @@ public class Payments {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.ResetConnectorResponse res = new dev.formance.javasdk.models.operations.ResetConnectorResponse() {{
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 204) {
@@ -472,11 +463,11 @@ public class Payments {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.UninstallConnectorResponse res = new dev.formance.javasdk.models.operations.UninstallConnectorResponse() {{
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 204) {

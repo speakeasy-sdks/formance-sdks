@@ -9,4 +9,5 @@ public class WiseConfig {
         this.apiKey = apiKey;
         return this;
     }
+    
 }

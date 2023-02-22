@@ -12,6 +12,7 @@ public class ConnectorsResponseData {
         this.enabled = enabled;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("provider")
     public ConnectorEnum provider;
@@ -19,4 +20,5 @@ public class ConnectorsResponseData {
         this.provider = provider;
         return this;
     }
+    
 }

@@ -8,14 +8,17 @@ public class ListUsersResponse {
         this.contentType = contentType;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.ListUsersResponse listUsersResponse;
     public ListUsersResponse withListUsersResponse(dev.formance.javasdk.models.shared.ListUsersResponse listUsersResponse) {
         this.listUsersResponse = listUsersResponse;
         return this;
     }
-    public Long statusCode;
-    public ListUsersResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public ListUsersResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

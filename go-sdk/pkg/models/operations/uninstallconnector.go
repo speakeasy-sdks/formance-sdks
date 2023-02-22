@@ -14,5 +14,5 @@ type UninstallConnectorRequest struct {
 
 type UninstallConnectorResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

@@ -9,10 +9,12 @@ public class Error {
         this.errorCode = errorCode;
         return this;
     }
+    
     @JsonProperty("errorMessage")
     public String errorMessage;
     public Error withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
     }
+    
 }

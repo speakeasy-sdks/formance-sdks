@@ -16,6 +16,6 @@ type CreateBalanceRequest struct {
 type CreateBalanceResponse struct {
 	ContentType           string
 	CreateBalanceResponse *shared.CreateBalanceResponse
-	StatusCode            int64
+	StatusCode            int
 	WalletsErrorResponse  *shared.WalletsErrorResponse
 }

@@ -9,4 +9,5 @@ public class ResetConnectorPathParams {
         this.connector = connector;
         return this;
     }
+    
 }

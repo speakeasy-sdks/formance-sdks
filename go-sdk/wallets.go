@@ -61,7 +61,7 @@ func (s *wallets) ConfirmHold(ctx context.Context, request operations.ConfirmHol
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ConfirmHoldResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -112,7 +112,7 @@ func (s *wallets) CreateBalance(ctx context.Context, request operations.CreateBa
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CreateBalanceResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -172,7 +172,7 @@ func (s *wallets) CreateWallet(ctx context.Context, request operations.CreateWal
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CreateWalletResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -232,7 +232,7 @@ func (s *wallets) CreditWallet(ctx context.Context, request operations.CreditWal
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CreditWalletResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -283,7 +283,7 @@ func (s *wallets) DebitWallet(ctx context.Context, request operations.DebitWalle
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DebitWalletResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -337,7 +337,7 @@ func (s *wallets) GetBalance(ctx context.Context, request operations.GetBalanceR
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetBalanceResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -390,7 +390,7 @@ func (s *wallets) GetHold(ctx context.Context, request operations.GetHoldRequest
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetHoldResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -429,7 +429,9 @@ func (s *wallets) GetHolds(ctx context.Context, request operations.GetHoldsReque
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.securityClient
 
@@ -445,7 +447,7 @@ func (s *wallets) GetHolds(ctx context.Context, request operations.GetHoldsReque
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetHoldsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -483,7 +485,9 @@ func (s *wallets) GetTransactions(ctx context.Context, request operations.GetTra
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.securityClient
 
@@ -499,7 +503,7 @@ func (s *wallets) GetTransactions(ctx context.Context, request operations.GetTra
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetTransactionsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -552,7 +556,7 @@ func (s *wallets) GetWallet(ctx context.Context, request operations.GetWalletReq
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetWalletResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -606,7 +610,7 @@ func (s *wallets) ListBalances(ctx context.Context, request operations.ListBalan
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListBalancesResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -635,7 +639,9 @@ func (s *wallets) ListWallets(ctx context.Context, request operations.ListWallet
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.securityClient
 
@@ -651,7 +657,7 @@ func (s *wallets) ListWallets(ctx context.Context, request operations.ListWallet
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListWalletsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -701,7 +707,7 @@ func (s *wallets) UpdateWallet(ctx context.Context, request operations.UpdateWal
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.UpdateWalletResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -745,7 +751,7 @@ func (s *wallets) VoidHold(ctx context.Context, request operations.VoidHoldReque
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.VoidHoldResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -789,7 +795,7 @@ func (s *wallets) WalletsgetServerInfo(ctx context.Context) (*operations.Wallets
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.WalletsgetServerInfoResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

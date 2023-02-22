@@ -9,4 +9,5 @@ public class GetMappingPathParams {
         this.ledger = ledger;
         return this;
     }
+    
 }

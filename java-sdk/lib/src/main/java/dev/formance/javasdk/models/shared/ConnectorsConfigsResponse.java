@@ -9,4 +9,5 @@ public class ConnectorsConfigsResponse {
         this.data = data;
         return this;
     }
+    
 }

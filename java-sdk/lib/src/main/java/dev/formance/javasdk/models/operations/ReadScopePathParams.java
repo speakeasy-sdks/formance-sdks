@@ -9,4 +9,5 @@ public class ReadScopePathParams {
         this.scopeId = scopeId;
         return this;
     }
+    
 }

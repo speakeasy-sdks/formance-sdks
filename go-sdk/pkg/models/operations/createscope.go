@@ -11,5 +11,5 @@ type CreateScopeRequest struct {
 type CreateScopeResponse struct {
 	ContentType         string
 	CreateScopeResponse *shared.CreateScopeResponse
-	StatusCode          int64
+	StatusCode          int
 }

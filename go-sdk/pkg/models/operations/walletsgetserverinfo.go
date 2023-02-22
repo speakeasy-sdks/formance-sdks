@@ -7,6 +7,6 @@ import (
 type WalletsgetServerInfoResponse struct {
 	ContentType          string
 	ServerInfo           *shared.ServerInfo
-	StatusCode           int64
+	StatusCode           int
 	WalletsErrorResponse *shared.WalletsErrorResponse
 }

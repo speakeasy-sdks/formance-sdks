@@ -9,4 +9,5 @@ public class CreditWalletPathParams {
         this.id = id;
         return this;
     }
+    
 }

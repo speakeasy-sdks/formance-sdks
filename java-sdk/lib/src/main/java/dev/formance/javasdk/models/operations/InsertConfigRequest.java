@@ -9,4 +9,5 @@ public class InsertConfigRequest {
         this.request = request;
         return this;
     }
+    
 }

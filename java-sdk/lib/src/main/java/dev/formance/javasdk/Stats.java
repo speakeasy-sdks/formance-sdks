@@ -3,6 +3,7 @@ package dev.formance.javasdk;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.formance.javasdk.utils.HTTPClient;
 import dev.formance.javasdk.utils.HTTPRequest;
+import dev.formance.javasdk.utils.JSON;
 import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 
@@ -42,27 +43,25 @@ public class Stats {
         
         HttpResponse<byte[]> httpRes = client.send(req);
 
-        String contentType = httpRes.headers().allValues("Content-Type").get(0);
+        String contentType = httpRes.headers().firstValue("Content-Type").orElse("application/octet-stream");
 
         dev.formance.javasdk.models.operations.ReadStatsResponse res = new dev.formance.javasdk.models.operations.ReadStatsResponse() {{
             statsResponse = null;
             errorResponse = null;
         }};
-        res.statusCode = Long.valueOf(httpRes.statusCode());
+        res.statusCode = httpRes.statusCode();
         res.contentType = contentType;
         
         if (httpRes.statusCode() == 200) {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.StatsResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.StatsResponse.class);
                 res.statsResponse = out;
             }
         }
         else {
             if (dev.formance.javasdk.utils.Utils.matchContentType(contentType, "application/json")) {
-                ObjectMapper mapper = new ObjectMapper();
-                mapper.findAndRegisterModules();
+                ObjectMapper mapper = JSON.getMapper();
                 dev.formance.javasdk.models.shared.ErrorResponse out = mapper.readValue(new String(httpRes.body(), StandardCharsets.UTF_8), dev.formance.javasdk.models.shared.ErrorResponse.class);
                 res.errorResponse = out;
             }

@@ -12,6 +12,7 @@ public class ErrorResponse {
         this.details = details;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("errorCode")
     public ErrorsEnumEnum errorCode;
@@ -19,6 +20,7 @@ public class ErrorResponse {
         this.errorCode = errorCode;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("errorMessage")
     public String errorMessage;
@@ -26,4 +28,5 @@ public class ErrorResponse {
         this.errorMessage = errorMessage;
         return this;
     }
+    
 }

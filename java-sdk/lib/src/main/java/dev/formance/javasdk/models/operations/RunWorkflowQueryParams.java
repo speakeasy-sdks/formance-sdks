@@ -9,4 +9,5 @@ public class RunWorkflowQueryParams {
         this.wait = wait;
         return this;
     }
+    
 }

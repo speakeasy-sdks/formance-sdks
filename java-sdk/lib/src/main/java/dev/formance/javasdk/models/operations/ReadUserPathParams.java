@@ -9,4 +9,5 @@ public class ReadUserPathParams {
         this.userId = userId;
         return this;
     }
+    
 }

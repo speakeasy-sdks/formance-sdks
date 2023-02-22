@@ -9,4 +9,5 @@ public class ActivateConfigPathParams {
         this.id = id;
         return this;
     }
+    
 }

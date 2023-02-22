@@ -8,14 +8,17 @@ public class ConfirmHoldResponse {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public ConfirmHoldResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public ConfirmHoldResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.WalletsErrorResponse walletsErrorResponse;
     public ConfirmHoldResponse withWalletsErrorResponse(dev.formance.javasdk.models.shared.WalletsErrorResponse walletsErrorResponse) {
         this.walletsErrorResponse = walletsErrorResponse;
         return this;
     }
+    
 }

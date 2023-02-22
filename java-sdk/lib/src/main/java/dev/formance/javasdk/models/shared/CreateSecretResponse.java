@@ -12,4 +12,5 @@ public class CreateSecretResponse {
         this.data = data;
         return this;
     }
+    
 }

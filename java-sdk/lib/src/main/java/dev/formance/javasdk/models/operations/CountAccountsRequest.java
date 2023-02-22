@@ -8,9 +8,11 @@ public class CountAccountsRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
     public CountAccountsQueryParams queryParams;
     public CountAccountsRequest withQueryParams(CountAccountsQueryParams queryParams) {
         this.queryParams = queryParams;
         return this;
     }
+    
 }

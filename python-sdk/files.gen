@@ -17,6 +17,11 @@ src/formanceapi/wallets.py
 src/formanceapi/webhooks.py
 src/formanceapi/sdk.py
 setup.py
+src/formanceapi/__init__.py
+src/formanceapi/models/__init__.py
+src/formanceapi/utils/__init__.py
+src/formanceapi/utils/retries.py
+src/formanceapi/utils/utils.py
 src/formanceapi/models/operations/addmetadatatoaccount.py
 src/formanceapi/models/operations/countaccounts.py
 src/formanceapi/models/operations/getaccount.py

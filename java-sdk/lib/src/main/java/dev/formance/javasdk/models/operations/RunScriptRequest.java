@@ -8,15 +8,18 @@ public class RunScriptRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
     public RunScriptQueryParams queryParams;
     public RunScriptRequest withQueryParams(RunScriptQueryParams queryParams) {
         this.queryParams = queryParams;
         return this;
     }
+    
     @SpeakeasyMetadata("request:mediaType=application/json")
     public dev.formance.javasdk.models.shared.Script request;
     public RunScriptRequest withRequest(dev.formance.javasdk.models.shared.Script request) {
         this.request = request;
         return this;
     }
+    
 }

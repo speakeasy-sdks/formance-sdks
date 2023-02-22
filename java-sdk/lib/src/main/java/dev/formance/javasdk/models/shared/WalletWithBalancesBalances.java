@@ -9,4 +9,5 @@ public class WalletWithBalancesBalances {
         this.main = main;
         return this;
     }
+    
 }

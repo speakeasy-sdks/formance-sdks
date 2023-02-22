@@ -8,14 +8,17 @@ public class ListConnectorTasksResponse {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public ListConnectorTasksResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public ListConnectorTasksResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.TasksCursor tasksCursor;
     public ListConnectorTasksResponse withTasksCursor(dev.formance.javasdk.models.shared.TasksCursor tasksCursor) {
         this.tasksCursor = tasksCursor;
         return this;
     }
+    
 }

@@ -8,9 +8,11 @@ public class ResetConnectorResponse {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public ResetConnectorResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public ResetConnectorResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

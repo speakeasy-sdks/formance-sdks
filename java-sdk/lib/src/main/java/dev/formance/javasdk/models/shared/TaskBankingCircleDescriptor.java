@@ -12,6 +12,7 @@ public class TaskBankingCircleDescriptor {
         this.key = key;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("name")
     public String name;
@@ -19,4 +20,5 @@ public class TaskBankingCircleDescriptor {
         this.name = name;
         return this;
     }
+    
 }

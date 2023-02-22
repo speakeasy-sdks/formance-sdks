@@ -9,4 +9,5 @@ public class ConfirmHoldPathParams {
         this.holdId = holdId;
         return this;
     }
+    
 }

@@ -3,7 +3,6 @@ package dev.formance.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.OffsetDateTime;
 
 public class AccountWithVolumesAndBalances {
     @JsonProperty("address")
@@ -12,6 +11,7 @@ public class AccountWithVolumesAndBalances {
         this.address = address;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("balances")
     public java.util.Map<String, Long> balances;
@@ -19,6 +19,7 @@ public class AccountWithVolumesAndBalances {
         this.balances = balances;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("metadata")
     public java.util.Map<String, Object> metadata;
@@ -26,6 +27,7 @@ public class AccountWithVolumesAndBalances {
         this.metadata = metadata;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("type")
     public String type;
@@ -33,6 +35,7 @@ public class AccountWithVolumesAndBalances {
         this.type = type;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("volumes")
     public java.util.Map<String, java.util.Map<String, Long>> volumes;
@@ -40,4 +43,5 @@ public class AccountWithVolumesAndBalances {
         this.volumes = volumes;
         return this;
     }
+    
 }

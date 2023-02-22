@@ -9,10 +9,12 @@ public class GetAccountPathParams {
         this.address = address;
         return this;
     }
+    
     @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=ledger")
     public String ledger;
     public GetAccountPathParams withLedger(String ledger) {
         this.ledger = ledger;
         return this;
     }
+    
 }

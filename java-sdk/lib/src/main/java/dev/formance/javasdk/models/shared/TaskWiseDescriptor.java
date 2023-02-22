@@ -12,6 +12,7 @@ public class TaskWiseDescriptor {
         this.key = key;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("name")
     public String name;
@@ -19,6 +20,7 @@ public class TaskWiseDescriptor {
         this.name = name;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("profileID")
     public Long profileID;
@@ -26,4 +28,5 @@ public class TaskWiseDescriptor {
         this.profileID = profileID;
         return this;
     }
+    
 }

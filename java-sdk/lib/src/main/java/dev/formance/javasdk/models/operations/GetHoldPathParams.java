@@ -9,4 +9,5 @@ public class GetHoldPathParams {
         this.holdID = holdID;
         return this;
     }
+    
 }

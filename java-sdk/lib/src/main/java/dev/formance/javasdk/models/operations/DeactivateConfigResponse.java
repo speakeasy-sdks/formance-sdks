@@ -8,14 +8,17 @@ public class DeactivateConfigResponse {
         this.configResponse = configResponse;
         return this;
     }
+    
     public String contentType;
     public DeactivateConfigResponse withContentType(String contentType) {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public DeactivateConfigResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public DeactivateConfigResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

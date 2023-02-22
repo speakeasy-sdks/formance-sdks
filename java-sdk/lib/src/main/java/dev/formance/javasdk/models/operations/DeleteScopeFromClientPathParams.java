@@ -9,10 +9,12 @@ public class DeleteScopeFromClientPathParams {
         this.clientId = clientId;
         return this;
     }
+    
     @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=scopeId")
     public String scopeId;
     public DeleteScopeFromClientPathParams withScopeId(String scopeId) {
         this.scopeId = scopeId;
         return this;
     }
+    
 }

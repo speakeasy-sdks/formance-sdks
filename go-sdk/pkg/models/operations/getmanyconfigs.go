@@ -16,5 +16,5 @@ type GetManyConfigsRequest struct {
 type GetManyConfigsResponse struct {
 	ConfigsResponse *shared.ConfigsResponse
 	ContentType     string
-	StatusCode      int64
+	StatusCode      int
 }

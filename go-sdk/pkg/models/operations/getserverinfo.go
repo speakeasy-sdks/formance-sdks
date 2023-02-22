@@ -7,5 +7,5 @@ import (
 type GetServerInfoResponse struct {
 	ContentType string
 	ServerInfo  *shared.ServerInfo
-	StatusCode  int64
+	StatusCode  int
 }

@@ -8,4 +8,5 @@ public class DeleteConfigRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

@@ -11,5 +11,5 @@ type AddScopeToClientRequest struct {
 
 type AddScopeToClientResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

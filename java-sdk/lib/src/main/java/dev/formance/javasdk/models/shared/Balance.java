@@ -9,4 +9,5 @@ public class Balance {
         this.name = name;
         return this;
     }
+    
 }

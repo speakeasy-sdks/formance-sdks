@@ -8,19 +8,23 @@ public class CreateBalanceResponse {
         this.contentType = contentType;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.CreateBalanceResponse createBalanceResponse;
     public CreateBalanceResponse withCreateBalanceResponse(dev.formance.javasdk.models.shared.CreateBalanceResponse createBalanceResponse) {
         this.createBalanceResponse = createBalanceResponse;
         return this;
     }
-    public Long statusCode;
-    public CreateBalanceResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public CreateBalanceResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.WalletsErrorResponse walletsErrorResponse;
     public CreateBalanceResponse withWalletsErrorResponse(dev.formance.javasdk.models.shared.WalletsErrorResponse walletsErrorResponse) {
         this.walletsErrorResponse = walletsErrorResponse;
         return this;
     }
+    
 }

@@ -16,6 +16,7 @@ public class TaskModulr {
         this.connectorId = connectorId;
         return this;
     }
+    
     @JsonSerialize(using = DateTimeSerializer.class)
     @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("createdAt")
@@ -24,12 +25,14 @@ public class TaskModulr {
         this.createdAt = createdAt;
         return this;
     }
+    
     @JsonProperty("descriptor")
     public TaskModulrDescriptor descriptor;
     public TaskModulr withDescriptor(TaskModulrDescriptor descriptor) {
         this.descriptor = descriptor;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("error")
     public String error;
@@ -37,24 +40,28 @@ public class TaskModulr {
         this.error = error;
         return this;
     }
+    
     @JsonProperty("id")
     public String id;
     public TaskModulr withId(String id) {
         this.id = id;
         return this;
     }
+    
     @JsonProperty("state")
     public java.util.Map<String, Object> state;
     public TaskModulr withState(java.util.Map<String, Object> state) {
         this.state = state;
         return this;
     }
+    
     @JsonProperty("status")
     public PaymentStatusEnum status;
     public TaskModulr withStatus(PaymentStatusEnum status) {
         this.status = status;
         return this;
     }
+    
     @JsonSerialize(using = DateTimeSerializer.class)
     @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("updatedAt")
@@ -63,4 +70,5 @@ public class TaskModulr {
         this.updatedAt = updatedAt;
         return this;
     }
+    
 }

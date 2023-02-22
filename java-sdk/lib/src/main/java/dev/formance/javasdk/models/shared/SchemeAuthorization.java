@@ -9,4 +9,5 @@ public class SchemeAuthorization {
         this.authorization = authorization;
         return this;
     }
+    
 }

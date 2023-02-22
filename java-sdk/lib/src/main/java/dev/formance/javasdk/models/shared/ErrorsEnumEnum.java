@@ -1,6 +1,6 @@
 package dev.formance.javasdk.models.shared;
 
-
+import com.fasterxml.jackson.annotation.JsonValue;
 public enum ErrorsEnumEnum {
     INTERNAL("INTERNAL"),
     INSUFFICIENT_FUND("INSUFFICIENT_FUND"),
@@ -10,6 +10,7 @@ public enum ErrorsEnumEnum {
     COMPILATION_FAILED("COMPILATION_FAILED"),
     METADATA_OVERRIDE("METADATA_OVERRIDE");
 
+    @JsonValue
     public final String value;
 
     private ErrorsEnumEnum(String value) {

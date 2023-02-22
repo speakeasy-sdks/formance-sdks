@@ -8,14 +8,17 @@ public class ChangeConfigSecretResponse {
         this.configResponse = configResponse;
         return this;
     }
+    
     public String contentType;
     public ChangeConfigSecretResponse withContentType(String contentType) {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public ChangeConfigSecretResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public ChangeConfigSecretResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

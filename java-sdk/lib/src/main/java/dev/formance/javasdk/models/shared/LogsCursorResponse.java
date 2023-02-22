@@ -9,4 +9,5 @@ public class LogsCursorResponse {
         this.cursor = cursor;
         return this;
     }
+    
 }

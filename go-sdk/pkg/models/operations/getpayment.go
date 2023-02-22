@@ -15,5 +15,5 @@ type GetPaymentRequest struct {
 type GetPaymentResponse struct {
 	ContentType     string
 	PaymentResponse *shared.PaymentResponse
-	StatusCode      int64
+	StatusCode      int
 }

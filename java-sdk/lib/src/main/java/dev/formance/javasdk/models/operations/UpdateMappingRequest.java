@@ -8,10 +8,12 @@ public class UpdateMappingRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
     @SpeakeasyMetadata("request:mediaType=application/json")
     public dev.formance.javasdk.models.shared.Mapping request;
     public UpdateMappingRequest withRequest(dev.formance.javasdk.models.shared.Mapping request) {
         this.request = request;
         return this;
     }
+    
 }

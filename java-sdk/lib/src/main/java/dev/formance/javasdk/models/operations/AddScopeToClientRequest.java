@@ -8,4 +8,5 @@ public class AddScopeToClientRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

@@ -12,4 +12,5 @@ public class MappingResponse {
         this.data = data;
         return this;
     }
+    
 }

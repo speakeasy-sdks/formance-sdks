@@ -18,5 +18,5 @@ type ListWalletsRequest struct {
 type ListWalletsResponse struct {
 	ContentType         string
 	ListWalletsResponse *shared.ListWalletsResponse
-	StatusCode          int64
+	StatusCode          int
 }

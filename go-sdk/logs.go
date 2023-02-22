@@ -40,7 +40,9 @@ func (s *logs) ListLogs(ctx context.Context, request operations.ListLogsRequest)
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.securityClient
 
@@ -56,7 +58,7 @@ func (s *logs) ListLogs(ctx context.Context, request operations.ListLogsRequest)
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListLogsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

@@ -11,6 +11,7 @@ public class TaskStripeDescriptor {
         this.account = account;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("main")
     public Boolean main;
@@ -18,10 +19,12 @@ public class TaskStripeDescriptor {
         this.main = main;
         return this;
     }
+    
     @JsonProperty("name")
     public String name;
     public TaskStripeDescriptor withName(String name) {
         this.name = name;
         return this;
     }
+    
 }

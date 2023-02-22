@@ -16,5 +16,5 @@ type ReadStatsResponse struct {
 	ContentType   string
 	ErrorResponse *shared.ErrorResponse
 	StatsResponse *shared.StatsResponse
-	StatusCode    int64
+	StatusCode    int
 }

@@ -12,4 +12,5 @@ public class TaskCurrencyCloudDescriptor {
         this.name = name;
         return this;
     }
+    
 }

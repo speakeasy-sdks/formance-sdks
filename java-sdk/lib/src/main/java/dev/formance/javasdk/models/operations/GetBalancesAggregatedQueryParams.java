@@ -9,4 +9,5 @@ public class GetBalancesAggregatedQueryParams {
         this.address = address;
         return this;
     }
+    
 }

@@ -8,9 +8,11 @@ public class DeleteConfigResponse {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public DeleteConfigResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public DeleteConfigResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

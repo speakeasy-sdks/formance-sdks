@@ -8,19 +8,23 @@ public class InsertConfigResponse {
         this.configResponse = configResponse;
         return this;
     }
+    
     public String contentType;
     public InsertConfigResponse withContentType(String contentType) {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public InsertConfigResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public InsertConfigResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
     public String insertConfig400TextPlainString;
     public InsertConfigResponse withInsertConfig400TextPlainString(String insertConfig400TextPlainString) {
         this.insertConfig400TextPlainString = insertConfig400TextPlainString;
         return this;
     }
+    
 }

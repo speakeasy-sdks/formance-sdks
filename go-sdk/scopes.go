@@ -55,7 +55,7 @@ func (s *scopes) AddTransientScope(ctx context.Context, request operations.AddTr
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.AddTransientScopeResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -97,7 +97,7 @@ func (s *scopes) CreateScope(ctx context.Context, request operations.CreateScope
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CreateScopeResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -141,7 +141,7 @@ func (s *scopes) DeleteScope(ctx context.Context, request operations.DeleteScope
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteScopeResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -176,7 +176,7 @@ func (s *scopes) DeleteTransientScope(ctx context.Context, request operations.De
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteTransientScopeResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -211,7 +211,7 @@ func (s *scopes) ListScopes(ctx context.Context) (*operations.ListScopesResponse
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListScopesResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -255,7 +255,7 @@ func (s *scopes) ReadScope(ctx context.Context, request operations.ReadScopeRequ
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ReadScopeResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -306,7 +306,7 @@ func (s *scopes) UpdateScope(ctx context.Context, request operations.UpdateScope
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.UpdateScopeResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

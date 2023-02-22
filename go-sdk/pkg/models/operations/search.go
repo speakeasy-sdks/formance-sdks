@@ -11,5 +11,5 @@ type SearchRequest struct {
 type SearchResponse struct {
 	ContentType string
 	Response    *shared.Response
-	StatusCode  int64
+	StatusCode  int
 }

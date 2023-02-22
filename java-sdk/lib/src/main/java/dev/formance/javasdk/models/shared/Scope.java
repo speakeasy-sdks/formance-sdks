@@ -3,7 +3,6 @@ package dev.formance.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.OffsetDateTime;
 
 public class Scope {
     @JsonProperty("id")
@@ -12,12 +11,14 @@ public class Scope {
         this.id = id;
         return this;
     }
+    
     @JsonProperty("label")
     public String label;
     public Scope withLabel(String label) {
         this.label = label;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("metadata")
     public java.util.Map<String, Object> metadata;
@@ -25,6 +26,7 @@ public class Scope {
         this.metadata = metadata;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("transient")
     public String[] transient_;
@@ -32,4 +34,5 @@ public class Scope {
         this.transient_ = transient_;
         return this;
     }
+    
 }

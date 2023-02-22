@@ -21,5 +21,5 @@ type GetBalancesAggregatedResponse struct {
 	AggregateBalancesResponse *shared.AggregateBalancesResponse
 	ContentType               string
 	ErrorResponse             *shared.ErrorResponse
-	StatusCode                int64
+	StatusCode                int
 }
