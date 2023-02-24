@@ -1,22 +1,23 @@
+from __future__ import annotations
 import dataclasses
 import dateutil.parser
 from ..shared import paymentstatus_enum as shared_paymentstatus_enum
-from dataclasses_json import dataclass_json
+from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from formanceapi import utils
 from marshmallow import fields
 from typing import Any, Optional
 
 
-@dataclass_json
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class TaskModulrDescriptor:
-    account_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('accountID') }})
-    key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('key') }})
-    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('name') }})
+    account_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('accountID'), 'exclude': lambda f: f is None }})
+    key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('key'), 'exclude': lambda f: f is None }})
+    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('name'), 'exclude': lambda f: f is None }})
     
 
-@dataclass_json
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class TaskModulr:
     connector_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.field_name('connectorId') }})
@@ -26,5 +27,5 @@ class TaskModulr:
     state: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.field_name('state') }})
     status: shared_paymentstatus_enum.PaymentStatusEnum = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.field_name('status') }})
     updated_at: datetime = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.field_name('updatedAt'), 'encoder': utils.datetimeisoformat(False), 'decoder': dateutil.parser.isoparse, 'mm_field': fields.DateTime(format='iso') }})
-    error: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('error') }})
+    error: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.field_name('error'), 'exclude': lambda f: f is None }})
     

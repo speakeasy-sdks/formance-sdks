@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import walletserrorresponse as shared_walletserrorresponse
 from typing import Optional

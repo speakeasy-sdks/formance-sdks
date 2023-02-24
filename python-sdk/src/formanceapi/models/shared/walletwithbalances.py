@@ -1,20 +1,21 @@
+from __future__ import annotations
 import dataclasses
 import dateutil.parser
 from ..shared import assetholder as shared_assetholder
-from dataclasses_json import dataclass_json
+from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from formanceapi import utils
 from marshmallow import fields
 from typing import Any
 
 
-@dataclass_json
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class WalletWithBalancesBalances:
     main: shared_assetholder.AssetHolder = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.field_name('main') }})
     
 
-@dataclass_json
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class WalletWithBalances:
     balances: WalletWithBalancesBalances = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.field_name('balances') }})

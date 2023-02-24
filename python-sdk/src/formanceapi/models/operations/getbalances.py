@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import balancescursorresponse as shared_balancescursorresponse
 from ..shared import errorresponse as shared_errorresponse

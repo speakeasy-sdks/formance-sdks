@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import accountscursor as shared_accountscursor
 from typing import Optional

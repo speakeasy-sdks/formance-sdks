@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 import dateutil.parser
 from ..shared import errorresponse as shared_errorresponse

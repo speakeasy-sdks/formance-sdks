@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import configinforesponse as shared_configinforesponse
 from ..shared import errorresponse as shared_errorresponse

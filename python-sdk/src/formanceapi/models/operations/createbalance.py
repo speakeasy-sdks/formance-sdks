@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import createbalancerequest as shared_createbalancerequest
 from ..shared import createbalanceresponse as shared_createbalanceresponse

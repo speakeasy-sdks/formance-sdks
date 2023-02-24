@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import listusersresponse as shared_listusersresponse
 from typing import Optional

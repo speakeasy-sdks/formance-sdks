@@ -1,10 +1,11 @@
+from __future__ import annotations
 import dataclasses
 import dateutil.parser
 from ..shared import connector_enum as shared_connector_enum
 from ..shared import paymentadjustment as shared_paymentadjustment
 from ..shared import paymentmetadata as shared_paymentmetadata
 from ..shared import paymentstatus_enum as shared_paymentstatus_enum
-from dataclasses_json import dataclass_json
+from dataclasses_json import Undefined, dataclass_json
 from datetime import datetime
 from enum import Enum
 from formanceapi import utils
@@ -38,7 +39,7 @@ class PaymentTypeEnum(str, Enum):
     OTHER = "OTHER"
 
 
-@dataclass_json
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Payment:
     account_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.field_name('accountID') }})
