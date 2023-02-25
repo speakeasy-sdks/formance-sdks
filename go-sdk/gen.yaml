@@ -1,8 +1,8 @@
 management:
     openapi-checksum: 08f26095ea418515c01acf8a1605ce89
     openapi-version: v1.0.0-rc.5
-    speakeasy-version: 1.5.0
+    speakeasy-version: 1.5.3
 go:
-    version: 1.5.0
+    version: 1.5.1
     packagename: github.com/speakeasy-sdks/formance-sdks/go-client-sdk
 sdkclassname: formance

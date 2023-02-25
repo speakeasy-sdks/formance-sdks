@@ -3,6 +3,7 @@
 package main
 
 import (
+    "context"
     "log"
     "github.com/speakeasy-sdks/formance-sdks/go-client-sdk"
     "github.com/speakeasy-sdks/formance-sdks/go-client-sdk/pkg/models/shared"
@@ -16,12 +17,13 @@ func main() {
                 Authorization: shared.SchemeAuthorization{
                     Authorization: "Bearer YOUR_ACCESS_TOKEN_HERE",
                 },
-            }
+            },
         ),
     }
 
     s := formance.New(opts...)
-    
+
+    ctx := context.Background()
     res, err := s.PaymentsgetServerInfo(ctx)
     if err != nil {
         log.Fatal(err)
@@ -30,5 +32,6 @@ func main() {
     if res.ServerInfo != nil {
         // handle response
     }
+}
 ```
 <!-- End SDK Example Usage -->
