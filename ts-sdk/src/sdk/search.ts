@@ -1,6 +1,8 @@
 import * as utils from "../internal/utils";
 import * as operations from "./models/operations";
+import * as shared from "./models/shared";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { plainToInstance } from "class-transformer";
 
 export class Search {
   _defaultClient: AxiosInstance;
@@ -66,7 +68,11 @@ export class Search {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.response = httpRes?.data;
+              res.response = plainToInstance(
+                shared.Response,
+                httpRes?.data as shared.Response,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           default:

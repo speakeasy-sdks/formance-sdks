@@ -1,6 +1,8 @@
 import * as utils from "../internal/utils";
 import * as operations from "./models/operations";
-import { AxiosInstance, AxiosRequestConfig, AxiosResponse, ParamsSerializerOptions } from "axios";
+import * as shared from "./models/shared";
+import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { plainToInstance } from "class-transformer";
 
 export class Wallets {
   _defaultClient: AxiosInstance;
@@ -65,7 +67,11 @@ export class Wallets {
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.walletsErrorResponse = httpRes?.data;
+              res.walletsErrorResponse = plainToInstance(
+                shared.WalletsErrorResponse,
+                httpRes?.data as shared.WalletsErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -119,12 +125,20 @@ export class Wallets {
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.createBalanceResponse = httpRes?.data;
+              res.createBalanceResponse = plainToInstance(
+                shared.CreateBalanceResponse,
+                httpRes?.data as shared.CreateBalanceResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.walletsErrorResponse = httpRes?.data;
+              res.walletsErrorResponse = plainToInstance(
+                shared.WalletsErrorResponse,
+                httpRes?.data as shared.WalletsErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -178,12 +192,20 @@ export class Wallets {
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.createWalletResponse = httpRes?.data;
+              res.createWalletResponse = plainToInstance(
+                shared.CreateWalletResponse,
+                httpRes?.data as shared.CreateWalletResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.walletsErrorResponse = httpRes?.data;
+              res.walletsErrorResponse = plainToInstance(
+                shared.WalletsErrorResponse,
+                httpRes?.data as shared.WalletsErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -239,7 +261,11 @@ export class Wallets {
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.walletsErrorResponse = httpRes?.data;
+              res.walletsErrorResponse = plainToInstance(
+                shared.WalletsErrorResponse,
+                httpRes?.data as shared.WalletsErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -293,14 +319,22 @@ export class Wallets {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.debitWalletResponse = httpRes?.data;
+              res.debitWalletResponse = plainToInstance(
+                shared.DebitWalletResponse,
+                httpRes?.data as shared.DebitWalletResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           case httpRes?.status == 204:
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.walletsErrorResponse = httpRes?.data;
+              res.walletsErrorResponse = plainToInstance(
+                shared.WalletsErrorResponse,
+                httpRes?.data as shared.WalletsErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -341,12 +375,20 @@ export class Wallets {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.getBalanceResponse = httpRes?.data;
+              res.getBalanceResponse = plainToInstance(
+                shared.GetBalanceResponse,
+                httpRes?.data as shared.GetBalanceResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.walletsErrorResponse = httpRes?.data;
+              res.walletsErrorResponse = plainToInstance(
+                shared.WalletsErrorResponse,
+                httpRes?.data as shared.WalletsErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -387,12 +429,20 @@ export class Wallets {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.getHoldResponse = httpRes?.data;
+              res.getHoldResponse = plainToInstance(
+                shared.GetHoldResponse,
+                httpRes?.data as shared.GetHoldResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.walletsErrorResponse = httpRes?.data;
+              res.walletsErrorResponse = plainToInstance(
+                shared.WalletsErrorResponse,
+                httpRes?.data as shared.WalletsErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -418,19 +468,12 @@ export class Wallets {
     
     const client: AxiosInstance = this._securityClient!;
     
-    const qpSerializer: ParamsSerializerOptions = utils.getQueryParamSerializer(req.queryParams);
-
-    const requestConfig: AxiosRequestConfig = {
-      ...config,
-      params: req.queryParams,
-      paramsSerializer: qpSerializer,
-    };
-    
+    const queryParams: string = utils.serializeQueryParams(req.queryParams);
     
     const r = client.request({
-      url: url,
+      url: url + queryParams,
       method: "get",
-      ...requestConfig,
+      ...config,
     });
     
     return r.then((httpRes: AxiosResponse) => {
@@ -441,12 +484,20 @@ export class Wallets {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.getHoldsResponse = httpRes?.data;
+              res.getHoldsResponse = plainToInstance(
+                shared.GetHoldsResponse,
+                httpRes?.data as shared.GetHoldsResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.walletsErrorResponse = httpRes?.data;
+              res.walletsErrorResponse = plainToInstance(
+                shared.WalletsErrorResponse,
+                httpRes?.data as shared.WalletsErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -469,19 +520,12 @@ export class Wallets {
     
     const client: AxiosInstance = this._securityClient!;
     
-    const qpSerializer: ParamsSerializerOptions = utils.getQueryParamSerializer(req.queryParams);
-
-    const requestConfig: AxiosRequestConfig = {
-      ...config,
-      params: req.queryParams,
-      paramsSerializer: qpSerializer,
-    };
-    
+    const queryParams: string = utils.serializeQueryParams(req.queryParams);
     
     const r = client.request({
-      url: url,
+      url: url + queryParams,
       method: "get",
-      ...requestConfig,
+      ...config,
     });
     
     return r.then((httpRes: AxiosResponse) => {
@@ -492,12 +536,20 @@ export class Wallets {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.getTransactionsResponse = httpRes?.data;
+              res.getTransactionsResponse = plainToInstance(
+                shared.GetTransactionsResponse,
+                httpRes?.data as shared.GetTransactionsResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.walletsErrorResponse = httpRes?.data;
+              res.walletsErrorResponse = plainToInstance(
+                shared.WalletsErrorResponse,
+                httpRes?.data as shared.WalletsErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -538,14 +590,22 @@ export class Wallets {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.getWalletResponse = httpRes?.data;
+              res.getWalletResponse = plainToInstance(
+                shared.GetWalletResponse,
+                httpRes?.data as shared.GetWalletResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           case httpRes?.status == 404:
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.walletsErrorResponse = httpRes?.data;
+              res.walletsErrorResponse = plainToInstance(
+                shared.WalletsErrorResponse,
+                httpRes?.data as shared.WalletsErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -586,7 +646,11 @@ export class Wallets {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.listBalancesResponse = httpRes?.data;
+              res.listBalancesResponse = plainToInstance(
+                shared.ListBalancesResponse,
+                httpRes?.data as shared.ListBalancesResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -612,19 +676,12 @@ export class Wallets {
     
     const client: AxiosInstance = this._securityClient!;
     
-    const qpSerializer: ParamsSerializerOptions = utils.getQueryParamSerializer(req.queryParams);
-
-    const requestConfig: AxiosRequestConfig = {
-      ...config,
-      params: req.queryParams,
-      paramsSerializer: qpSerializer,
-    };
-    
+    const queryParams: string = utils.serializeQueryParams(req.queryParams);
     
     const r = client.request({
-      url: url,
+      url: url + queryParams,
       method: "get",
-      ...requestConfig,
+      ...config,
     });
     
     return r.then((httpRes: AxiosResponse) => {
@@ -635,7 +692,11 @@ export class Wallets {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.listWalletsResponse = httpRes?.data;
+              res.listWalletsResponse = plainToInstance(
+                shared.ListWalletsResponse,
+                httpRes?.data as shared.ListWalletsResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -691,7 +752,11 @@ export class Wallets {
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.walletsErrorResponse = httpRes?.data;
+              res.walletsErrorResponse = plainToInstance(
+                shared.WalletsErrorResponse,
+                httpRes?.data as shared.WalletsErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -734,7 +799,11 @@ export class Wallets {
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.walletsErrorResponse = httpRes?.data;
+              res.walletsErrorResponse = plainToInstance(
+                shared.WalletsErrorResponse,
+                httpRes?.data as shared.WalletsErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -770,12 +839,20 @@ export class Wallets {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.serverInfo = httpRes?.data;
+              res.serverInfo = plainToInstance(
+                shared.ServerInfo,
+                httpRes?.data as shared.ServerInfo,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.walletsErrorResponse = httpRes?.data;
+              res.walletsErrorResponse = plainToInstance(
+                shared.WalletsErrorResponse,
+                httpRes?.data as shared.WalletsErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }

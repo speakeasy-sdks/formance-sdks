@@ -1,5 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
+import { Transform, Type } from "class-transformer";
 
 
 export class CountTransactionsPathParams extends SpeakeasyBase {
@@ -14,7 +15,7 @@ export class CountTransactionsQueryParams extends SpeakeasyBase {
   @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=destination" })
   destination?: string;
 
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=endTime" })
+  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=endTime;dateTimeFormat=YYYY-MM-DDThh:mm:ss.sssZ" })
   endTime?: Date;
 
   @SpeakeasyMetadata({ data: "queryParam, style=deepObject;explode=true;name=metadata" })
@@ -26,7 +27,7 @@ export class CountTransactionsQueryParams extends SpeakeasyBase {
   @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=source" })
   source?: string;
 
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=startTime" })
+  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=startTime;dateTimeFormat=YYYY-MM-DDThh:mm:ss.sssZ" })
   startTime?: Date;
 }
 

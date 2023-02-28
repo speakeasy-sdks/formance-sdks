@@ -1,5 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
+import { Transform, Type } from "class-transformer";
 
 
 export class ListLogsPathParams extends SpeakeasyBase {
@@ -14,7 +15,7 @@ export class ListLogsQueryParams extends SpeakeasyBase {
   @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=cursor" })
   cursor?: string;
 
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=endTime" })
+  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=endTime;dateTimeFormat=YYYY-MM-DDThh:mm:ss.sssZ" })
   endTime?: Date;
 
   @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=pageSize" })
@@ -23,7 +24,7 @@ export class ListLogsQueryParams extends SpeakeasyBase {
   @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=pagination_token" })
   paginationToken?: string;
 
-  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=startTime" })
+  @SpeakeasyMetadata({ data: "queryParam, style=form;explode=true;name=startTime;dateTimeFormat=YYYY-MM-DDThh:mm:ss.sssZ" })
   startTime?: Date;
 }
 

@@ -1,8 +1,11 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { TransactionData } from "./transactiondata";
+import { Expose, Type } from "class-transformer";
 
 
 export class Transactions extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=transactions", elemType: TransactionData })
+  @SpeakeasyMetadata({ elemType: TransactionData })
+  @Expose({ name: "transactions" })
+  @Type(() => TransactionData)
   transactions: TransactionData[];
 }

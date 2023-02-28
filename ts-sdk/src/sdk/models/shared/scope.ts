@@ -1,16 +1,21 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class Scope extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=id" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "id" })
   id: string;
 
-  @SpeakeasyMetadata({ data: "json, name=label" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "label" })
   label: string;
 
-  @SpeakeasyMetadata({ data: "json, name=metadata" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "metadata" })
   metadata?: Record<string, any>;
 
-  @SpeakeasyMetadata({ data: "json, name=transient" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "transient" })
   transient?: string[];
 }

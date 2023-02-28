@@ -1,20 +1,29 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { StageStatus } from "./stagestatus";
+import { Expose, Transform, Type } from "class-transformer";
 
 
 export class WorkflowOccurrence extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=createdAt" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "createdAt" })
+  @Transform(({ value }) => new Date(value), { toClassOnly: true })
   createdAt: Date;
 
-  @SpeakeasyMetadata({ data: "json, name=id" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "id" })
   id: string;
 
-  @SpeakeasyMetadata({ data: "json, name=statuses", elemType: StageStatus })
+  @SpeakeasyMetadata({ elemType: StageStatus })
+  @Expose({ name: "statuses" })
+  @Type(() => StageStatus)
   statuses: StageStatus[];
 
-  @SpeakeasyMetadata({ data: "json, name=updatedAt" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "updatedAt" })
+  @Transform(({ value }) => new Date(value), { toClassOnly: true })
   updatedAt: Date;
 
-  @SpeakeasyMetadata({ data: "json, name=workflowID" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "workflowID" })
   workflowID: string;
 }

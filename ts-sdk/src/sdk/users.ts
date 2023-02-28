@@ -1,6 +1,8 @@
 import * as utils from "../internal/utils";
 import * as operations from "./models/operations";
+import * as shared from "./models/shared";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { plainToInstance } from "class-transformer";
 
 export class Users {
   _defaultClient: AxiosInstance;
@@ -47,7 +49,11 @@ export class Users {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.listUsersResponse = httpRes?.data;
+              res.listUsersResponse = plainToInstance(
+                shared.ListUsersResponse,
+                httpRes?.data as shared.ListUsersResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -90,7 +96,11 @@ export class Users {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.readUserResponse = httpRes?.data;
+              res.readUserResponse = plainToInstance(
+                shared.ReadUserResponse,
+                httpRes?.data as shared.ReadUserResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }

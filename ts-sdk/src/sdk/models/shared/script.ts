@@ -1,16 +1,21 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class Script extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=metadata" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "metadata" })
   metadata?: Record<string, any>;
 
-  @SpeakeasyMetadata({ data: "json, name=plain" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "plain" })
   plain: string;
 
-  @SpeakeasyMetadata({ data: "json, name=reference" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "reference" })
   reference?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=vars" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "vars" })
   vars?: Record<string, any>;
 }

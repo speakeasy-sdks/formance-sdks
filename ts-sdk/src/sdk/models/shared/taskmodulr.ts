@@ -1,40 +1,55 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { PaymentStatusEnum } from "./paymentstatusenum";
+import { Expose, Transform, Type } from "class-transformer";
 
 
 export class TaskModulrDescriptor extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=accountID" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "accountID" })
   accountID?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=key" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "key" })
   key?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=name" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "name" })
   name?: string;
 }
 
 export class TaskModulr extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=connectorId" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "connectorId" })
   connectorId: string;
 
-  @SpeakeasyMetadata({ data: "json, name=createdAt" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "createdAt" })
+  @Transform(({ value }) => new Date(value), { toClassOnly: true })
   createdAt: Date;
 
-  @SpeakeasyMetadata({ data: "json, name=descriptor" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "descriptor" })
+  @Type(() => TaskModulrDescriptor)
   descriptor: TaskModulrDescriptor;
 
-  @SpeakeasyMetadata({ data: "json, name=error" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "error" })
   error?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=id" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "id" })
   id: string;
 
-  @SpeakeasyMetadata({ data: "json, name=state" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "state" })
   state: Record<string, any>;
 
-  @SpeakeasyMetadata({ data: "json, name=status" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "status" })
   status: PaymentStatusEnum;
 
-  @SpeakeasyMetadata({ data: "json, name=updatedAt" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "updatedAt" })
+  @Transform(({ value }) => new Date(value), { toClassOnly: true })
   updatedAt: Date;
 }

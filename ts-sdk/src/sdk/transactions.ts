@@ -1,6 +1,8 @@
 import * as utils from "../internal/utils";
 import * as operations from "./models/operations";
-import { AxiosInstance, AxiosRequestConfig, AxiosResponse, ParamsSerializerOptions } from "axios";
+import * as shared from "./models/shared";
+import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { plainToInstance } from "class-transformer";
 
 export class Transactions {
   _defaultClient: AxiosInstance;
@@ -64,12 +66,20 @@ export class Transactions {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.transactionsResponse = httpRes?.data;
+              res.transactionsResponse = plainToInstance(
+                shared.TransactionsResponse,
+                httpRes?.data as shared.TransactionsResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.errorResponse = httpRes?.data;
+              res.errorResponse = plainToInstance(
+                shared.ErrorResponse,
+                httpRes?.data as shared.ErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -125,7 +135,11 @@ export class Transactions {
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.errorResponse = httpRes?.data;
+              res.errorResponse = plainToInstance(
+                shared.ErrorResponse,
+                httpRes?.data as shared.ErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -151,19 +165,12 @@ export class Transactions {
     
     const client: AxiosInstance = this._securityClient!;
     
-    const qpSerializer: ParamsSerializerOptions = utils.getQueryParamSerializer(req.queryParams);
-
-    const requestConfig: AxiosRequestConfig = {
-      ...config,
-      params: req.queryParams,
-      paramsSerializer: qpSerializer,
-    };
-    
+    const queryParams: string = utils.serializeQueryParams(req.queryParams);
     
     const r = client.request({
-      url: url,
+      url: url + queryParams,
       method: "head",
-      ...requestConfig,
+      ...config,
     });
     
     return r.then((httpRes: AxiosResponse) => {
@@ -176,7 +183,11 @@ export class Transactions {
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.errorResponse = httpRes?.data;
+              res.errorResponse = plainToInstance(
+                shared.ErrorResponse,
+                httpRes?.data as shared.ErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -213,22 +224,15 @@ export class Transactions {
     const client: AxiosInstance = this._securityClient!;
     
     const headers = {...reqBodyHeaders, ...config?.headers};
-    const qpSerializer: ParamsSerializerOptions = utils.getQueryParamSerializer(req.queryParams);
-
-    const requestConfig: AxiosRequestConfig = {
-      ...config,
-      params: req.queryParams,
-      paramsSerializer: qpSerializer,
-    };
-    
+    const queryParams: string = utils.serializeQueryParams(req.queryParams);
     if (reqBody == null || Object.keys(reqBody).length === 0) throw new Error("request body is required");
     
     const r = client.request({
-      url: url,
+      url: url + queryParams,
       method: "post",
       headers: headers,
       data: reqBody, 
-      ...requestConfig,
+      ...config,
     });
     
     return r.then((httpRes: AxiosResponse) => {
@@ -239,12 +243,20 @@ export class Transactions {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.transactionsResponse = httpRes?.data;
+              res.transactionsResponse = plainToInstance(
+                shared.TransactionsResponse,
+                httpRes?.data as shared.TransactionsResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.errorResponse = httpRes?.data;
+              res.errorResponse = plainToInstance(
+                shared.ErrorResponse,
+                httpRes?.data as shared.ErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -285,12 +297,20 @@ export class Transactions {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.transactionResponse = httpRes?.data;
+              res.transactionResponse = plainToInstance(
+                shared.TransactionResponse,
+                httpRes?.data as shared.TransactionResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.errorResponse = httpRes?.data;
+              res.errorResponse = plainToInstance(
+                shared.ErrorResponse,
+                httpRes?.data as shared.ErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -318,19 +338,12 @@ export class Transactions {
     
     const client: AxiosInstance = this._securityClient!;
     
-    const qpSerializer: ParamsSerializerOptions = utils.getQueryParamSerializer(req.queryParams);
-
-    const requestConfig: AxiosRequestConfig = {
-      ...config,
-      params: req.queryParams,
-      paramsSerializer: qpSerializer,
-    };
-    
+    const queryParams: string = utils.serializeQueryParams(req.queryParams);
     
     const r = client.request({
-      url: url,
+      url: url + queryParams,
       method: "get",
-      ...requestConfig,
+      ...config,
     });
     
     return r.then((httpRes: AxiosResponse) => {
@@ -341,12 +354,20 @@ export class Transactions {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.transactionsCursorResponse = httpRes?.data;
+              res.transactionsCursorResponse = plainToInstance(
+                shared.TransactionsCursorResponse,
+                httpRes?.data as shared.TransactionsCursorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.errorResponse = httpRes?.data;
+              res.errorResponse = plainToInstance(
+                shared.ErrorResponse,
+                httpRes?.data as shared.ErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -387,12 +408,20 @@ export class Transactions {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.transactionResponse = httpRes?.data;
+              res.transactionResponse = plainToInstance(
+                shared.TransactionResponse,
+                httpRes?.data as shared.TransactionResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.errorResponse = httpRes?.data;
+              res.errorResponse = plainToInstance(
+                shared.ErrorResponse,
+                httpRes?.data as shared.ErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }

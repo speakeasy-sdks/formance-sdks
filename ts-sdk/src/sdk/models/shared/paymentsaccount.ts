@@ -1,5 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { ConnectorEnum } from "./connectorenum";
+import { Expose, Transform } from "class-transformer";
 
 export enum PaymentsAccountTypeEnum {
     Target = "TARGET",
@@ -7,18 +8,24 @@ export enum PaymentsAccountTypeEnum {
 }
 
 export class PaymentsAccount extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=createdAt" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "createdAt" })
+  @Transform(({ value }) => new Date(value), { toClassOnly: true })
   createdAt: Date;
 
-  @SpeakeasyMetadata({ data: "json, name=id" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "id" })
   id: string;
 
-  @SpeakeasyMetadata({ data: "json, name=provider" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "provider" })
   provider: ConnectorEnum;
 
-  @SpeakeasyMetadata({ data: "json, name=reference" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "reference" })
   reference: string;
 
-  @SpeakeasyMetadata({ data: "json, name=type" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "type" })
   type: PaymentsAccountTypeEnum;
 }

@@ -1,16 +1,21 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class CurrencyCloudConfig extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=apiKey" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "apiKey" })
   apiKey: string;
 
-  @SpeakeasyMetadata({ data: "json, name=endpoint" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "endpoint" })
   endpoint?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=loginID" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "loginID" })
   loginID: string;
 
-  @SpeakeasyMetadata({ data: "json, name=pollingPeriod" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "pollingPeriod" })
   pollingPeriod?: string;
 }

@@ -1,25 +1,34 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Hold } from "./hold";
+import { Expose, Type } from "class-transformer";
 
 
 export class GetHoldsResponseCursor extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=data", elemType: Hold })
+  @SpeakeasyMetadata({ elemType: Hold })
+  @Expose({ name: "data" })
+  @Type(() => Hold)
   data: Hold[];
 
-  @SpeakeasyMetadata({ data: "json, name=hasMore" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "hasMore" })
   hasMore?: boolean;
 
-  @SpeakeasyMetadata({ data: "json, name=next" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "next" })
   next?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=pageSize" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "pageSize" })
   pageSize: number;
 
-  @SpeakeasyMetadata({ data: "json, name=previous" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "previous" })
   previous?: string;
 }
 
 export class GetHoldsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=cursor" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "cursor" })
+  @Type(() => GetHoldsResponseCursor)
   cursor: GetHoldsResponseCursor;
 }

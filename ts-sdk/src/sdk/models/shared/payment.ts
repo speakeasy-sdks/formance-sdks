@@ -3,6 +3,7 @@ import { ConnectorEnum } from "./connectorenum";
 import { PaymentAdjustment } from "./paymentadjustment";
 import { PaymentMetadata } from "./paymentmetadata";
 import { PaymentStatusEnum } from "./paymentstatusenum";
+import { Expose, Transform, Type } from "class-transformer";
 
 export enum PaymentSchemeEnum {
     Visa = "visa",
@@ -32,42 +33,58 @@ export enum PaymentTypeEnum {
 }
 
 export class Payment extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=accountID" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "accountID" })
   accountID: string;
 
-  @SpeakeasyMetadata({ data: "json, name=adjustments", elemType: PaymentAdjustment })
+  @SpeakeasyMetadata({ elemType: PaymentAdjustment })
+  @Expose({ name: "adjustments" })
+  @Type(() => PaymentAdjustment)
   adjustments: PaymentAdjustment[];
 
-  @SpeakeasyMetadata({ data: "json, name=asset" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "asset" })
   asset: string;
 
-  @SpeakeasyMetadata({ data: "json, name=createdAt" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "createdAt" })
+  @Transform(({ value }) => new Date(value), { toClassOnly: true })
   createdAt: Date;
 
-  @SpeakeasyMetadata({ data: "json, name=id" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "id" })
   id: string;
 
-  @SpeakeasyMetadata({ data: "json, name=initialAmount" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "initialAmount" })
   initialAmount: number;
 
-  @SpeakeasyMetadata({ data: "json, name=metadata", elemType: PaymentMetadata })
+  @SpeakeasyMetadata({ elemType: PaymentMetadata })
+  @Expose({ name: "metadata" })
+  @Type(() => PaymentMetadata)
   metadata: PaymentMetadata[];
 
-  @SpeakeasyMetadata({ data: "json, name=provider" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "provider" })
   provider: ConnectorEnum;
 
-  @SpeakeasyMetadata({ data: "json, name=raw" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "raw" })
   raw: Record<string, any>;
 
-  @SpeakeasyMetadata({ data: "json, name=reference" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "reference" })
   reference: string;
 
-  @SpeakeasyMetadata({ data: "json, name=scheme" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "scheme" })
   scheme: PaymentSchemeEnum;
 
-  @SpeakeasyMetadata({ data: "json, name=status" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "status" })
   status: PaymentStatusEnum;
 
-  @SpeakeasyMetadata({ data: "json, name=type" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "type" })
   type: PaymentTypeEnum;
 }

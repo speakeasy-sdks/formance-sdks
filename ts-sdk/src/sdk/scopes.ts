@@ -1,6 +1,8 @@
 import * as utils from "../internal/utils";
 import * as operations from "./models/operations";
+import * as shared from "./models/shared";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { plainToInstance } from "class-transformer";
 
 export class Scopes {
   _defaultClient: AxiosInstance;
@@ -105,7 +107,11 @@ export class Scopes {
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.createScopeResponse = httpRes?.data;
+              res.createScopeResponse = plainToInstance(
+                shared.CreateScopeResponse,
+                httpRes?.data as shared.CreateScopeResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -223,7 +229,11 @@ export class Scopes {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.listScopesResponse = httpRes?.data;
+              res.listScopesResponse = plainToInstance(
+                shared.ListScopesResponse,
+                httpRes?.data as shared.ListScopesResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -266,7 +276,11 @@ export class Scopes {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.readScopeResponse = httpRes?.data;
+              res.readScopeResponse = plainToInstance(
+                shared.ReadScopeResponse,
+                httpRes?.data as shared.ReadScopeResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -322,7 +336,11 @@ export class Scopes {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.updateScopeResponse = httpRes?.data;
+              res.updateScopeResponse = plainToInstance(
+                shared.UpdateScopeResponse,
+                httpRes?.data as shared.UpdateScopeResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }

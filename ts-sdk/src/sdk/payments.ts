@@ -1,6 +1,8 @@
 import * as utils from "../internal/utils";
 import * as operations from "./models/operations";
-import { AxiosInstance, AxiosRequestConfig, AxiosResponse, ParamsSerializerOptions } from "axios";
+import * as shared from "./models/shared";
+import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { plainToInstance } from "class-transformer";
 
 export class Payments {
   _defaultClient: AxiosInstance;
@@ -66,7 +68,11 @@ export class Payments {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.stripeTransferResponse = httpRes?.data;
+              res.stripeTransferResponse = plainToInstance(
+                ,
+                httpRes?.data as ,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -109,7 +115,11 @@ export class Payments {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.taskResponse = httpRes?.data;
+              res.taskResponse = plainToInstance(
+                shared.TaskResponse,
+                httpRes?.data as shared.TaskResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -150,7 +160,11 @@ export class Payments {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.paymentResponse = httpRes?.data;
+              res.paymentResponse = plainToInstance(
+                shared.PaymentResponse,
+                httpRes?.data as shared.PaymentResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -242,7 +256,11 @@ export class Payments {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.connectorsResponse = httpRes?.data;
+              res.connectorsResponse = plainToInstance(
+                shared.ConnectorsResponse,
+                httpRes?.data as shared.ConnectorsResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -280,7 +298,11 @@ export class Payments {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.connectorsConfigsResponse = httpRes?.data;
+              res.connectorsConfigsResponse = plainToInstance(
+                shared.ConnectorsConfigsResponse,
+                httpRes?.data as shared.ConnectorsConfigsResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -308,19 +330,12 @@ export class Payments {
     
     const client: AxiosInstance = this._securityClient!;
     
-    const qpSerializer: ParamsSerializerOptions = utils.getQueryParamSerializer(req.queryParams);
-
-    const requestConfig: AxiosRequestConfig = {
-      ...config,
-      params: req.queryParams,
-      paramsSerializer: qpSerializer,
-    };
-    
+    const queryParams: string = utils.serializeQueryParams(req.queryParams);
     
     const r = client.request({
-      url: url,
+      url: url + queryParams,
       method: "get",
-      ...requestConfig,
+      ...config,
     });
     
     return r.then((httpRes: AxiosResponse) => {
@@ -331,7 +346,11 @@ export class Payments {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.tasksCursor = httpRes?.data;
+              res.tasksCursor = plainToInstance(
+                shared.TasksCursor,
+                httpRes?.data as shared.TasksCursor,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -357,19 +376,12 @@ export class Payments {
     
     const client: AxiosInstance = this._securityClient!;
     
-    const qpSerializer: ParamsSerializerOptions = utils.getQueryParamSerializer(req.queryParams);
-
-    const requestConfig: AxiosRequestConfig = {
-      ...config,
-      params: req.queryParams,
-      paramsSerializer: qpSerializer,
-    };
-    
+    const queryParams: string = utils.serializeQueryParams(req.queryParams);
     
     const r = client.request({
-      url: url,
+      url: url + queryParams,
       method: "get",
-      ...requestConfig,
+      ...config,
     });
     
     return r.then((httpRes: AxiosResponse) => {
@@ -380,7 +392,11 @@ export class Payments {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.paymentsCursor = httpRes?.data;
+              res.paymentsCursor = plainToInstance(
+                shared.PaymentsCursor,
+                httpRes?.data as shared.PaymentsCursor,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -406,19 +422,12 @@ export class Payments {
     
     const client: AxiosInstance = this._securityClient!;
     
-    const qpSerializer: ParamsSerializerOptions = utils.getQueryParamSerializer(req.queryParams);
-
-    const requestConfig: AxiosRequestConfig = {
-      ...config,
-      params: req.queryParams,
-      paramsSerializer: qpSerializer,
-    };
-    
+    const queryParams: string = utils.serializeQueryParams(req.queryParams);
     
     const r = client.request({
-      url: url,
+      url: url + queryParams,
       method: "get",
-      ...requestConfig,
+      ...config,
     });
     
     return r.then((httpRes: AxiosResponse) => {
@@ -429,7 +438,11 @@ export class Payments {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.accountsCursor = httpRes?.data;
+              res.accountsCursor = plainToInstance(
+                shared.AccountsCursor,
+                httpRes?.data as shared.AccountsCursor,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -472,7 +485,11 @@ export class Payments {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.connectorConfigResponse = httpRes?.data;
+              res.connectorConfigResponse = plainToInstance(
+                shared.ConnectorConfigResponse,
+                httpRes?.data as shared.ConnectorConfigResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }

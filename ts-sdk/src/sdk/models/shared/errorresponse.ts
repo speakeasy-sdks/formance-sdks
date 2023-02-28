@@ -1,14 +1,18 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { ErrorsEnumEnum } from "./errorsenumenum";
+import { Expose } from "class-transformer";
 
 
 export class ErrorResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=details" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "details" })
   details?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=errorCode" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "errorCode" })
   errorCode?: ErrorsEnumEnum;
 
-  @SpeakeasyMetadata({ data: "json, name=errorMessage" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "errorMessage" })
   errorMessage?: string;
 }

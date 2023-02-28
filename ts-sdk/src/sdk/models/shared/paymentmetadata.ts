@@ -1,14 +1,19 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { PaymentMetadataChangelog } from "./paymentmetadatachangelog";
+import { Expose, Type } from "class-transformer";
 
 
 export class PaymentMetadata extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=changelog" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "changelog" })
+  @Type(() => PaymentMetadataChangelog)
   changelog?: PaymentMetadataChangelog;
 
-  @SpeakeasyMetadata({ data: "json, name=key" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "key" })
   key: string;
 
-  @SpeakeasyMetadata({ data: "json, name=value" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "value" })
   value: string;
 }

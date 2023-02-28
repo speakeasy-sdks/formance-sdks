@@ -1,10 +1,13 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class UpdateScopeRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=label" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "label" })
   label: string;
 
-  @SpeakeasyMetadata({ data: "json, name=metadata" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "metadata" })
   metadata?: Record<string, any>;
 }

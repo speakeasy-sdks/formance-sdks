@@ -1,19 +1,25 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class Hold extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=description" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "description" })
   description: string;
 
-  @SpeakeasyMetadata({ data: "json, name=destination" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "destination" })
   destination?: any;
 
-  @SpeakeasyMetadata({ data: "json, name=id" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "id" })
   id: string;
 
-  @SpeakeasyMetadata({ data: "json, name=metadata" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "metadata" })
   metadata: Record<string, any>;
 
-  @SpeakeasyMetadata({ data: "json, name=walletID" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "walletID" })
   walletID: string;
 }

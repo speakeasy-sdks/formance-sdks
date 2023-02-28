@@ -1,28 +1,37 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class Query extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=after" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "after" })
   after?: string[];
 
-  @SpeakeasyMetadata({ data: "json, name=cursor" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "cursor" })
   cursor?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=ledgers" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "ledgers" })
   ledgers?: string[];
 
-  @SpeakeasyMetadata({ data: "json, name=pageSize" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "pageSize" })
   pageSize?: number;
 
-  @SpeakeasyMetadata({ data: "json, name=policy" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "policy" })
   policy?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=sort" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "sort" })
   sort?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=target" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "target" })
   target?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=terms" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "terms" })
   terms?: string[];
 }

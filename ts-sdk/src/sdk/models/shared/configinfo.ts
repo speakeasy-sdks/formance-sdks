@@ -1,14 +1,19 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Config } from "./config";
+import { Expose, Type } from "class-transformer";
 
 
 export class ConfigInfo extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=config" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "config" })
+  @Type(() => Config)
   config: Config;
 
-  @SpeakeasyMetadata({ data: "json, name=server" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "server" })
   server: string;
 
-  @SpeakeasyMetadata({ data: "json, name=version" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "version" })
   version: string;
 }

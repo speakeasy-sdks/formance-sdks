@@ -1,13 +1,17 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class StripeConfig extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=apiKey" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "apiKey" })
   apiKey: string;
 
-  @SpeakeasyMetadata({ data: "json, name=pageSize" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "pageSize" })
   pageSize?: number;
 
-  @SpeakeasyMetadata({ data: "json, name=pollingPeriod" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "pollingPeriod" })
   pollingPeriod?: string;
 }

@@ -1,27 +1,37 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Posting } from "./posting";
 import { WalletsVolume } from "./walletsvolume";
+import { Expose, Transform, Type } from "class-transformer";
 
 
 export class WalletsTransaction extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=metadata" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "metadata" })
   metadata?: Record<string, any>;
 
-  @SpeakeasyMetadata({ data: "json, name=postCommitVolumes", elemType: WalletsVolume, elemDepth: 2 })
+  @SpeakeasyMetadata({ elemType: WalletsVolume, elemDepth: 2 })
+  @Expose({ name: "postCommitVolumes" })
   postCommitVolumes?: Record<string, Record<string, WalletsVolume>>;
 
-  @SpeakeasyMetadata({ data: "json, name=postings", elemType: Posting })
+  @SpeakeasyMetadata({ elemType: Posting })
+  @Expose({ name: "postings" })
+  @Type(() => Posting)
   postings: Posting[];
 
-  @SpeakeasyMetadata({ data: "json, name=preCommitVolumes", elemType: WalletsVolume, elemDepth: 2 })
+  @SpeakeasyMetadata({ elemType: WalletsVolume, elemDepth: 2 })
+  @Expose({ name: "preCommitVolumes" })
   preCommitVolumes?: Record<string, Record<string, WalletsVolume>>;
 
-  @SpeakeasyMetadata({ data: "json, name=reference" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "reference" })
   reference?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=timestamp" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "timestamp" })
+  @Transform(({ value }) => new Date(value), { toClassOnly: true })
   timestamp: Date;
 
-  @SpeakeasyMetadata({ data: "json, name=txid" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "txid" })
   txid: number;
 }
