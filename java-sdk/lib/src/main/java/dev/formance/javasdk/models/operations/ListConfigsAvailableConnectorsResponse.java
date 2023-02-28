@@ -8,14 +8,17 @@ public class ListConfigsAvailableConnectorsResponse {
         this.connectorsConfigsResponse = connectorsConfigsResponse;
         return this;
     }
+    
     public String contentType;
     public ListConfigsAvailableConnectorsResponse withContentType(String contentType) {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public ListConfigsAvailableConnectorsResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public ListConfigsAvailableConnectorsResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

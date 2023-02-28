@@ -1,16 +1,21 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { ConnectorEnum } from "./connectorenum";
+import { Expose, Type } from "class-transformer";
 
 
 export class ConnectorsResponseData extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=enabled" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "enabled" })
   enabled?: boolean;
 
-  @SpeakeasyMetadata({ data: "json, name=provider" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "provider" })
   provider?: ConnectorEnum;
 }
 
 export class ConnectorsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=data", elemType: ConnectorsResponseData })
+  @SpeakeasyMetadata({ elemType: ConnectorsResponseData })
+  @Expose({ name: "data" })
+  @Type(() => ConnectorsResponseData)
   data: ConnectorsResponseData[];
 }

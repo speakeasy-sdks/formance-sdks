@@ -12,6 +12,7 @@ public class ScriptResponse {
         this.details = details;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("errorCode")
     public ErrorsEnumEnum errorCode;
@@ -19,6 +20,7 @@ public class ScriptResponse {
         this.errorCode = errorCode;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("errorMessage")
     public String errorMessage;
@@ -26,6 +28,7 @@ public class ScriptResponse {
         this.errorMessage = errorMessage;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("transaction")
     public Transaction transaction;
@@ -33,4 +36,5 @@ public class ScriptResponse {
         this.transaction = transaction;
         return this;
     }
+    
 }

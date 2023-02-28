@@ -15,5 +15,5 @@ type ReadScopeRequest struct {
 type ReadScopeResponse struct {
 	ContentType       string
 	ReadScopeResponse *shared.ReadScopeResponse
-	StatusCode        int64
+	StatusCode        int
 }

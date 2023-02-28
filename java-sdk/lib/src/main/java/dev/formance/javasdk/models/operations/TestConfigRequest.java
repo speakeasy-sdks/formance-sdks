@@ -8,4 +8,5 @@ public class TestConfigRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

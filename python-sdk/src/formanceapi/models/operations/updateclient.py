@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import updateclientrequest as shared_updateclientrequest
 from ..shared import updateclientresponse as shared_updateclientresponse

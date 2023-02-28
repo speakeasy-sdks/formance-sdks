@@ -56,7 +56,7 @@ func (s *webhooks) ActivateConfig(ctx context.Context, request operations.Activa
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ActivateConfigResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -111,7 +111,7 @@ func (s *webhooks) ChangeConfigSecret(ctx context.Context, request operations.Ch
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ChangeConfigSecretResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -155,7 +155,7 @@ func (s *webhooks) DeactivateConfig(ctx context.Context, request operations.Deac
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeactivateConfigResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -200,7 +200,7 @@ func (s *webhooks) DeleteConfig(ctx context.Context, request operations.DeleteCo
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.DeleteConfigResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -221,7 +221,9 @@ func (s *webhooks) GetManyConfigs(ctx context.Context, request operations.GetMan
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.securityClient
 
@@ -237,7 +239,7 @@ func (s *webhooks) GetManyConfigs(ctx context.Context, request operations.GetMan
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetManyConfigsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -299,7 +301,7 @@ func (s *webhooks) InsertConfig(ctx context.Context, request operations.InsertCo
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.InsertConfigResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -354,7 +356,7 @@ func (s *webhooks) TestConfig(ctx context.Context, request operations.TestConfig
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.TestConfigResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

@@ -8,5 +8,5 @@ type OrchestrationgetServerInfoResponse struct {
 	ContentType string
 	Error       *shared.Error
 	ServerInfo  *shared.ServerInfo
-	StatusCode  int64
+	StatusCode  int
 }

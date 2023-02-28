@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import serverinfo as shared_serverinfo
 from typing import Optional

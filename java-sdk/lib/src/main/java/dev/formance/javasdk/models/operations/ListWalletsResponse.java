@@ -8,14 +8,17 @@ public class ListWalletsResponse {
         this.contentType = contentType;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.ListWalletsResponse listWalletsResponse;
     public ListWalletsResponse withListWalletsResponse(dev.formance.javasdk.models.shared.ListWalletsResponse listWalletsResponse) {
         this.listWalletsResponse = listWalletsResponse;
         return this;
     }
-    public Long statusCode;
-    public ListWalletsResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public ListWalletsResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

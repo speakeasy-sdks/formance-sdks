@@ -8,14 +8,17 @@ public class CreateSecretResponse {
         this.contentType = contentType;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.CreateSecretResponse createSecretResponse;
     public CreateSecretResponse withCreateSecretResponse(dev.formance.javasdk.models.shared.CreateSecretResponse createSecretResponse) {
         this.createSecretResponse = createSecretResponse;
         return this;
     }
-    public Long statusCode;
-    public CreateSecretResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public CreateSecretResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

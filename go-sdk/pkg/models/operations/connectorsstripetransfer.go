@@ -10,6 +10,6 @@ type ConnectorsStripeTransferRequest struct {
 
 type ConnectorsStripeTransferResponse struct {
 	ContentType            string
-	StatusCode             int64
+	StatusCode             int
 	StripeTransferResponse map[string]interface{}
 }

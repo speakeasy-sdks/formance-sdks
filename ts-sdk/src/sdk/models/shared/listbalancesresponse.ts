@@ -1,25 +1,34 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Balance } from "./balance";
+import { Expose, Type } from "class-transformer";
 
 
 export class ListBalancesResponseCursor extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=data", elemType: Balance })
+  @SpeakeasyMetadata({ elemType: Balance })
+  @Expose({ name: "data" })
+  @Type(() => Balance)
   data: Balance[];
 
-  @SpeakeasyMetadata({ data: "json, name=hasMore" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "hasMore" })
   hasMore?: boolean;
 
-  @SpeakeasyMetadata({ data: "json, name=next" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "next" })
   next?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=pageSize" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "pageSize" })
   pageSize: number;
 
-  @SpeakeasyMetadata({ data: "json, name=previous" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "previous" })
   previous?: string;
 }
 
 export class ListBalancesResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=cursor" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "cursor" })
+  @Type(() => ListBalancesResponseCursor)
   cursor: ListBalancesResponseCursor;
 }

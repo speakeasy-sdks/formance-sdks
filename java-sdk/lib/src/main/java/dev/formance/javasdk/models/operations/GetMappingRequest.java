@@ -8,4 +8,5 @@ public class GetMappingRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

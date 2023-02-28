@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import paymentresponse as shared_paymentresponse
 from typing import Optional

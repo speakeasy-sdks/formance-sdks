@@ -8,4 +8,5 @@ public class GetPaymentRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

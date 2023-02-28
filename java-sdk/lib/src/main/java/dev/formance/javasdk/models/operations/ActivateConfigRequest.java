@@ -8,4 +8,5 @@ public class ActivateConfigRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

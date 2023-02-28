@@ -16,5 +16,5 @@ type CreateSecretRequest struct {
 type CreateSecretResponse struct {
 	ContentType          string
 	CreateSecretResponse *shared.CreateSecretResponse
-	StatusCode           int64
+	StatusCode           int
 }

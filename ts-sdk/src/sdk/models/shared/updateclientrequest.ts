@@ -1,25 +1,33 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class UpdateClientRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=description" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "description" })
   description?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=metadata" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "metadata" })
   metadata?: Record<string, any>;
 
-  @SpeakeasyMetadata({ data: "json, name=name" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "name" })
   name: string;
 
-  @SpeakeasyMetadata({ data: "json, name=postLogoutRedirectUris" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "postLogoutRedirectUris" })
   postLogoutRedirectUris?: string[];
 
-  @SpeakeasyMetadata({ data: "json, name=public" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "public" })
   public?: boolean;
 
-  @SpeakeasyMetadata({ data: "json, name=redirectUris" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "redirectUris" })
   redirectUris?: string[];
 
-  @SpeakeasyMetadata({ data: "json, name=trusted" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "trusted" })
   trusted?: boolean;
 }

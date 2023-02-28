@@ -8,4 +8,5 @@ public class GetWorkflowOccurrenceRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

@@ -1,6 +1,8 @@
 import * as utils from "../internal/utils";
 import * as operations from "./models/operations";
-import { AxiosInstance, AxiosRequestConfig, AxiosResponse, ParamsSerializerOptions } from "axios";
+import * as shared from "./models/shared";
+import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { plainToInstance } from "class-transformer";
 
 export class Webhooks {
   _defaultClient: AxiosInstance;
@@ -52,7 +54,11 @@ export class Webhooks {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.configResponse = httpRes?.data;
+              res.configResponse = plainToInstance(
+                shared.ConfigResponse,
+                httpRes?.data as shared.ConfigResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           case httpRes?.status == 304:
@@ -114,7 +120,11 @@ export class Webhooks {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.configResponse = httpRes?.data;
+              res.configResponse = plainToInstance(
+                shared.ConfigResponse,
+                httpRes?.data as shared.ConfigResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -157,7 +167,11 @@ export class Webhooks {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.configResponse = httpRes?.data;
+              res.configResponse = plainToInstance(
+                shared.ConfigResponse,
+                httpRes?.data as shared.ConfigResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           case httpRes?.status == 304:
@@ -227,19 +241,12 @@ export class Webhooks {
     
     const client: AxiosInstance = this._securityClient!;
     
-    const qpSerializer: ParamsSerializerOptions = utils.getQueryParamSerializer(req.queryParams);
-
-    const requestConfig: AxiosRequestConfig = {
-      ...config,
-      params: req.queryParams,
-      paramsSerializer: qpSerializer,
-    };
-    
+    const queryParams: string = utils.serializeQueryParams(req.queryParams);
     
     const r = client.request({
-      url: url,
+      url: url + queryParams,
       method: "get",
-      ...requestConfig,
+      ...config,
     });
     
     return r.then((httpRes: AxiosResponse) => {
@@ -250,7 +257,11 @@ export class Webhooks {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.configsResponse = httpRes?.data;
+              res.configsResponse = plainToInstance(
+                shared.ConfigsResponse,
+                httpRes?.data as shared.ConfigsResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -316,7 +327,11 @@ export class Webhooks {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.configResponse = httpRes?.data;
+              res.configResponse = plainToInstance(
+                shared.ConfigResponse,
+                httpRes?.data as shared.ConfigResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           case httpRes?.status == 400:
@@ -364,7 +379,11 @@ export class Webhooks {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.attemptResponse = httpRes?.data;
+              res.attemptResponse = plainToInstance(
+                shared.AttemptResponse,
+                httpRes?.data as shared.AttemptResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }

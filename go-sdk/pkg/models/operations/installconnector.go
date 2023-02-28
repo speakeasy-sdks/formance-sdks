@@ -15,5 +15,5 @@ type InstallConnectorRequest struct {
 
 type InstallConnectorResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

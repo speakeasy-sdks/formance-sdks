@@ -9,4 +9,5 @@ public class TasksCursor {
         this.cursor = cursor;
         return this;
     }
+    
 }

@@ -9,4 +9,5 @@ public class ServerInfo {
         this.version = version;
         return this;
     }
+    
 }

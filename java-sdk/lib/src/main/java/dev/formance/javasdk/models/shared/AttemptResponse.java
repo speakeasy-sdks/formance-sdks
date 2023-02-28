@@ -9,4 +9,5 @@ public class AttemptResponse {
         this.data = data;
         return this;
     }
+    
 }

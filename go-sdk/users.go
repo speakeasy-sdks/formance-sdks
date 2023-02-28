@@ -55,7 +55,7 @@ func (s *users) ListUsers(ctx context.Context) (*operations.ListUsersResponse, e
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListUsersResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -99,7 +99,7 @@ func (s *users) ReadUser(ctx context.Context, request operations.ReadUserRequest
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ReadUserResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

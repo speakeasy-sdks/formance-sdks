@@ -9,4 +9,5 @@ public class CreateWalletRequest {
         this.request = request;
         return this;
     }
+    
 }

@@ -1,8 +1,11 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Client } from "./client";
+import { Expose, Type } from "class-transformer";
 
 
 export class ReadClientResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=data" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "data" })
+  @Type(() => Client)
   data?: Client;
 }

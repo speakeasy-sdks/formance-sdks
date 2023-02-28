@@ -16,6 +16,6 @@ type RevertTransactionRequest struct {
 type RevertTransactionResponse struct {
 	ContentType         string
 	ErrorResponse       *shared.ErrorResponse
-	StatusCode          int64
+	StatusCode          int
 	TransactionResponse *shared.TransactionResponse
 }

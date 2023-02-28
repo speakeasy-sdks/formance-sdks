@@ -8,10 +8,12 @@ public class CreateBalanceRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
     @SpeakeasyMetadata("request:mediaType=application/json")
     public dev.formance.javasdk.models.shared.CreateBalanceRequest request;
     public CreateBalanceRequest withRequest(dev.formance.javasdk.models.shared.CreateBalanceRequest request) {
         this.request = request;
         return this;
     }
+    
 }

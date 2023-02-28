@@ -8,14 +8,17 @@ public class PaymentslistAccountsResponse {
         this.accountsCursor = accountsCursor;
         return this;
     }
+    
     public String contentType;
     public PaymentslistAccountsResponse withContentType(String contentType) {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public PaymentslistAccountsResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public PaymentslistAccountsResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

@@ -8,14 +8,17 @@ public class TestConfigResponse {
         this.attemptResponse = attemptResponse;
         return this;
     }
+    
     public String contentType;
     public TestConfigResponse withContentType(String contentType) {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public TestConfigResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public TestConfigResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

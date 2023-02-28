@@ -1,17 +1,25 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { WorkflowConfig } from "./workflowconfig";
+import { Expose, Transform, Type } from "class-transformer";
 
 
 export class Workflow extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=config" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "config" })
+  @Type(() => WorkflowConfig)
   config: WorkflowConfig;
 
-  @SpeakeasyMetadata({ data: "json, name=createdAt" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "createdAt" })
+  @Transform(({ value }) => new Date(value), { toClassOnly: true })
   createdAt: Date;
 
-  @SpeakeasyMetadata({ data: "json, name=id" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "id" })
   id: string;
 
-  @SpeakeasyMetadata({ data: "json, name=updatedAt" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "updatedAt" })
+  @Transform(({ value }) => new Date(value), { toClassOnly: true })
   updatedAt: Date;
 }

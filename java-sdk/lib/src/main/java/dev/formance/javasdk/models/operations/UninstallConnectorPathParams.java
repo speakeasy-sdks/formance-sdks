@@ -9,4 +9,5 @@ public class UninstallConnectorPathParams {
         this.connector = connector;
         return this;
     }
+    
 }

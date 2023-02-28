@@ -8,9 +8,11 @@ public class AddScopeToClientResponse {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public AddScopeToClientResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public AddScopeToClientResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

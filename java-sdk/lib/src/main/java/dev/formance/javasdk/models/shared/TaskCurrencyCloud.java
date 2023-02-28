@@ -16,6 +16,7 @@ public class TaskCurrencyCloud {
         this.connectorId = connectorId;
         return this;
     }
+    
     @JsonSerialize(using = DateTimeSerializer.class)
     @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("createdAt")
@@ -24,12 +25,14 @@ public class TaskCurrencyCloud {
         this.createdAt = createdAt;
         return this;
     }
+    
     @JsonProperty("descriptor")
     public TaskCurrencyCloudDescriptor descriptor;
     public TaskCurrencyCloud withDescriptor(TaskCurrencyCloudDescriptor descriptor) {
         this.descriptor = descriptor;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("error")
     public String error;
@@ -37,24 +40,28 @@ public class TaskCurrencyCloud {
         this.error = error;
         return this;
     }
+    
     @JsonProperty("id")
     public String id;
     public TaskCurrencyCloud withId(String id) {
         this.id = id;
         return this;
     }
+    
     @JsonProperty("state")
     public java.util.Map<String, Object> state;
     public TaskCurrencyCloud withState(java.util.Map<String, Object> state) {
         this.state = state;
         return this;
     }
+    
     @JsonProperty("status")
     public PaymentStatusEnum status;
     public TaskCurrencyCloud withStatus(PaymentStatusEnum status) {
         this.status = status;
         return this;
     }
+    
     @JsonSerialize(using = DateTimeSerializer.class)
     @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("updatedAt")
@@ -63,4 +70,5 @@ public class TaskCurrencyCloud {
         this.updatedAt = updatedAt;
         return this;
     }
+    
 }

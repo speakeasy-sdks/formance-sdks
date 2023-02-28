@@ -1,13 +1,17 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class ModulrConfig extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=apiKey" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "apiKey" })
   apiKey: string;
 
-  @SpeakeasyMetadata({ data: "json, name=apiSecret" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "apiSecret" })
   apiSecret: string;
 
-  @SpeakeasyMetadata({ data: "json, name=endpoint" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "endpoint" })
   endpoint?: string;
 }

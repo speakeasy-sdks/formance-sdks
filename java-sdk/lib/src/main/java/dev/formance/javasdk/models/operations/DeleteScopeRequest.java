@@ -8,4 +8,5 @@ public class DeleteScopeRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

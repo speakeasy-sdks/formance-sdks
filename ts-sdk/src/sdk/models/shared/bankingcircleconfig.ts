@@ -1,16 +1,21 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class BankingCircleConfig extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=authorizationEndpoint" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "authorizationEndpoint" })
   authorizationEndpoint: string;
 
-  @SpeakeasyMetadata({ data: "json, name=endpoint" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "endpoint" })
   endpoint: string;
 
-  @SpeakeasyMetadata({ data: "json, name=password" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "password" })
   password: string;
 
-  @SpeakeasyMetadata({ data: "json, name=username" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "username" })
   username: string;
 }

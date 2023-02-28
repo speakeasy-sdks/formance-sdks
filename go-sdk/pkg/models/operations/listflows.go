@@ -8,5 +8,5 @@ type ListFlowsResponse struct {
 	ContentType           string
 	Error                 *shared.Error
 	ListWorkflowsResponse *shared.ListWorkflowsResponse
-	StatusCode            int64
+	StatusCode            int
 }

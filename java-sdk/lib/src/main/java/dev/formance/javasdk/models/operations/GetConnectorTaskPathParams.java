@@ -9,10 +9,12 @@ public class GetConnectorTaskPathParams {
         this.connector = connector;
         return this;
     }
+    
     @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=taskId")
     public String taskId;
     public GetConnectorTaskPathParams withTaskId(String taskId) {
         this.taskId = taskId;
         return this;
     }
+    
 }

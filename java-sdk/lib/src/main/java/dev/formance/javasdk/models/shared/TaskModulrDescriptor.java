@@ -12,6 +12,7 @@ public class TaskModulrDescriptor {
         this.accountID = accountID;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("key")
     public String key;
@@ -19,6 +20,7 @@ public class TaskModulrDescriptor {
         this.key = key;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("name")
     public String name;
@@ -26,4 +28,5 @@ public class TaskModulrDescriptor {
         this.name = name;
         return this;
     }
+    
 }

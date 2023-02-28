@@ -1,7 +1,6 @@
 package dev.formance.javasdk.models.operations;
 
 import dev.formance.javasdk.utils.SpeakeasyMetadata;
-import java.time.OffsetDateTime;
 
 public class PaymentslistAccountsQueryParams {
     @SpeakeasyMetadata("queryParam:style=form,explode=true,name=cursor")
@@ -10,16 +9,19 @@ public class PaymentslistAccountsQueryParams {
         this.cursor = cursor;
         return this;
     }
+    
     @SpeakeasyMetadata("queryParam:style=form,explode=true,name=pageSize")
     public Long pageSize;
     public PaymentslistAccountsQueryParams withPageSize(Long pageSize) {
         this.pageSize = pageSize;
         return this;
     }
+    
     @SpeakeasyMetadata("queryParam:style=form,explode=true,name=sort")
     public String[] sort;
     public PaymentslistAccountsQueryParams withSort(String[] sort) {
         this.sort = sort;
         return this;
     }
+    
 }

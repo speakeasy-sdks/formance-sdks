@@ -1,13 +1,17 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class DummyPayConfig extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=directory" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "directory" })
   directory: string;
 
-  @SpeakeasyMetadata({ data: "json, name=fileGenerationPeriod" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "fileGenerationPeriod" })
   fileGenerationPeriod?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=filePollingPeriod" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "filePollingPeriod" })
   filePollingPeriod?: string;
 }

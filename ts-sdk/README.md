@@ -19,19 +19,22 @@ yarn add @formance/sdk
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
 ```typescript
-import { FormanceAPI, withSecurity} from "@formance/sdk";
-import { GetServerInfoResponse } from "@formance/sdk/src/sdk/models/operations";
-import { AxiosError } from "axios";
+import {
+  PaymentsgetServerInfoResponse 
+} from "@formance/sdk/dist/sdk/models/operations";
 
-const sdk = new FormanceAPI(withSecurity(
+import { AxiosError } from "axios";
+import { FormanceAPI } from "@formance/sdk";
+
+const sdk = new FormanceAPI({
   security: {
     authorization: {
       authorization: "Bearer YOUR_ACCESS_TOKEN_HERE",
     },
   }
-));
+});
 
-sdk.ledger.getServerInfo().then((res: GetServerInfoResponse | AxiosError) => {
+sdk.paymentsgetServerInfo().then((res: PaymentsgetServerInfoResponse | AxiosError) => {
    // handle response
 });
 ```

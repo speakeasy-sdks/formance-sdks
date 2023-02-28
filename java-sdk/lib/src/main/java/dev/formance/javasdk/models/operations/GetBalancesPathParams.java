@@ -9,4 +9,5 @@ public class GetBalancesPathParams {
         this.ledger = ledger;
         return this;
     }
+    
 }

@@ -9,4 +9,5 @@ public class ConnectorsStripeTransferRequest {
         this.request = request;
         return this;
     }
+    
 }

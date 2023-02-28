@@ -8,4 +8,5 @@ public class ReadScopeRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

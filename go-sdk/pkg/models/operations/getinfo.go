@@ -8,5 +8,5 @@ type GetInfoResponse struct {
 	ConfigInfoResponse *shared.ConfigInfoResponse
 	ContentType        string
 	ErrorResponse      *shared.ErrorResponse
-	StatusCode         int64
+	StatusCode         int
 }

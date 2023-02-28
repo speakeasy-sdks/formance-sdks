@@ -1,7 +1,9 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class ServerInfo extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=version" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "version" })
   version: string;
 }

@@ -8,14 +8,17 @@ public class ReadConnectorConfigResponse {
         this.connectorConfigResponse = connectorConfigResponse;
         return this;
     }
+    
     public String contentType;
     public ReadConnectorConfigResponse withContentType(String contentType) {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public ReadConnectorConfigResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public ReadConnectorConfigResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

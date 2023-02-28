@@ -63,7 +63,7 @@ func (s *accounts) AddMetadataToAccount(ctx context.Context, request operations.
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.AddMetadataToAccountResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -93,7 +93,9 @@ func (s *accounts) CountAccounts(ctx context.Context, request operations.CountAc
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.securityClient
 
@@ -109,7 +111,7 @@ func (s *accounts) CountAccounts(ctx context.Context, request operations.CountAc
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CountAccountsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -155,7 +157,7 @@ func (s *accounts) GetAccount(ctx context.Context, request operations.GetAccount
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetAccountResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -195,7 +197,9 @@ func (s *accounts) ListAccounts(ctx context.Context, request operations.ListAcco
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.securityClient
 
@@ -211,7 +215,7 @@ func (s *accounts) ListAccounts(ctx context.Context, request operations.ListAcco
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListAccountsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

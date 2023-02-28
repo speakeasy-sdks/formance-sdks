@@ -9,4 +9,5 @@ public class UpdateClientPathParams {
         this.clientId = clientId;
         return this;
     }
+    
 }

@@ -9,4 +9,5 @@ public class AccountsCursorResponse {
         this.cursor = cursor;
         return this;
     }
+    
 }

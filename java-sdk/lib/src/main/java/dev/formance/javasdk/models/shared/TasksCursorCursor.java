@@ -3,7 +3,6 @@ package dev.formance.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.OffsetDateTime;
 
 public class TasksCursorCursor {
     @JsonProperty("data")
@@ -12,12 +11,14 @@ public class TasksCursorCursor {
         this.data = data;
         return this;
     }
+    
     @JsonProperty("hasMore")
     public Boolean hasMore;
     public TasksCursorCursor withHasMore(Boolean hasMore) {
         this.hasMore = hasMore;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("next")
     public String next;
@@ -25,12 +26,14 @@ public class TasksCursorCursor {
         this.next = next;
         return this;
     }
+    
     @JsonProperty("pageSize")
     public Long pageSize;
     public TasksCursorCursor withPageSize(Long pageSize) {
         this.pageSize = pageSize;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("previous")
     public String previous;
@@ -38,4 +41,5 @@ public class TasksCursorCursor {
         this.previous = previous;
         return this;
     }
+    
 }

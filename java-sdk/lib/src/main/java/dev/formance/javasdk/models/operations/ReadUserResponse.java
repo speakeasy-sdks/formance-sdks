@@ -8,14 +8,17 @@ public class ReadUserResponse {
         this.contentType = contentType;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.ReadUserResponse readUserResponse;
     public ReadUserResponse withReadUserResponse(dev.formance.javasdk.models.shared.ReadUserResponse readUserResponse) {
         this.readUserResponse = readUserResponse;
         return this;
     }
-    public Long statusCode;
-    public ReadUserResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public ReadUserResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

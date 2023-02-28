@@ -8,9 +8,11 @@ public class GetBalancesAggregatedRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
     public GetBalancesAggregatedQueryParams queryParams;
     public GetBalancesAggregatedRequest withQueryParams(GetBalancesAggregatedQueryParams queryParams) {
         this.queryParams = queryParams;
         return this;
     }
+    
 }

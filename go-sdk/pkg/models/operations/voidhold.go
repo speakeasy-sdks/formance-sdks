@@ -14,6 +14,6 @@ type VoidHoldRequest struct {
 
 type VoidHoldResponse struct {
 	ContentType          string
-	StatusCode           int64
+	StatusCode           int
 	WalletsErrorResponse *shared.WalletsErrorResponse
 }

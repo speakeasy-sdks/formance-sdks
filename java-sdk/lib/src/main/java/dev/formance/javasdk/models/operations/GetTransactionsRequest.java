@@ -8,4 +8,5 @@ public class GetTransactionsRequest {
         this.queryParams = queryParams;
         return this;
     }
+    
 }

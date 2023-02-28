@@ -15,5 +15,5 @@ type ReadUserRequest struct {
 type ReadUserResponse struct {
 	ContentType      string
 	ReadUserResponse *shared.ReadUserResponse
-	StatusCode       int64
+	StatusCode       int
 }

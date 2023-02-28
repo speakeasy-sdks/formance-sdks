@@ -54,7 +54,7 @@ func (s *ledger) GetLedgerInfo(ctx context.Context, request operations.GetLedger
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetLedgerInfoResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -107,7 +107,7 @@ func (s *ledger) GetServerInfo(ctx context.Context) (*operations.GetServerInfoRe
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetServerInfoResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

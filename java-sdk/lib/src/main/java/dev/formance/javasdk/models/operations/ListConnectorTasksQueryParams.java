@@ -9,10 +9,12 @@ public class ListConnectorTasksQueryParams {
         this.cursor = cursor;
         return this;
     }
+    
     @SpeakeasyMetadata("queryParam:style=form,explode=true,name=pageSize")
     public Long pageSize;
     public ListConnectorTasksQueryParams withPageSize(Long pageSize) {
         this.pageSize = pageSize;
         return this;
     }
+    
 }

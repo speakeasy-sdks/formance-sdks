@@ -9,4 +9,5 @@ public class ChangeConfigSecretPathParams {
         this.id = id;
         return this;
     }
+    
 }

@@ -1,25 +1,34 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose, Type } from "class-transformer";
 
 
 export class ConnectorsConfigsResponseDataConnectorKey extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=dataType" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "dataType" })
   dataType: string;
 
-  @SpeakeasyMetadata({ data: "json, name=required" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "required" })
   required: boolean;
 }
 
 export class ConnectorsConfigsResponseDataConnector extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=key" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "key" })
+  @Type(() => ConnectorsConfigsResponseDataConnectorKey)
   key: ConnectorsConfigsResponseDataConnectorKey;
 }
 
 export class ConnectorsConfigsResponseData extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=connector" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "connector" })
+  @Type(() => ConnectorsConfigsResponseDataConnector)
   connector: ConnectorsConfigsResponseDataConnector;
 }
 
 export class ConnectorsConfigsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=data" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "data" })
+  @Type(() => ConnectorsConfigsResponseData)
   data: ConnectorsConfigsResponseData;
 }

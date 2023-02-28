@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import connectorsresponse as shared_connectorsresponse
 from typing import Optional

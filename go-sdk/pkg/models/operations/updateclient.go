@@ -15,6 +15,6 @@ type UpdateClientRequest struct {
 
 type UpdateClientResponse struct {
 	ContentType          string
-	StatusCode           int64
+	StatusCode           int
 	UpdateClientResponse *shared.UpdateClientResponse
 }

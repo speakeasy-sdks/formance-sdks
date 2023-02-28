@@ -8,10 +8,12 @@ public class CreateSecretRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
     @SpeakeasyMetadata("request:mediaType=application/json")
     public dev.formance.javasdk.models.shared.CreateSecretRequest request;
     public CreateSecretRequest withRequest(dev.formance.javasdk.models.shared.CreateSecretRequest request) {
         this.request = request;
         return this;
     }
+    
 }

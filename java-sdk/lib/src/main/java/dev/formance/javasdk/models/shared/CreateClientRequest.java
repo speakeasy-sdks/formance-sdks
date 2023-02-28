@@ -3,7 +3,6 @@ package dev.formance.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.OffsetDateTime;
 
 public class CreateClientRequest {
     @JsonInclude(Include.NON_ABSENT)
@@ -13,6 +12,7 @@ public class CreateClientRequest {
         this.description = description;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("metadata")
     public java.util.Map<String, Object> metadata;
@@ -20,12 +20,14 @@ public class CreateClientRequest {
         this.metadata = metadata;
         return this;
     }
+    
     @JsonProperty("name")
     public String name;
     public CreateClientRequest withName(String name) {
         this.name = name;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("postLogoutRedirectUris")
     public String[] postLogoutRedirectUris;
@@ -33,6 +35,7 @@ public class CreateClientRequest {
         this.postLogoutRedirectUris = postLogoutRedirectUris;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("public")
     public Boolean public_;
@@ -40,6 +43,7 @@ public class CreateClientRequest {
         this.public_ = public_;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("redirectUris")
     public String[] redirectUris;
@@ -47,6 +51,7 @@ public class CreateClientRequest {
         this.redirectUris = redirectUris;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("trusted")
     public Boolean trusted;
@@ -54,4 +59,5 @@ public class CreateClientRequest {
         this.trusted = trusted;
         return this;
     }
+    
 }

@@ -14,6 +14,7 @@ public class WalletWithBalances {
         this.balances = balances;
         return this;
     }
+    
     @JsonSerialize(using = DateTimeSerializer.class)
     @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("createdAt")
@@ -22,28 +23,33 @@ public class WalletWithBalances {
         this.createdAt = createdAt;
         return this;
     }
+    
     @JsonProperty("id")
     public String id;
     public WalletWithBalances withId(String id) {
         this.id = id;
         return this;
     }
+    
     @JsonProperty("ledger")
     public String ledger;
     public WalletWithBalances withLedger(String ledger) {
         this.ledger = ledger;
         return this;
     }
+    
     @JsonProperty("metadata")
     public java.util.Map<String, Object> metadata;
     public WalletWithBalances withMetadata(java.util.Map<String, Object> metadata) {
         this.metadata = metadata;
         return this;
     }
+    
     @JsonProperty("name")
     public String name;
     public WalletWithBalances withName(String name) {
         this.name = name;
         return this;
     }
+    
 }

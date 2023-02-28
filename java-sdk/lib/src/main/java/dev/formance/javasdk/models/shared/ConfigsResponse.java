@@ -9,4 +9,5 @@ public class ConfigsResponse {
         this.cursor = cursor;
         return this;
     }
+    
 }

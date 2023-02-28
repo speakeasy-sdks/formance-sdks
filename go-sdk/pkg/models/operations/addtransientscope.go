@@ -11,5 +11,5 @@ type AddTransientScopeRequest struct {
 
 type AddTransientScopeResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import readscoperesponse as shared_readscoperesponse
 from typing import Optional

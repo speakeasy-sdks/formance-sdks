@@ -9,4 +9,5 @@ public class ListWalletsResponse {
         this.cursor = cursor;
         return this;
     }
+    
 }

@@ -11,6 +11,7 @@ public class DummyPayConfig {
         this.directory = directory;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("fileGenerationPeriod")
     public String fileGenerationPeriod;
@@ -18,6 +19,7 @@ public class DummyPayConfig {
         this.fileGenerationPeriod = fileGenerationPeriod;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("filePollingPeriod")
     public String filePollingPeriod;
@@ -25,4 +27,5 @@ public class DummyPayConfig {
         this.filePollingPeriod = filePollingPeriod;
         return this;
     }
+    
 }

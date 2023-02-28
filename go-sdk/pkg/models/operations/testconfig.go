@@ -15,5 +15,5 @@ type TestConfigRequest struct {
 type TestConfigResponse struct {
 	AttemptResponse *shared.AttemptResponse
 	ContentType     string
-	StatusCode      int64
+	StatusCode      int
 }

@@ -9,4 +9,5 @@ public class GetLedgerInfoPathParams {
         this.ledger = ledger;
         return this;
     }
+    
 }

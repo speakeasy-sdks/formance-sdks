@@ -14,12 +14,14 @@ public class PaymentAdjustment {
         this.absolute = absolute;
         return this;
     }
+    
     @JsonProperty("amount")
     public Long amount;
     public PaymentAdjustment withAmount(Long amount) {
         this.amount = amount;
         return this;
     }
+    
     @JsonSerialize(using = DateTimeSerializer.class)
     @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("date")
@@ -28,16 +30,19 @@ public class PaymentAdjustment {
         this.date = date;
         return this;
     }
+    
     @JsonProperty("raw")
     public java.util.Map<String, Object> raw;
     public PaymentAdjustment withRaw(java.util.Map<String, Object> raw) {
         this.raw = raw;
         return this;
     }
+    
     @JsonProperty("status")
     public PaymentStatusEnum status;
     public PaymentAdjustment withStatus(PaymentStatusEnum status) {
         this.status = status;
         return this;
     }
+    
 }

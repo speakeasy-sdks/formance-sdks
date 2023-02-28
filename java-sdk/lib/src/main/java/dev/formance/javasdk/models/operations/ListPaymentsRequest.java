@@ -8,4 +8,5 @@ public class ListPaymentsRequest {
         this.queryParams = queryParams;
         return this;
     }
+    
 }

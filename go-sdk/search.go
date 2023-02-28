@@ -65,7 +65,7 @@ func (s *search) Search(ctx context.Context, request operations.SearchRequest) (
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SearchResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

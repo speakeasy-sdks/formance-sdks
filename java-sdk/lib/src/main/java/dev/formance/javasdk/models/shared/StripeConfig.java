@@ -11,6 +11,7 @@ public class StripeConfig {
         this.apiKey = apiKey;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("pageSize")
     public Long pageSize;
@@ -18,6 +19,7 @@ public class StripeConfig {
         this.pageSize = pageSize;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("pollingPeriod")
     public String pollingPeriod;
@@ -25,4 +27,5 @@ public class StripeConfig {
         this.pollingPeriod = pollingPeriod;
         return this;
     }
+    
 }

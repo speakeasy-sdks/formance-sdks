@@ -12,4 +12,5 @@ public class ReadUserResponse {
         this.data = data;
         return this;
     }
+    
 }

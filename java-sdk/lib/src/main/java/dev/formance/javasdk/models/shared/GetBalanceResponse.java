@@ -9,4 +9,5 @@ public class GetBalanceResponse {
         this.data = data;
         return this;
     }
+    
 }

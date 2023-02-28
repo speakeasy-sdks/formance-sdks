@@ -1,23 +1,31 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Monetary } from "./monetary";
+import { Expose, Type } from "class-transformer";
 
 
 export class DebitWalletRequest extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=amount" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "amount" })
+  @Type(() => Monetary)
   amount: Monetary;
 
-  @SpeakeasyMetadata({ data: "json, name=balances" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "balances" })
   balances?: string[];
 
-  @SpeakeasyMetadata({ data: "json, name=description" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "description" })
   description?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=destination" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "destination" })
   destination?: any;
 
-  @SpeakeasyMetadata({ data: "json, name=metadata" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "metadata" })
   metadata?: Record<string, any>;
 
-  @SpeakeasyMetadata({ data: "json, name=pending" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "pending" })
   pending?: boolean;
 }

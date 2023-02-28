@@ -1,38 +1,51 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose, Type } from "class-transformer";
 
 
 export class ResponseCursorTotal extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=relation" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "relation" })
   relation?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=value" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "value" })
   value?: number;
 }
 
 export class ResponseCursor extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=data" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "data" })
   data?: Record<string, any>[];
 
-  @SpeakeasyMetadata({ data: "json, name=hasMore" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "hasMore" })
   hasMore?: boolean;
 
-  @SpeakeasyMetadata({ data: "json, name=next" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "next" })
   next?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=pageSize" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "pageSize" })
   pageSize?: number;
 
-  @SpeakeasyMetadata({ data: "json, name=previous" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "previous" })
   previous?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=total" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "total" })
+  @Type(() => ResponseCursorTotal)
   total?: ResponseCursorTotal;
 }
 
 export class Response extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=cursor" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "cursor" })
+  @Type(() => ResponseCursor)
   cursor?: ResponseCursor;
 
-  @SpeakeasyMetadata({ data: "json, name=data" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "data" })
   data?: Record<string, any>;
 }

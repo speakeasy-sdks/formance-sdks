@@ -1,8 +1,11 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Scope } from "./scope";
+import { Expose, Type } from "class-transformer";
 
 
 export class ListScopesResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=data", elemType: Scope })
+  @SpeakeasyMetadata({ elemType: Scope })
+  @Expose({ name: "data" })
+  @Type(() => Scope)
   data?: Scope[];
 }

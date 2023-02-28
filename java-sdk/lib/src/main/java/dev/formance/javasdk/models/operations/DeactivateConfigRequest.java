@@ -8,4 +8,5 @@ public class DeactivateConfigRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

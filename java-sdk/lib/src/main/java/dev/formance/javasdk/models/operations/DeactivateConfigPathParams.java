@@ -9,4 +9,5 @@ public class DeactivateConfigPathParams {
         this.id = id;
         return this;
     }
+    
 }

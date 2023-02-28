@@ -8,14 +8,17 @@ public class SearchResponse {
         this.contentType = contentType;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.Response response;
     public SearchResponse withResponse(dev.formance.javasdk.models.shared.Response response) {
         this.response = response;
         return this;
     }
-    public Long statusCode;
-    public SearchResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public SearchResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

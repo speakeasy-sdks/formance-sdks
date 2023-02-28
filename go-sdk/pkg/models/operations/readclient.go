@@ -15,5 +15,5 @@ type ReadClientRequest struct {
 type ReadClientResponse struct {
 	ContentType        string
 	ReadClientResponse *shared.ReadClientResponse
-	StatusCode         int64
+	StatusCode         int
 }

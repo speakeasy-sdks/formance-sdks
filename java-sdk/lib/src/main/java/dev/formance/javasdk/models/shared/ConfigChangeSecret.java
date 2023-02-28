@@ -12,4 +12,5 @@ public class ConfigChangeSecret {
         this.secret = secret;
         return this;
     }
+    
 }

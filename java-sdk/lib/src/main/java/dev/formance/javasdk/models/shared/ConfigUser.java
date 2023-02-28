@@ -3,7 +3,6 @@ package dev.formance.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.OffsetDateTime;
 
 public class ConfigUser {
     @JsonProperty("endpoint")
@@ -12,12 +11,14 @@ public class ConfigUser {
         this.endpoint = endpoint;
         return this;
     }
+    
     @JsonProperty("eventTypes")
     public String[] eventTypes;
     public ConfigUser withEventTypes(String[] eventTypes) {
         this.eventTypes = eventTypes;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("secret")
     public String secret;
@@ -25,4 +26,5 @@ public class ConfigUser {
         this.secret = secret;
         return this;
     }
+    
 }

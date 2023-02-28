@@ -17,5 +17,5 @@ type UpdateMappingResponse struct {
 	ContentType     string
 	ErrorResponse   *shared.ErrorResponse
 	MappingResponse *shared.MappingResponse
-	StatusCode      int64
+	StatusCode      int
 }

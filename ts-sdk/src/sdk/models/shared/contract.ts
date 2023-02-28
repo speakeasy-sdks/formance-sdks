@@ -1,10 +1,13 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class Contract extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=account" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "account" })
   account?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=expr" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "expr" })
   expr: Record<string, any>;
 }

@@ -3,7 +3,6 @@ package dev.formance.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.OffsetDateTime;
 
 public class CreateSecretRequest {
     @JsonInclude(Include.NON_ABSENT)
@@ -13,10 +12,12 @@ public class CreateSecretRequest {
         this.metadata = metadata;
         return this;
     }
+    
     @JsonProperty("name")
     public String name;
     public CreateSecretRequest withName(String name) {
         this.name = name;
         return this;
     }
+    
 }

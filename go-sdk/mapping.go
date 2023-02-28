@@ -53,7 +53,7 @@ func (s *mapping) GetMapping(ctx context.Context, request operations.GetMappingR
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetMappingResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -116,7 +116,7 @@ func (s *mapping) UpdateMapping(ctx context.Context, request operations.UpdateMa
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.UpdateMappingResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

@@ -9,10 +9,12 @@ public class DeleteSecretPathParams {
         this.clientId = clientId;
         return this;
     }
+    
     @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=secretId")
     public String secretId;
     public DeleteSecretPathParams withSecretId(String secretId) {
         this.secretId = secretId;
         return this;
     }
+    
 }

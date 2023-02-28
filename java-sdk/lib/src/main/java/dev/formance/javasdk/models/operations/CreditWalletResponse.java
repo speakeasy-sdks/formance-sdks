@@ -8,14 +8,17 @@ public class CreditWalletResponse {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public CreditWalletResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public CreditWalletResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.WalletsErrorResponse walletsErrorResponse;
     public CreditWalletResponse withWalletsErrorResponse(dev.formance.javasdk.models.shared.WalletsErrorResponse walletsErrorResponse) {
         this.walletsErrorResponse = walletsErrorResponse;
         return this;
     }
+    
 }

@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import configresponse as shared_configresponse
 from ..shared import configuser as shared_configuser

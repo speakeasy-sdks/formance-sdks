@@ -9,4 +9,5 @@ public class GetHoldsResponse {
         this.cursor = cursor;
         return this;
     }
+    
 }

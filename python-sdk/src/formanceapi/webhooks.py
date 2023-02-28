@@ -61,13 +61,13 @@ class Webhooks:
         url = utils.generate_url(base_url, "/api/webhooks/configs/{id}/secret/change", request.path_params)
         
         headers = {}
-        req_content_type, data, json, files = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request)
         if req_content_type != "multipart/form-data" and req_content_type != "multipart/mixed":
             headers["content-type"] = req_content_type
         
         client = self._security_client
         
-        r = client.request("PUT", url, data=data, json=json, files=files, headers=headers)
+        r = client.request("PUT", url, data=data, files=form, headers=headers)
         content_type = r.headers.get("Content-Type")
 
         res = operations.ChangeConfigSecretResponse(status_code=r.status_code, content_type=content_type)
@@ -175,15 +175,15 @@ class Webhooks:
         url = base_url.removesuffix("/") + "/api/webhooks/configs"
         
         headers = {}
-        req_content_type, data, json, files = utils.serialize_request_body(request)
+        req_content_type, data, form = utils.serialize_request_body(request)
         if req_content_type != "multipart/form-data" and req_content_type != "multipart/mixed":
             headers["content-type"] = req_content_type
-        if data is None and json is None:
+        if data is None and form is None:
            raise Exception('request body is required')
         
         client = self._security_client
         
-        r = client.request("POST", url, data=data, json=json, files=files, headers=headers)
+        r = client.request("POST", url, data=data, files=form, headers=headers)
         content_type = r.headers.get("Content-Type")
 
         res = operations.InsertConfigResponse(status_code=r.status_code, content_type=content_type)

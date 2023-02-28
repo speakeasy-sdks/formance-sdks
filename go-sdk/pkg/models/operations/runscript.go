@@ -21,5 +21,5 @@ type RunScriptRequest struct {
 type RunScriptResponse struct {
 	ContentType    string
 	ScriptResponse *shared.ScriptResponse
-	StatusCode     int64
+	StatusCode     int
 }

@@ -22,5 +22,5 @@ type RunWorkflowResponse struct {
 	ContentType         string
 	Error               *shared.Error
 	RunWorkflowResponse *shared.RunWorkflowResponse
-	StatusCode          int64
+	StatusCode          int
 }

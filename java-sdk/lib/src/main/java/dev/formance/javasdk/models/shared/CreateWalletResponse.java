@@ -9,4 +9,5 @@ public class CreateWalletResponse {
         this.data = data;
         return this;
     }
+    
 }

@@ -65,7 +65,7 @@ func (s *payments) ConnectorsStripeTransfer(ctx context.Context, request operati
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ConnectorsStripeTransferResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -109,7 +109,7 @@ func (s *payments) GetConnectorTask(ctx context.Context, request operations.GetC
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetConnectorTaskResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -152,7 +152,7 @@ func (s *payments) GetPayment(ctx context.Context, request operations.GetPayment
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetPaymentResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -206,7 +206,7 @@ func (s *payments) InstallConnector(ctx context.Context, request operations.Inst
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.InstallConnectorResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -241,7 +241,7 @@ func (s *payments) ListAllConnectors(ctx context.Context) (*operations.ListAllCo
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListAllConnectorsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -285,7 +285,7 @@ func (s *payments) ListConfigsAvailableConnectors(ctx context.Context) (*operati
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListConfigsAvailableConnectorsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -315,7 +315,9 @@ func (s *payments) ListConnectorTasks(ctx context.Context, request operations.Li
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.securityClient
 
@@ -331,7 +333,7 @@ func (s *payments) ListConnectorTasks(ctx context.Context, request operations.Li
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListConnectorTasksResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -360,7 +362,9 @@ func (s *payments) ListPayments(ctx context.Context, request operations.ListPaym
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.securityClient
 
@@ -376,7 +380,7 @@ func (s *payments) ListPayments(ctx context.Context, request operations.ListPaym
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListPaymentsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -405,7 +409,9 @@ func (s *payments) PaymentslistAccounts(ctx context.Context, request operations.
 		return nil, fmt.Errorf("error creating request: %w", err)
 	}
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.securityClient
 
@@ -421,7 +427,7 @@ func (s *payments) PaymentslistAccounts(ctx context.Context, request operations.
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PaymentslistAccountsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -465,7 +471,7 @@ func (s *payments) ReadConnectorConfig(ctx context.Context, request operations.R
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ReadConnectorConfigResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -510,7 +516,7 @@ func (s *payments) ResetConnector(ctx context.Context, request operations.ResetC
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ResetConnectorResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -545,7 +551,7 @@ func (s *payments) UninstallConnector(ctx context.Context, request operations.Un
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.UninstallConnectorResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

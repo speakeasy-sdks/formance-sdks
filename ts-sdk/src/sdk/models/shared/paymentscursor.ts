@@ -1,25 +1,34 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Payment } from "./payment";
+import { Expose, Type } from "class-transformer";
 
 
 export class PaymentsCursorCursor extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=data", elemType: Payment })
+  @SpeakeasyMetadata({ elemType: Payment })
+  @Expose({ name: "data" })
+  @Type(() => Payment)
   data: Payment[];
 
-  @SpeakeasyMetadata({ data: "json, name=hasMore" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "hasMore" })
   hasMore: boolean;
 
-  @SpeakeasyMetadata({ data: "json, name=next" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "next" })
   next?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=pageSize" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "pageSize" })
   pageSize: number;
 
-  @SpeakeasyMetadata({ data: "json, name=previous" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "previous" })
   previous?: string;
 }
 
 export class PaymentsCursor extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=cursor" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "cursor" })
+  @Type(() => PaymentsCursorCursor)
   cursor: PaymentsCursorCursor;
 }

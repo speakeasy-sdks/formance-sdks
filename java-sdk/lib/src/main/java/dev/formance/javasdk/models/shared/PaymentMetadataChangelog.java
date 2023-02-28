@@ -16,10 +16,12 @@ public class PaymentMetadataChangelog {
         this.timestamp = timestamp;
         return this;
     }
+    
     @JsonProperty("value")
     public String value;
     public PaymentMetadataChangelog withValue(String value) {
         this.value = value;
         return this;
     }
+    
 }

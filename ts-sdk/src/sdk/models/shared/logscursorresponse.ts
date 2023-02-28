@@ -1,25 +1,34 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Log } from "./log";
+import { Expose, Type } from "class-transformer";
 
 
 export class LogsCursorResponseCursor extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=data", elemType: Log })
+  @SpeakeasyMetadata({ elemType: Log })
+  @Expose({ name: "data" })
+  @Type(() => Log)
   data: Log[];
 
-  @SpeakeasyMetadata({ data: "json, name=hasMore" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "hasMore" })
   hasMore: boolean;
 
-  @SpeakeasyMetadata({ data: "json, name=next" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "next" })
   next?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=pageSize" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "pageSize" })
   pageSize: number;
 
-  @SpeakeasyMetadata({ data: "json, name=previous" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "previous" })
   previous?: string;
 }
 
 export class LogsCursorResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=cursor" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "cursor" })
+  @Type(() => LogsCursorResponseCursor)
   cursor: LogsCursorResponseCursor;
 }

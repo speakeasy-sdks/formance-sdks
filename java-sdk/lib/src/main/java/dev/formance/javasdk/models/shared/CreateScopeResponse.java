@@ -12,4 +12,5 @@ public class CreateScopeResponse {
         this.data = data;
         return this;
     }
+    
 }

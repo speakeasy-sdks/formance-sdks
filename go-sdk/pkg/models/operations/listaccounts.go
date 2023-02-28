@@ -39,5 +39,5 @@ type ListAccountsResponse struct {
 	AccountsCursorResponse *shared.AccountsCursorResponse
 	ContentType            string
 	ErrorResponse          *shared.ErrorResponse
-	StatusCode             int64
+	StatusCode             int
 }

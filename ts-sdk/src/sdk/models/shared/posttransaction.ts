@@ -1,28 +1,39 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { Posting } from "./posting";
+import { Expose, Transform, Type } from "class-transformer";
 
 
 export class PostTransactionScript extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=plain" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "plain" })
   plain: string;
 
-  @SpeakeasyMetadata({ data: "json, name=vars" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "vars" })
   vars?: Record<string, any>;
 }
 
 export class PostTransaction extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=metadata" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "metadata" })
   metadata?: Record<string, any>;
 
-  @SpeakeasyMetadata({ data: "json, name=postings", elemType: Posting })
+  @SpeakeasyMetadata({ elemType: Posting })
+  @Expose({ name: "postings" })
+  @Type(() => Posting)
   postings?: Posting[];
 
-  @SpeakeasyMetadata({ data: "json, name=reference" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "reference" })
   reference?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=script" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "script" })
+  @Type(() => PostTransactionScript)
   script?: PostTransactionScript;
 
-  @SpeakeasyMetadata({ data: "json, name=timestamp" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "timestamp" })
+  @Transform(({ value }) => new Date(value), { toClassOnly: true })
   timestamp?: Date;
 }

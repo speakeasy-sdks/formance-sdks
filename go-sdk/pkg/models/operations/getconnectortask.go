@@ -15,6 +15,6 @@ type GetConnectorTaskRequest struct {
 
 type GetConnectorTaskResponse struct {
 	ContentType  string
-	StatusCode   int64
+	StatusCode   int
 	TaskResponse *shared.TaskResponse
 }

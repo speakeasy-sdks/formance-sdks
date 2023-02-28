@@ -8,9 +8,11 @@ public class ListConnectorTasksRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
     public ListConnectorTasksQueryParams queryParams;
     public ListConnectorTasksRequest withQueryParams(ListConnectorTasksQueryParams queryParams) {
         this.queryParams = queryParams;
         return this;
     }
+    
 }

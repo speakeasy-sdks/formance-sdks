@@ -9,10 +9,12 @@ public class AddMetadataOnTransactionPathParams {
         this.ledger = ledger;
         return this;
     }
+    
     @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=txid")
     public Long txid;
     public AddMetadataOnTransactionPathParams withTxid(Long txid) {
         this.txid = txid;
         return this;
     }
+    
 }

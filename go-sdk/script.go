@@ -50,7 +50,9 @@ func (s *script) RunScript(ctx context.Context, request operations.RunScriptRequ
 
 	req.Header.Set("Content-Type", reqContentType)
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.securityClient
 
@@ -66,7 +68,7 @@ func (s *script) RunScript(ctx context.Context, request operations.RunScriptRequ
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RunScriptResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

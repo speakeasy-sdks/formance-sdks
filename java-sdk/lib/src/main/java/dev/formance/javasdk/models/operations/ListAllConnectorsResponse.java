@@ -8,14 +8,17 @@ public class ListAllConnectorsResponse {
         this.connectorsResponse = connectorsResponse;
         return this;
     }
+    
     public String contentType;
     public ListAllConnectorsResponse withContentType(String contentType) {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public ListAllConnectorsResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public ListAllConnectorsResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

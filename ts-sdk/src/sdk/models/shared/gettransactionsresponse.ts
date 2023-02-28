@@ -1,25 +1,34 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { WalletsTransaction } from "./walletstransaction";
+import { Expose, Type } from "class-transformer";
 
 
 export class GetTransactionsResponseCursor extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=data", elemType: WalletsTransaction })
+  @SpeakeasyMetadata({ elemType: WalletsTransaction })
+  @Expose({ name: "data" })
+  @Type(() => WalletsTransaction)
   data: WalletsTransaction[];
 
-  @SpeakeasyMetadata({ data: "json, name=hasMore" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "hasMore" })
   hasMore?: boolean;
 
-  @SpeakeasyMetadata({ data: "json, name=next" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "next" })
   next?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=pageSize" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "pageSize" })
   pageSize: number;
 
-  @SpeakeasyMetadata({ data: "json, name=previous" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "previous" })
   previous?: string;
 }
 
 export class GetTransactionsResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=cursor" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "cursor" })
+  @Type(() => GetTransactionsResponseCursor)
   cursor: GetTransactionsResponseCursor;
 }

@@ -16,6 +16,7 @@ public class TaskWise {
         this.connectorId = connectorId;
         return this;
     }
+    
     @JsonSerialize(using = DateTimeSerializer.class)
     @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("createdAt")
@@ -24,12 +25,14 @@ public class TaskWise {
         this.createdAt = createdAt;
         return this;
     }
+    
     @JsonProperty("descriptor")
     public TaskWiseDescriptor descriptor;
     public TaskWise withDescriptor(TaskWiseDescriptor descriptor) {
         this.descriptor = descriptor;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("error")
     public String error;
@@ -37,24 +40,28 @@ public class TaskWise {
         this.error = error;
         return this;
     }
+    
     @JsonProperty("id")
     public String id;
     public TaskWise withId(String id) {
         this.id = id;
         return this;
     }
+    
     @JsonProperty("state")
     public java.util.Map<String, Object> state;
     public TaskWise withState(java.util.Map<String, Object> state) {
         this.state = state;
         return this;
     }
+    
     @JsonProperty("status")
     public PaymentStatusEnum status;
     public TaskWise withStatus(PaymentStatusEnum status) {
         this.status = status;
         return this;
     }
+    
     @JsonSerialize(using = DateTimeSerializer.class)
     @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("updatedAt")
@@ -63,4 +70,5 @@ public class TaskWise {
         this.updatedAt = updatedAt;
         return this;
     }
+    
 }

@@ -1,7 +1,6 @@
 package dev.formance.javasdk.models.shared;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.OffsetDateTime;
 
 public class BalanceWithAssets {
     @JsonProperty("assets")
@@ -10,10 +9,12 @@ public class BalanceWithAssets {
         this.assets = assets;
         return this;
     }
+    
     @JsonProperty("name")
     public String name;
     public BalanceWithAssets withName(String name) {
         this.name = name;
         return this;
     }
+    
 }

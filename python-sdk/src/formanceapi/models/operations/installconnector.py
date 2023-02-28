@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import connector_enum as shared_connector_enum
 from typing import Any

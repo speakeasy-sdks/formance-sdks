@@ -1,10 +1,13 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class BalanceWithAssets extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=assets" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "assets" })
   assets: Record<string, number>;
 
-  @SpeakeasyMetadata({ data: "json, name=name" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "name" })
   name: string;
 }

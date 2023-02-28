@@ -8,4 +8,5 @@ public class GetManyConfigsRequest {
         this.queryParams = queryParams;
         return this;
     }
+    
 }

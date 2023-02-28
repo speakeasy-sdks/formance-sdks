@@ -9,4 +9,5 @@ public class DebitWalletPathParams {
         this.id = id;
         return this;
     }
+    
 }

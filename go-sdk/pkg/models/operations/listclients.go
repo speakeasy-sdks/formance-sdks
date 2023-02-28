@@ -7,5 +7,5 @@ import (
 type ListClientsResponse struct {
 	ContentType         string
 	ListClientsResponse *shared.ListClientsResponse
-	StatusCode          int64
+	StatusCode          int
 }

@@ -1,19 +1,25 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class AccountWithVolumesAndBalances extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=address" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "address" })
   address: string;
 
-  @SpeakeasyMetadata({ data: "json, name=balances" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "balances" })
   balances?: Record<string, number>;
 
-  @SpeakeasyMetadata({ data: "json, name=metadata" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "metadata" })
   metadata?: Record<string, any>;
 
-  @SpeakeasyMetadata({ data: "json, name=type" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "type" })
   type?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=volumes" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "volumes" })
   volumes?: Record<string, Record<string, number>>;
 }

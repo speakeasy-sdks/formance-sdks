@@ -9,10 +9,12 @@ public class GetBalancePathParams {
         this.balanceName = balanceName;
         return this;
     }
+    
     @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=id")
     public String id;
     public GetBalancePathParams withId(String id) {
         this.id = id;
         return this;
     }
+    
 }

@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import configsresponse as shared_configsresponse
 from typing import Optional

@@ -3,7 +3,6 @@ package dev.formance.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.OffsetDateTime;
 
 public class DebitWalletRequest {
     @JsonProperty("amount")
@@ -12,6 +11,7 @@ public class DebitWalletRequest {
         this.amount = amount;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("balances")
     public String[] balances;
@@ -19,6 +19,7 @@ public class DebitWalletRequest {
         this.balances = balances;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("description")
     public String description;
@@ -26,6 +27,7 @@ public class DebitWalletRequest {
         this.description = description;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("destination")
     public Object destination;
@@ -33,6 +35,7 @@ public class DebitWalletRequest {
         this.destination = destination;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("metadata")
     public java.util.Map<String, Object> metadata;
@@ -40,6 +43,7 @@ public class DebitWalletRequest {
         this.metadata = metadata;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("pending")
     public Boolean pending;
@@ -47,4 +51,5 @@ public class DebitWalletRequest {
         this.pending = pending;
         return this;
     }
+    
 }

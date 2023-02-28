@@ -8,4 +8,5 @@ public class ReadUserRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

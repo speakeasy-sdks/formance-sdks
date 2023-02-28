@@ -54,7 +54,7 @@ func (s *server) GetInfo(ctx context.Context) (*operations.GetInfoResponse, erro
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetInfoResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

@@ -12,6 +12,7 @@ public class ConfirmHoldRequest {
         this.amount = amount;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("final")
     public Boolean final_;
@@ -19,4 +20,5 @@ public class ConfirmHoldRequest {
         this.final_ = final_;
         return this;
     }
+    
 }

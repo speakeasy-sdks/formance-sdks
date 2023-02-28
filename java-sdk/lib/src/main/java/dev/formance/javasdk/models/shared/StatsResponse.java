@@ -9,4 +9,5 @@ public class StatsResponse {
         this.data = data;
         return this;
     }
+    
 }

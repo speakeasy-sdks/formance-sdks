@@ -8,9 +8,11 @@ public class UninstallConnectorResponse {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public UninstallConnectorResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public UninstallConnectorResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

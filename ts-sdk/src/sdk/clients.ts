@@ -1,6 +1,8 @@
 import * as utils from "../internal/utils";
 import * as operations from "./models/operations";
+import * as shared from "./models/shared";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { plainToInstance } from "class-transformer";
 
 export class Clients {
   _defaultClient: AxiosInstance;
@@ -101,7 +103,11 @@ export class Clients {
         switch (true) {
           case httpRes?.status == 201:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.createClientResponse = httpRes?.data;
+              res.createClientResponse = plainToInstance(
+                shared.CreateClientResponse,
+                httpRes?.data as shared.CreateClientResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -155,7 +161,11 @@ export class Clients {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.createSecretResponse = httpRes?.data;
+              res.createSecretResponse = plainToInstance(
+                shared.CreateSecretResponse,
+                httpRes?.data as shared.CreateSecretResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -305,7 +315,11 @@ export class Clients {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.listClientsResponse = httpRes?.data;
+              res.listClientsResponse = plainToInstance(
+                shared.ListClientsResponse,
+                httpRes?.data as shared.ListClientsResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -346,7 +360,11 @@ export class Clients {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.readClientResponse = httpRes?.data;
+              res.readClientResponse = plainToInstance(
+                shared.ReadClientResponse,
+                httpRes?.data as shared.ReadClientResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -400,7 +418,11 @@ export class Clients {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.updateClientResponse = httpRes?.data;
+              res.updateClientResponse = plainToInstance(
+                shared.UpdateClientResponse,
+                httpRes?.data as shared.UpdateClientResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }

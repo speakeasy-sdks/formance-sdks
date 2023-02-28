@@ -17,5 +17,5 @@ type GetAccountResponse struct {
 	AccountResponse *shared.AccountResponse
 	ContentType     string
 	ErrorResponse   *shared.ErrorResponse
-	StatusCode      int64
+	StatusCode      int
 }

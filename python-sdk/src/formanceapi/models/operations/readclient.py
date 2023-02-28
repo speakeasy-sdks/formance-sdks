@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import readclientresponse as shared_readclientresponse
 from typing import Optional

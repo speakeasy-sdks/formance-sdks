@@ -31,6 +31,6 @@ type ListTransactionsRequest struct {
 type ListTransactionsResponse struct {
 	ContentType                string
 	ErrorResponse              *shared.ErrorResponse
-	StatusCode                 int64
+	StatusCode                 int
 	TransactionsCursorResponse *shared.TransactionsCursorResponse
 }

@@ -17,6 +17,7 @@ public class Transaction {
         this.metadata = metadata;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("postCommitVolumes")
     public java.util.Map<String, java.util.Map<String, Volume>> postCommitVolumes;
@@ -24,12 +25,14 @@ public class Transaction {
         this.postCommitVolumes = postCommitVolumes;
         return this;
     }
+    
     @JsonProperty("postings")
     public Posting[] postings;
     public Transaction withPostings(Posting[] postings) {
         this.postings = postings;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("preCommitVolumes")
     public java.util.Map<String, java.util.Map<String, Volume>> preCommitVolumes;
@@ -37,6 +40,7 @@ public class Transaction {
         this.preCommitVolumes = preCommitVolumes;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("reference")
     public String reference;
@@ -44,6 +48,7 @@ public class Transaction {
         this.reference = reference;
         return this;
     }
+    
     @JsonSerialize(using = DateTimeSerializer.class)
     @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("timestamp")
@@ -52,10 +57,12 @@ public class Transaction {
         this.timestamp = timestamp;
         return this;
     }
+    
     @JsonProperty("txid")
     public Long txid;
     public Transaction withTxid(Long txid) {
         this.txid = txid;
         return this;
     }
+    
 }

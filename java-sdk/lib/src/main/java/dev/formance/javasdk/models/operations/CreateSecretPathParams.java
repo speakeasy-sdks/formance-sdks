@@ -9,4 +9,5 @@ public class CreateSecretPathParams {
         this.clientId = clientId;
         return this;
     }
+    
 }

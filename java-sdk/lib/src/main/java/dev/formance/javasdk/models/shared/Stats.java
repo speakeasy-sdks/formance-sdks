@@ -9,10 +9,12 @@ public class Stats {
         this.accounts = accounts;
         return this;
     }
+    
     @JsonProperty("transactions")
     public Long transactions;
     public Stats withTransactions(Long transactions) {
         this.transactions = transactions;
         return this;
     }
+    
 }

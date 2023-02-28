@@ -9,4 +9,5 @@ public class GetTransactionsResponse {
         this.cursor = cursor;
         return this;
     }
+    
 }

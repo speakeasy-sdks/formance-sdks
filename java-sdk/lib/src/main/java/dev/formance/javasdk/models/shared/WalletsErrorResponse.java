@@ -9,10 +9,12 @@ public class WalletsErrorResponse {
         this.errorCode = errorCode;
         return this;
     }
+    
     @JsonProperty("errorMessage")
     public String errorMessage;
     public WalletsErrorResponse withErrorMessage(String errorMessage) {
         this.errorMessage = errorMessage;
         return this;
     }
+    
 }

@@ -3,7 +3,6 @@ package dev.formance.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.OffsetDateTime;
 
 public class CreditWalletRequest {
     @JsonProperty("amount")
@@ -12,6 +11,7 @@ public class CreditWalletRequest {
         this.amount = amount;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("balance")
     public String balance;
@@ -19,6 +19,7 @@ public class CreditWalletRequest {
         this.balance = balance;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("metadata")
     public java.util.Map<String, Object> metadata;
@@ -26,6 +27,7 @@ public class CreditWalletRequest {
         this.metadata = metadata;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("reference")
     public String reference;
@@ -33,10 +35,12 @@ public class CreditWalletRequest {
         this.reference = reference;
         return this;
     }
+    
     @JsonProperty("sources")
     public Object[] sources;
     public CreditWalletRequest withSources(Object[] sources) {
         this.sources = sources;
         return this;
     }
+    
 }

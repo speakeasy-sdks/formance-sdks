@@ -8,4 +8,5 @@ public class GetLedgerInfoRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

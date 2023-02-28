@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import debitwalletrequest as shared_debitwalletrequest
 from ..shared import debitwalletresponse as shared_debitwalletresponse

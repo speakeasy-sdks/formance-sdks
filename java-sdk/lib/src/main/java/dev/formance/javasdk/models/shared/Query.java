@@ -3,7 +3,6 @@ package dev.formance.javasdk.models.shared;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.time.OffsetDateTime;
 
 public class Query {
     @JsonInclude(Include.NON_ABSENT)
@@ -13,6 +12,7 @@ public class Query {
         this.after = after;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("cursor")
     public String cursor;
@@ -20,6 +20,7 @@ public class Query {
         this.cursor = cursor;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("ledgers")
     public String[] ledgers;
@@ -27,6 +28,7 @@ public class Query {
         this.ledgers = ledgers;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("pageSize")
     public Long pageSize;
@@ -34,6 +36,7 @@ public class Query {
         this.pageSize = pageSize;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("policy")
     public String policy;
@@ -41,6 +44,7 @@ public class Query {
         this.policy = policy;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("sort")
     public String sort;
@@ -48,6 +52,7 @@ public class Query {
         this.sort = sort;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("target")
     public String target;
@@ -55,6 +60,7 @@ public class Query {
         this.target = target;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("terms")
     public String[] terms;
@@ -62,4 +68,5 @@ public class Query {
         this.terms = terms;
         return this;
     }
+    
 }

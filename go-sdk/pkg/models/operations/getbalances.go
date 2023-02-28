@@ -24,5 +24,5 @@ type GetBalancesResponse struct {
 	BalancesCursorResponse *shared.BalancesCursorResponse
 	ContentType            string
 	ErrorResponse          *shared.ErrorResponse
-	StatusCode             int64
+	StatusCode             int
 }

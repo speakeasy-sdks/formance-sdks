@@ -1,16 +1,21 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class Posting extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=amount" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "amount" })
   amount: number;
 
-  @SpeakeasyMetadata({ data: "json, name=asset" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "asset" })
   asset: string;
 
-  @SpeakeasyMetadata({ data: "json, name=destination" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "destination" })
   destination: string;
 
-  @SpeakeasyMetadata({ data: "json, name=source" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "source" })
   source: string;
 }

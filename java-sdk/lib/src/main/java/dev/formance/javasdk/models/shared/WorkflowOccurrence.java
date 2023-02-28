@@ -16,18 +16,21 @@ public class WorkflowOccurrence {
         this.createdAt = createdAt;
         return this;
     }
+    
     @JsonProperty("id")
     public String id;
     public WorkflowOccurrence withId(String id) {
         this.id = id;
         return this;
     }
+    
     @JsonProperty("statuses")
     public StageStatus[] statuses;
     public WorkflowOccurrence withStatuses(StageStatus[] statuses) {
         this.statuses = statuses;
         return this;
     }
+    
     @JsonSerialize(using = DateTimeSerializer.class)
     @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("updatedAt")
@@ -36,10 +39,12 @@ public class WorkflowOccurrence {
         this.updatedAt = updatedAt;
         return this;
     }
+    
     @JsonProperty("workflowID")
     public String workflowID;
     public WorkflowOccurrence withWorkflowID(String workflowID) {
         this.workflowID = workflowID;
         return this;
     }
+    
 }

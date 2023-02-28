@@ -7,5 +7,5 @@ import (
 type ListConfigsAvailableConnectorsResponse struct {
 	ConnectorsConfigsResponse *shared.ConnectorsConfigsResponse
 	ContentType               string
-	StatusCode                int64
+	StatusCode                int
 }

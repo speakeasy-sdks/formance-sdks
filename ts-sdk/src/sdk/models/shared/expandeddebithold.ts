@@ -1,25 +1,33 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class ExpandedDebitHold extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=description" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "description" })
   description: string;
 
-  @SpeakeasyMetadata({ data: "json, name=destination" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "destination" })
   destination?: any;
 
-  @SpeakeasyMetadata({ data: "json, name=id" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "id" })
   id: string;
 
-  @SpeakeasyMetadata({ data: "json, name=metadata" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "metadata" })
   metadata: Record<string, any>;
 
-  @SpeakeasyMetadata({ data: "json, name=originalAmount" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "originalAmount" })
   originalAmount: number;
 
-  @SpeakeasyMetadata({ data: "json, name=remaining" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "remaining" })
   remaining: number;
 
-  @SpeakeasyMetadata({ data: "json, name=walletID" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "walletID" })
   walletID: string;
 }

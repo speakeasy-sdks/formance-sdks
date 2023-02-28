@@ -8,14 +8,17 @@ public class GetManyConfigsResponse {
         this.configsResponse = configsResponse;
         return this;
     }
+    
     public String contentType;
     public GetManyConfigsResponse withContentType(String contentType) {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public GetManyConfigsResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public GetManyConfigsResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

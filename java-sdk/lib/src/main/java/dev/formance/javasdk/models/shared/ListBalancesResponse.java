@@ -9,4 +9,5 @@ public class ListBalancesResponse {
         this.cursor = cursor;
         return this;
     }
+    
 }

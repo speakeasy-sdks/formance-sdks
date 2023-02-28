@@ -9,4 +9,5 @@ public class CreateBalanceRequest {
         this.name = name;
         return this;
     }
+    
 }

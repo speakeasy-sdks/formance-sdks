@@ -15,5 +15,5 @@ type ListBalancesRequest struct {
 type ListBalancesResponse struct {
 	ContentType          string
 	ListBalancesResponse *shared.ListBalancesResponse
-	StatusCode           int64
+	StatusCode           int
 }

@@ -6,7 +6,7 @@ import { Ledger } from "./ledger";
 import { Logs } from "./logs";
 import { Mapping } from "./mapping";
 import * as operations from "./models/operations";
-import { Security } from "./models/shared";
+import * as shared from "./models/shared";
 import { Orchestration } from "./orchestration";
 import { Payments } from "./payments";
 import { Scopes } from "./scopes";
@@ -19,6 +19,7 @@ import { Users } from "./users";
 import { Wallets } from "./wallets";
 import { Webhooks } from "./webhooks";
 import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { plainToInstance } from "class-transformer";
 
 export const ServerList = [
 	"http://localhost",
@@ -30,7 +31,7 @@ export const ServerList = [
 export type SDKProps = {
   defaultClient?: AxiosInstance;
 
-  security?: Security;
+  security?: shared.Security;
 
   serverUrl?: string;
 }
@@ -59,17 +60,17 @@ export class FormanceAPI {
   public _securityClient: AxiosInstance;
   public _serverURL: string;
   private _language = "typescript";
-  private _sdkVersion = "1.3.1";
-  private _genVersion = "1.3.1";
+  private _sdkVersion = "1.5.2";
+  private _genVersion = "1.5.4";
 
   constructor(props: SDKProps) {
     this._serverURL = props.serverUrl ?? ServerList[0];
 
     this._defaultClient = props.defaultClient ?? axios.create({ baseURL: this._serverURL });
     if (props.security) {
-      let security: Security = props.security;
+      let security: shared.Security = props.security;
       if (!(props.security instanceof utils.SpeakeasyBase))
-        security = new Security(props.security);
+        security = new shared.Security(props.security);
       this._securityClient = utils.createSecurityClient(
         this._defaultClient,
         security
@@ -258,7 +259,11 @@ export class FormanceAPI {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.serverInfo = httpRes?.data;
+              res.serverInfo = plainToInstance(
+                shared.ServerInfo,
+                httpRes?.data as shared.ServerInfo,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -293,7 +298,11 @@ export class FormanceAPI {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.serverInfo = httpRes?.data;
+              res.serverInfo = plainToInstance(
+                shared.ServerInfo,
+                httpRes?.data as shared.ServerInfo,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }

@@ -9,4 +9,5 @@ public class GetWorkflowResponse {
         this.data = data;
         return this;
     }
+    
 }

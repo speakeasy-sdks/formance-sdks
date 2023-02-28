@@ -8,10 +8,12 @@ public class ChangeConfigSecretRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
     @SpeakeasyMetadata("request:mediaType=application/json")
     public dev.formance.javasdk.models.shared.ConfigChangeSecret request;
     public ChangeConfigSecretRequest withRequest(dev.formance.javasdk.models.shared.ConfigChangeSecret request) {
         this.request = request;
         return this;
     }
+    
 }

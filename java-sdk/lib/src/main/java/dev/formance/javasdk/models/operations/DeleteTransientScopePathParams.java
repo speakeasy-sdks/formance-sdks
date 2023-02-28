@@ -9,10 +9,12 @@ public class DeleteTransientScopePathParams {
         this.scopeId = scopeId;
         return this;
     }
+    
     @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=transientScopeId")
     public String transientScopeId;
     public DeleteTransientScopePathParams withTransientScopeId(String transientScopeId) {
         this.transientScopeId = transientScopeId;
         return this;
     }
+    
 }

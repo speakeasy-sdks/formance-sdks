@@ -17,5 +17,5 @@ type AddMetadataToAccountRequest struct {
 type AddMetadataToAccountResponse struct {
 	ContentType   string
 	ErrorResponse *shared.ErrorResponse
-	StatusCode    int64
+	StatusCode    int
 }

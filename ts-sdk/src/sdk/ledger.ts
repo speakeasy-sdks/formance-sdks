@@ -1,6 +1,8 @@
 import * as utils from "../internal/utils";
 import * as operations from "./models/operations";
+import * as shared from "./models/shared";
 import { AxiosInstance, AxiosRequestConfig, AxiosResponse } from "axios";
+import { plainToInstance } from "class-transformer";
 
 export class Ledger {
   _defaultClient: AxiosInstance;
@@ -50,12 +52,20 @@ export class Ledger {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.ledgerInfoResponse = httpRes?.data;
+              res.ledgerInfoResponse = plainToInstance(
+                ,
+                httpRes?.data as ,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
           default:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.errorResponse = httpRes?.data;
+              res.errorResponse = plainToInstance(
+                shared.ErrorResponse,
+                httpRes?.data as shared.ErrorResponse,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }
@@ -91,7 +101,11 @@ export class Ledger {
         switch (true) {
           case httpRes?.status == 200:
             if (utils.matchContentType(contentType, `application/json`)) {
-                res.serverInfo = httpRes?.data;
+              res.serverInfo = plainToInstance(
+                shared.ServerInfo,
+                httpRes?.data as shared.ServerInfo,
+                { excludeExtraneousValues: true }
+              );
             }
             break;
         }

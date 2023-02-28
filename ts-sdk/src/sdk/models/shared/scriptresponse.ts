@@ -1,18 +1,24 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { ErrorsEnumEnum } from "./errorsenumenum";
 import { Transaction } from "./transaction";
+import { Expose, Type } from "class-transformer";
 
 
 export class ScriptResponse extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=details" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "details" })
   details?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=errorCode" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "errorCode" })
   errorCode?: ErrorsEnumEnum;
 
-  @SpeakeasyMetadata({ data: "json, name=errorMessage" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "errorMessage" })
   errorMessage?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=transaction" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "transaction" })
+  @Type(() => Transaction)
   transaction?: Transaction;
 }

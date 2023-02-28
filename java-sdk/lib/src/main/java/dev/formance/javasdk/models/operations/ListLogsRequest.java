@@ -8,9 +8,11 @@ public class ListLogsRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
     public ListLogsQueryParams queryParams;
     public ListLogsRequest withQueryParams(ListLogsQueryParams queryParams) {
         this.queryParams = queryParams;
         return this;
     }
+    
 }

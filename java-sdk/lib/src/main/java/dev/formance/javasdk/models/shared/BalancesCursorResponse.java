@@ -9,4 +9,5 @@ public class BalancesCursorResponse {
         this.cursor = cursor;
         return this;
     }
+    
 }

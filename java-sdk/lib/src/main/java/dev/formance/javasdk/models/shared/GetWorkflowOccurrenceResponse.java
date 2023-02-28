@@ -9,4 +9,5 @@ public class GetWorkflowOccurrenceResponse {
         this.data = data;
         return this;
     }
+    
 }

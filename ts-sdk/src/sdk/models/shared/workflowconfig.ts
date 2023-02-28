@@ -1,7 +1,9 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class WorkflowConfig extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=stages" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "stages" })
   stages: Record<string, any>[];
 }

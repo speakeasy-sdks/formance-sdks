@@ -8,19 +8,23 @@ public class ListRunsResponse {
         this.contentType = contentType;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.Error error;
     public ListRunsResponse withError(dev.formance.javasdk.models.shared.Error error) {
         this.error = error;
         return this;
     }
+    
     public Object listRunsResponse;
     public ListRunsResponse withListRunsResponse(Object listRunsResponse) {
         this.listRunsResponse = listRunsResponse;
         return this;
     }
-    public Long statusCode;
-    public ListRunsResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public ListRunsResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

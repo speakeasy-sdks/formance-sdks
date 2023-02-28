@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import stripetransferrequest as shared_stripetransferrequest
 from typing import Any, Optional

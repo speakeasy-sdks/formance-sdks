@@ -8,19 +8,23 @@ public class CreateWalletResponse {
         this.contentType = contentType;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.CreateWalletResponse createWalletResponse;
     public CreateWalletResponse withCreateWalletResponse(dev.formance.javasdk.models.shared.CreateWalletResponse createWalletResponse) {
         this.createWalletResponse = createWalletResponse;
         return this;
     }
-    public Long statusCode;
-    public CreateWalletResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public CreateWalletResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.WalletsErrorResponse walletsErrorResponse;
     public CreateWalletResponse withWalletsErrorResponse(dev.formance.javasdk.models.shared.WalletsErrorResponse walletsErrorResponse) {
         this.walletsErrorResponse = walletsErrorResponse;
         return this;
     }
+    
 }

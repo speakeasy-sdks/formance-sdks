@@ -8,9 +8,11 @@ public class ListTransactionsRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
     public ListTransactionsQueryParams queryParams;
     public ListTransactionsRequest withQueryParams(ListTransactionsQueryParams queryParams) {
         this.queryParams = queryParams;
         return this;
     }
+    
 }

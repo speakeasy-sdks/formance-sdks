@@ -1,5 +1,6 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import * as shared from "../shared";
+import { Expose, Type } from "class-transformer";
 
 
 export class UpdateWalletPathParams extends SpeakeasyBase {
@@ -8,7 +9,8 @@ export class UpdateWalletPathParams extends SpeakeasyBase {
 }
 
 export class UpdateWalletRequestBody extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=metadata" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "metadata" })
   metadata?: Record<string, any>;
 }
 

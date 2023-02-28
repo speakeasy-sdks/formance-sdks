@@ -8,19 +8,23 @@ public class GetBalancesAggregatedResponse {
         this.aggregateBalancesResponse = aggregateBalancesResponse;
         return this;
     }
+    
     public String contentType;
     public GetBalancesAggregatedResponse withContentType(String contentType) {
         this.contentType = contentType;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.ErrorResponse errorResponse;
     public GetBalancesAggregatedResponse withErrorResponse(dev.formance.javasdk.models.shared.ErrorResponse errorResponse) {
         this.errorResponse = errorResponse;
         return this;
     }
-    public Long statusCode;
-    public GetBalancesAggregatedResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public GetBalancesAggregatedResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

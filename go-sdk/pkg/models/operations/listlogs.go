@@ -27,5 +27,5 @@ type ListLogsResponse struct {
 	ContentType        string
 	ErrorResponse      *shared.ErrorResponse
 	LogsCursorResponse *shared.LogsCursorResponse
-	StatusCode         int64
+	StatusCode         int
 }

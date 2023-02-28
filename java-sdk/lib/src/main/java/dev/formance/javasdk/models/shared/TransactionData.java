@@ -17,12 +17,14 @@ public class TransactionData {
         this.metadata = metadata;
         return this;
     }
+    
     @JsonProperty("postings")
     public Posting[] postings;
     public TransactionData withPostings(Posting[] postings) {
         this.postings = postings;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("reference")
     public String reference;
@@ -30,13 +32,15 @@ public class TransactionData {
         this.reference = reference;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
-    @JsonSerialize(contentUsing = DateTimeSerializer.class)
-    @JsonDeserialize(contentUsing = DateTimeDeserializer.class)
+    @JsonSerialize(using = DateTimeSerializer.class)
+    @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("timestamp")
     public OffsetDateTime timestamp;
     public TransactionData withTimestamp(OffsetDateTime timestamp) {
         this.timestamp = timestamp;
         return this;
     }
+    
 }

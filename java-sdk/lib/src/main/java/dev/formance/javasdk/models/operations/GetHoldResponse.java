@@ -8,19 +8,23 @@ public class GetHoldResponse {
         this.contentType = contentType;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.GetHoldResponse getHoldResponse;
     public GetHoldResponse withGetHoldResponse(dev.formance.javasdk.models.shared.GetHoldResponse getHoldResponse) {
         this.getHoldResponse = getHoldResponse;
         return this;
     }
-    public Long statusCode;
-    public GetHoldResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public GetHoldResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.WalletsErrorResponse walletsErrorResponse;
     public GetHoldResponse withWalletsErrorResponse(dev.formance.javasdk.models.shared.WalletsErrorResponse walletsErrorResponse) {
         this.walletsErrorResponse = walletsErrorResponse;
         return this;
     }
+    
 }

@@ -8,4 +8,5 @@ public class ResetConnectorRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

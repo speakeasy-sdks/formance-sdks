@@ -76,8 +76,8 @@ func WithSecurity(security shared.Security) SDKOption {
 func New(opts ...SDKOption) *Formance {
 	sdk := &Formance{
 		_language:   "go",
-		_sdkVersion: "1.3.1",
-		_genVersion: "1.3.1",
+		_sdkVersion: "1.5.2",
+		_genVersion: "1.5.4",
 	}
 	for _, opt := range opts {
 		opt(sdk)
@@ -281,7 +281,7 @@ func (s *Formance) PaymentsgetServerInfo(ctx context.Context) (*operations.Payme
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.PaymentsgetServerInfoResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -324,7 +324,7 @@ func (s *Formance) SearchgetServerInfo(ctx context.Context) (*operations.Searchg
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.SearchgetServerInfoResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {

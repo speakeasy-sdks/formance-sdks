@@ -16,6 +16,12 @@ lib/src/main/java/dev/formance/javasdk/Users.java
 lib/src/main/java/dev/formance/javasdk/Wallets.java
 lib/src/main/java/dev/formance/javasdk/Webhooks.java
 lib/src/main/java/dev/formance/javasdk/FormanceAPI.java
+.gitattributes
+.gitignore
+gradle/wrapper/gradle-wrapper.jar
+gradle/wrapper/gradle-wrapper.properties
+gradlew
+gradlew.bat
 lib/build.gradle
 lib/src/main/java/dev/formance/javasdk/utils/DateTimeDeserializer.java
 lib/src/main/java/dev/formance/javasdk/utils/DateTimeSerializer.java
@@ -23,6 +29,7 @@ lib/src/main/java/dev/formance/javasdk/utils/FormMetadata.java
 lib/src/main/java/dev/formance/javasdk/utils/HTTPClient.java
 lib/src/main/java/dev/formance/javasdk/utils/HTTPRequest.java
 lib/src/main/java/dev/formance/javasdk/utils/HeaderMetadata.java
+lib/src/main/java/dev/formance/javasdk/utils/JSON.java
 lib/src/main/java/dev/formance/javasdk/utils/Metadata.java
 lib/src/main/java/dev/formance/javasdk/utils/MultipartFormMetadata.java
 lib/src/main/java/dev/formance/javasdk/utils/PathParamsMetadata.java

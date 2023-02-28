@@ -9,4 +9,5 @@ public class ListLogsPathParams {
         this.ledger = ledger;
         return this;
     }
+    
 }

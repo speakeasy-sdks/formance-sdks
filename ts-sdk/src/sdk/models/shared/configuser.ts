@@ -1,13 +1,17 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 
 export class ConfigUser extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=endpoint" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "endpoint" })
   endpoint: string;
 
-  @SpeakeasyMetadata({ data: "json, name=eventTypes" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "eventTypes" })
   eventTypes: string[];
 
-  @SpeakeasyMetadata({ data: "json, name=secret" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "secret" })
   secret?: string;
 }

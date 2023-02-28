@@ -9,4 +9,5 @@ public class DeleteScopePathParams {
         this.scopeId = scopeId;
         return this;
     }
+    
 }

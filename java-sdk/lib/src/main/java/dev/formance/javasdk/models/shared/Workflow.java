@@ -14,6 +14,7 @@ public class Workflow {
         this.config = config;
         return this;
     }
+    
     @JsonSerialize(using = DateTimeSerializer.class)
     @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("createdAt")
@@ -22,12 +23,14 @@ public class Workflow {
         this.createdAt = createdAt;
         return this;
     }
+    
     @JsonProperty("id")
     public String id;
     public Workflow withId(String id) {
         this.id = id;
         return this;
     }
+    
     @JsonSerialize(using = DateTimeSerializer.class)
     @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("updatedAt")
@@ -36,4 +39,5 @@ public class Workflow {
         this.updatedAt = updatedAt;
         return this;
     }
+    
 }

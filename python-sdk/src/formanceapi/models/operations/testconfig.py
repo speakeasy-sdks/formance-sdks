@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import attemptresponse as shared_attemptresponse
 from typing import Optional

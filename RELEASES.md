@@ -31,3 +31,43 @@ Based on:
 - Speakeasy CLI 1.3.1 https://github.com/speakeasy-api/speakeasy
 ### Releases
 - [Go v1.3.1] https://github.com/speakeasy-sdks/formance-sdks/releases/tag/v1.3.1 - ./go-sdk/
+
+## Version 1.4.0
+### Changes
+Based on:
+- OpenAPI Doc v1.0.0-rc.5 formance.yaml
+- Speakeasy CLI 1.4.5 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v1.4.0] https://github.com/speakeasy-sdks/formance-sdks/releases/tag/v1.4.0 - ./go-sdk/
+
+## Version 1.4.1
+### Changes
+Based on:
+- OpenAPI Doc v1.0.0-rc.5 formance.yaml
+- Speakeasy CLI 1.4.8 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v1.4.1] https://github.com/speakeasy-sdks/formance-sdks/releases/tag/v1.4.1 - ./go-sdk/
+
+## Version 1.5.0
+### Changes
+Based on:
+- OpenAPI Doc v1.0.0-rc.5 formance.yaml
+- Speakeasy CLI 1.5.0 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v1.5.0] https://github.com/speakeasy-sdks/formance-sdks/releases/tag/v1.5.0 - ./go-sdk/
+
+## Version 1.5.1
+### Changes
+Based on:
+- OpenAPI Doc v1.0.0-rc.5 formance.yaml
+- Speakeasy CLI 1.5.3 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v1.5.1] https://github.com/speakeasy-sdks/formance-sdks/releases/tag/v1.5.1 - ./go-sdk/
+
+## Version 1.5.2
+### Changes
+Based on:
+- OpenAPI Doc v1.0.0-rc.5 formance.yaml
+- Speakeasy CLI 1.5.4 https://github.com/speakeasy-api/speakeasy
+### Releases
+- [Go v1.5.2] https://github.com/speakeasy-sdks/formance-sdks/releases/tag/v1.5.2 - ./go-sdk/

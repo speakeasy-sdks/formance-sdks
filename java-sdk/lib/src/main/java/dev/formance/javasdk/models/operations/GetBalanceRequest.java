@@ -8,4 +8,5 @@ public class GetBalanceRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

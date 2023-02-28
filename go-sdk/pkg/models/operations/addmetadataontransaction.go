@@ -17,5 +17,5 @@ type AddMetadataOnTransactionRequest struct {
 type AddMetadataOnTransactionResponse struct {
 	ContentType   string
 	ErrorResponse *shared.ErrorResponse
-	StatusCode    int64
+	StatusCode    int
 }

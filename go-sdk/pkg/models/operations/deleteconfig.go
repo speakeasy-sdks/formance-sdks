@@ -10,5 +10,5 @@ type DeleteConfigRequest struct {
 
 type DeleteConfigResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

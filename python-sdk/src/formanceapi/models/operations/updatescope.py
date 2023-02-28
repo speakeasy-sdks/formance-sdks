@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import updatescoperequest as shared_updatescoperequest
 from ..shared import updatescoperesponse as shared_updatescoperesponse

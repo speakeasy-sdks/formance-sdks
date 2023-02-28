@@ -9,4 +9,5 @@ public class CreateScopeRequest {
         this.request = request;
         return this;
     }
+    
 }

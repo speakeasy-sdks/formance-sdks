@@ -11,6 +11,7 @@ public class CurrencyCloudConfig {
         this.apiKey = apiKey;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("endpoint")
     public String endpoint;
@@ -18,12 +19,14 @@ public class CurrencyCloudConfig {
         this.endpoint = endpoint;
         return this;
     }
+    
     @JsonProperty("loginID")
     public String loginID;
     public CurrencyCloudConfig withLoginID(String loginID) {
         this.loginID = loginID;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("pollingPeriod")
     public String pollingPeriod;
@@ -31,4 +34,5 @@ public class CurrencyCloudConfig {
         this.pollingPeriod = pollingPeriod;
         return this;
     }
+    
 }

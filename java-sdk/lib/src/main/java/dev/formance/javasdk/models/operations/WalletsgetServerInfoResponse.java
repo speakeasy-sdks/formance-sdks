@@ -8,19 +8,23 @@ public class WalletsgetServerInfoResponse {
         this.contentType = contentType;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.ServerInfo serverInfo;
     public WalletsgetServerInfoResponse withServerInfo(dev.formance.javasdk.models.shared.ServerInfo serverInfo) {
         this.serverInfo = serverInfo;
         return this;
     }
-    public Long statusCode;
-    public WalletsgetServerInfoResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public WalletsgetServerInfoResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.WalletsErrorResponse walletsErrorResponse;
     public WalletsgetServerInfoResponse withWalletsErrorResponse(dev.formance.javasdk.models.shared.WalletsErrorResponse walletsErrorResponse) {
         this.walletsErrorResponse = walletsErrorResponse;
         return this;
     }
+    
 }

@@ -8,14 +8,17 @@ public class GetPaymentResponse {
         this.contentType = contentType;
         return this;
     }
+    
     public dev.formance.javasdk.models.shared.PaymentResponse paymentResponse;
     public GetPaymentResponse withPaymentResponse(dev.formance.javasdk.models.shared.PaymentResponse paymentResponse) {
         this.paymentResponse = paymentResponse;
         return this;
     }
-    public Long statusCode;
-    public GetPaymentResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public GetPaymentResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

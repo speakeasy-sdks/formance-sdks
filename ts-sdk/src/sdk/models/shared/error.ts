@@ -1,13 +1,16 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
+import { Expose } from "class-transformer";
 
 export enum ErrorErrorCodeEnum {
     Validation = "VALIDATION"
 }
 
 export class ErrorT extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=errorCode" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "errorCode" })
   errorCode: ErrorErrorCodeEnum;
 
-  @SpeakeasyMetadata({ data: "json, name=errorMessage" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "errorMessage" })
   errorMessage: string;
 }

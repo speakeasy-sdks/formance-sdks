@@ -9,10 +9,12 @@ public class GetWorkflowOccurrencePathParams {
         this.flowId = flowId;
         return this;
     }
+    
     @SpeakeasyMetadata("pathParam:style=simple,explode=false,name=runId")
     public String runId;
     public GetWorkflowOccurrencePathParams withRunId(String runId) {
         this.runId = runId;
         return this;
     }
+    
 }

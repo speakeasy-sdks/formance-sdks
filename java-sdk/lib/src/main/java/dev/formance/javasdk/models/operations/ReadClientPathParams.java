@@ -9,4 +9,5 @@ public class ReadClientPathParams {
         this.clientId = clientId;
         return this;
     }
+    
 }

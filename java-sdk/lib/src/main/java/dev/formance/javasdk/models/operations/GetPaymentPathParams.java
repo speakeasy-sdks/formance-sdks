@@ -9,4 +9,5 @@ public class GetPaymentPathParams {
         this.paymentId = paymentId;
         return this;
     }
+    
 }

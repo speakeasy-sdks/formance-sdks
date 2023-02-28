@@ -9,4 +9,5 @@ public class GetWalletResponse {
         this.data = data;
         return this;
     }
+    
 }

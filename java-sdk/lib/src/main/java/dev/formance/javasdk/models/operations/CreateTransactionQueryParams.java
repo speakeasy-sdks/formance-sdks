@@ -9,4 +9,5 @@ public class CreateTransactionQueryParams {
         this.preview = preview;
         return this;
     }
+    
 }

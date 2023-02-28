@@ -15,6 +15,6 @@ type ConfirmHoldRequest struct {
 
 type ConfirmHoldResponse struct {
 	ContentType          string
-	StatusCode           int64
+	StatusCode           int
 	WalletsErrorResponse *shared.WalletsErrorResponse
 }

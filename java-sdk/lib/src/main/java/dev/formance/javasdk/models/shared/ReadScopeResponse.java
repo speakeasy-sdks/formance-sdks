@@ -12,4 +12,5 @@ public class ReadScopeResponse {
         this.data = data;
         return this;
     }
+    
 }

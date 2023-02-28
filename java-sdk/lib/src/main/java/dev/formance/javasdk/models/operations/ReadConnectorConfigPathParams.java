@@ -9,4 +9,5 @@ public class ReadConnectorConfigPathParams {
         this.connector = connector;
         return this;
     }
+    
 }

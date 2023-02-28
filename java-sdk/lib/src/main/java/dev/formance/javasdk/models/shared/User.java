@@ -12,6 +12,7 @@ public class User {
         this.email = email;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("id")
     public String id;
@@ -19,6 +20,7 @@ public class User {
         this.id = id;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
     @JsonProperty("subject")
     public String subject;
@@ -26,4 +28,5 @@ public class User {
         this.subject = subject;
         return this;
     }
+    
 }

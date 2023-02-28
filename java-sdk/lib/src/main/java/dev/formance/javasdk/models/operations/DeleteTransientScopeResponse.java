@@ -8,9 +8,11 @@ public class DeleteTransientScopeResponse {
         this.contentType = contentType;
         return this;
     }
-    public Long statusCode;
-    public DeleteTransientScopeResponse withStatusCode(Long statusCode) {
+    
+    public Integer statusCode;
+    public DeleteTransientScopeResponse withStatusCode(Integer statusCode) {
         this.statusCode = statusCode;
         return this;
     }
+    
 }

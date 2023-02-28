@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import createworkflowrequest as shared_createworkflowrequest
 from ..shared import createworkflowresponse as shared_createworkflowresponse

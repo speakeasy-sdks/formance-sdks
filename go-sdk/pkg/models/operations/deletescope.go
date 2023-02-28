@@ -10,5 +10,5 @@ type DeleteScopeRequest struct {
 
 type DeleteScopeResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

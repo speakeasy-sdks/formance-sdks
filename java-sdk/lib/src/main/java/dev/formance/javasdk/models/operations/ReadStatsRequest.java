@@ -8,4 +8,5 @@ public class ReadStatsRequest {
         this.pathParams = pathParams;
         return this;
     }
+    
 }

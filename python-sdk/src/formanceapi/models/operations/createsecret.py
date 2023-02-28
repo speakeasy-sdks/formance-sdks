@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import createsecretrequest as shared_createsecretrequest
 from ..shared import createsecretresponse as shared_createsecretresponse

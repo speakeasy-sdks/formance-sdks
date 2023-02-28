@@ -15,5 +15,5 @@ type DeactivateConfigRequest struct {
 type DeactivateConfigResponse struct {
 	ConfigResponse *shared.ConfigResponse
 	ContentType    string
-	StatusCode     int64
+	StatusCode     int
 }

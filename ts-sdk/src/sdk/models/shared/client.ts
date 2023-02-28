@@ -1,35 +1,47 @@
 import { SpeakeasyBase, SpeakeasyMetadata } from "../../../internal/utils";
 import { ClientSecret } from "./clientsecret";
+import { Expose, Type } from "class-transformer";
 
 
 export class Client extends SpeakeasyBase {
-  @SpeakeasyMetadata({ data: "json, name=description" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "description" })
   description?: string;
 
-  @SpeakeasyMetadata({ data: "json, name=id" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "id" })
   id: string;
 
-  @SpeakeasyMetadata({ data: "json, name=metadata" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "metadata" })
   metadata?: Record<string, any>;
 
-  @SpeakeasyMetadata({ data: "json, name=name" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "name" })
   name: string;
 
-  @SpeakeasyMetadata({ data: "json, name=postLogoutRedirectUris" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "postLogoutRedirectUris" })
   postLogoutRedirectUris?: string[];
 
-  @SpeakeasyMetadata({ data: "json, name=public" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "public" })
   public?: boolean;
 
-  @SpeakeasyMetadata({ data: "json, name=redirectUris" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "redirectUris" })
   redirectUris?: string[];
 
-  @SpeakeasyMetadata({ data: "json, name=scopes" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "scopes" })
   scopes?: string[];
 
-  @SpeakeasyMetadata({ data: "json, name=secrets", elemType: ClientSecret })
+  @SpeakeasyMetadata({ elemType: ClientSecret })
+  @Expose({ name: "secrets" })
+  @Type(() => ClientSecret)
   secrets?: ClientSecret[];
 
-  @SpeakeasyMetadata({ data: "json, name=trusted" })
+  @SpeakeasyMetadata()
+  @Expose({ name: "trusted" })
   trusted?: boolean;
 }

@@ -18,6 +18,6 @@ type GetHoldsRequest struct {
 type GetHoldsResponse struct {
 	ContentType          string
 	GetHoldsResponse     *shared.GetHoldsResponse
-	StatusCode           int64
+	StatusCode           int
 	WalletsErrorResponse *shared.WalletsErrorResponse
 }

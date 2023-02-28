@@ -17,6 +17,6 @@ type GetTransactionsRequest struct {
 type GetTransactionsResponse struct {
 	ContentType             string
 	GetTransactionsResponse *shared.GetTransactionsResponse
-	StatusCode              int64
+	StatusCode              int
 	WalletsErrorResponse    *shared.WalletsErrorResponse
 }

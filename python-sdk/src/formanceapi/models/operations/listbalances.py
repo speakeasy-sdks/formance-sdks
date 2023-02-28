@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import listbalancesresponse as shared_listbalancesresponse
 from typing import Optional

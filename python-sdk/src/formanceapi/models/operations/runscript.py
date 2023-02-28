@@ -1,3 +1,4 @@
+from __future__ import annotations
 import dataclasses
 from ..shared import script as shared_script
 from ..shared import scriptresponse as shared_scriptresponse

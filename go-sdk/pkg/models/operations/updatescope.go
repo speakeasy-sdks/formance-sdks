@@ -15,6 +15,6 @@ type UpdateScopeRequest struct {
 
 type UpdateScopeResponse struct {
 	ContentType         string
-	StatusCode          int64
+	StatusCode          int
 	UpdateScopeResponse *shared.UpdateScopeResponse
 }

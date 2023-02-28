@@ -17,18 +17,21 @@ public class StageStatus {
         this.error = error;
         return this;
     }
+    
     @JsonProperty("occurrenceID")
     public String occurrenceID;
     public StageStatus withOccurrenceID(String occurrenceID) {
         this.occurrenceID = occurrenceID;
         return this;
     }
+    
     @JsonProperty("stage")
     public Double stage;
     public StageStatus withStage(Double stage) {
         this.stage = stage;
         return this;
     }
+    
     @JsonSerialize(using = DateTimeSerializer.class)
     @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("startedAt")
@@ -37,13 +40,15 @@ public class StageStatus {
         this.startedAt = startedAt;
         return this;
     }
+    
     @JsonInclude(Include.NON_ABSENT)
-    @JsonSerialize(contentUsing = DateTimeSerializer.class)
-    @JsonDeserialize(contentUsing = DateTimeDeserializer.class)
+    @JsonSerialize(using = DateTimeSerializer.class)
+    @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("terminatedAt")
     public OffsetDateTime terminatedAt;
     public StageStatus withTerminatedAt(OffsetDateTime terminatedAt) {
         this.terminatedAt = terminatedAt;
         return this;
     }
+    
 }

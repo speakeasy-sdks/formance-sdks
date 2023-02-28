@@ -14,6 +14,7 @@ public class Log {
         this.data = data;
         return this;
     }
+    
     @JsonSerialize(using = DateTimeSerializer.class)
     @JsonDeserialize(using = DateTimeDeserializer.class)
     @JsonProperty("date")
@@ -22,22 +23,26 @@ public class Log {
         this.date = date;
         return this;
     }
+    
     @JsonProperty("hash")
     public String hash;
     public Log withHash(String hash) {
         this.hash = hash;
         return this;
     }
+    
     @JsonProperty("id")
     public Long id;
     public Log withId(Long id) {
         this.id = id;
         return this;
     }
+    
     @JsonProperty("type")
     public LogTypeEnum type;
     public Log withType(LogTypeEnum type) {
         this.type = type;
         return this;
     }
+    
 }

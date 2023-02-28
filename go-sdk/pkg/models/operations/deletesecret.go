@@ -11,5 +11,5 @@ type DeleteSecretRequest struct {
 
 type DeleteSecretResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

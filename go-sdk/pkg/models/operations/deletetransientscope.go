@@ -11,5 +11,5 @@ type DeleteTransientScopeRequest struct {
 
 type DeleteTransientScopeResponse struct {
 	ContentType string
-	StatusCode  int64
+	StatusCode  int
 }

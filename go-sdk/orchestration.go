@@ -62,7 +62,7 @@ func (s *orchestration) CreateWorkflow(ctx context.Context, request operations.C
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.CreateWorkflowResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -116,7 +116,7 @@ func (s *orchestration) GetFlow(ctx context.Context, request operations.GetFlowR
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetFlowResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -170,7 +170,7 @@ func (s *orchestration) GetWorkflowOccurrence(ctx context.Context, request opera
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.GetWorkflowOccurrenceResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -224,7 +224,7 @@ func (s *orchestration) ListFlows(ctx context.Context) (*operations.ListFlowsRes
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListFlowsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -278,7 +278,7 @@ func (s *orchestration) ListRuns(ctx context.Context, request operations.ListRun
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.ListRunsResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -331,7 +331,7 @@ func (s *orchestration) OrchestrationgetServerInfo(ctx context.Context) (*operat
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.OrchestrationgetServerInfoResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
@@ -378,7 +378,9 @@ func (s *orchestration) RunWorkflow(ctx context.Context, request operations.RunW
 
 	req.Header.Set("Content-Type", reqContentType)
 
-	utils.PopulateQueryParams(ctx, req, request.QueryParams)
+	if err := utils.PopulateQueryParams(ctx, req, request.QueryParams); err != nil {
+		return nil, fmt.Errorf("error populating query params: %w", err)
+	}
 
 	client := s.securityClient
 
@@ -394,7 +396,7 @@ func (s *orchestration) RunWorkflow(ctx context.Context, request operations.RunW
 	contentType := httpRes.Header.Get("Content-Type")
 
 	res := &operations.RunWorkflowResponse{
-		StatusCode:  int64(httpRes.StatusCode),
+		StatusCode:  httpRes.StatusCode,
 		ContentType: contentType,
 	}
 	switch {
